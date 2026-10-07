@@ -1,3 +1,6 @@
+*.jld2
+*.csv
+
 # ---> Images
 # JPEG
 *.jpg

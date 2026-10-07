@@ -1,0 +1,10 @@
+[deps]
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+HyperCloud = "46243fee-3493-4f45-a265-764054f6ddcc"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+PDEStudio = "9dcd72ad-f481-4c48-9703-3c94083dcfc3"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+ThreadPinning = "811555cd-349b-4f26-b7bc-1f208b848042"
+
+[sources]
+HyperCloud = {path = "../../Code/HyperCloud.jl"}
