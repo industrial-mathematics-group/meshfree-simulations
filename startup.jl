@@ -17,11 +17,7 @@ using ThreadPinning
 using HyperCloud
 using StaticArrays
 
-try
-    pinthreads(:cores)
-catch e
-    @warn "Could not pin threads to cores!"
-end
+pinthreads(:affinitymask)
 
 # Shared setup
 min_level_to_show = Logging.Info
