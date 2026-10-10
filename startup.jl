@@ -28,6 +28,7 @@ if mode == "web"
     @eval using WGLMakie
     @eval using PDEStudio
     @eval using Bonito
+    HyperCloud.CONFIG_ROOT_OVERWRITE[] = pwd()
     PDEStudioCore.set_save_path!("/bigtmp/pajung")
     HyperCloud.set_progress_interval!(0.5)
     HyperCloud.enable_progress_bar!(true)
@@ -35,6 +36,7 @@ if mode == "web"
 elseif mode == "local"
     @eval using PDEStudio
     @eval using GLMakie
+    HyperCloud.CONFIG_ROOT_OVERWRITE[] = pwd()
     PDEStudioCore.set_save_path!(pwd())
     HyperCloud.set_progress_interval!(0.5)
     HyperCloud.enable_progress_bar!(true)
@@ -42,6 +44,7 @@ elseif mode == "local"
 elseif mode == "headless"
     PDEStudioCore.set_save_path!("/bigtmp/pajung")
     PDEStudioCore.set_stat_preset!("hyperbolic")
+    HyperCloud.CONFIG_ROOT_OVERWRITE[] = pwd()
     HyperCloud.set_progress_interval!(60)
     HyperCloud.enable_progress_bar!(false)
 else
