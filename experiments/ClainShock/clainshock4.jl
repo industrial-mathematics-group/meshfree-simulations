@@ -29,7 +29,13 @@ function convertQuadrantInit(quadrant_data::NTuple{4, NTuple{4, T}}) where T <: 
         primToCons(quadrant_data[4]...)
     )
 end
-
+bc_map = Dict(
+    1 => :outflow,    # Left Wall
+    2 =>  :outflow,    # Right Wall 
+    3 =>  :outflow,  # Bottom Wall
+    4 =>  :outflow,     # Top Wall
+    5 =>  :outflow,    # Corners 
+)
 # =========================================================================
 # MAIN SIMULATION SETUP
 # =========================================================================
@@ -55,7 +61,7 @@ function get_config()
         :Grid_mins => (0.0, 0.0),
         :Grid_maxs => (1.0, 1.0),
         :Grid_Ns => (800, 800),
-        :Grid_bc => :outflow,
+        :Grid_bc => bc_map,
         :Grid_randomness_factor => (0.2, 0.2),
         :Grid_seed => 42,
         :Grid_mover => :none,
