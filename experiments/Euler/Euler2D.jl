@@ -1,62 +1,86 @@
+# Format: (rho, u, v, p)
+const clain_riemann_init = (
+    (0.138,  1.206, 1.206, 0.029), # 1: BL (Omega_ll)
+    (0.5323, 0.0,   1.206, 0.3),   # 2: BR (Omega_lr)
+    (0.5323, 1.206, 0.0,   0.3),   # 3: TL (Omega_ul)
+    (1.5,    0.0,   0.0,   1.5)    # 4: TR (Omega_ur)
+)
+
+# Format: (rho, p, u, v) -> Reordered dynamically to (rho, u, v, p)
+const implosionInit_raw = (
+    (0.8,    1.0, 0.0, 0.0),
+    (1.0,    1.0, 0.0, 0.7276),
+    (1.0,    1.0, 0.7276, 0.0),
+    (0.5313, 0.4, 0.0, 0.0)
+)
+const implosionNewOrder = Tuple((item[1], item[3], item[4], item[2]) for item in implosionInit_raw)
+
+function convertQuadrantInit(quadrant_data::NTuple{4, NTuple{4, T}}) where T <: AbstractFloat
+    function primToCons(rho, u, v, p)
+        mx = rho * u
+        my = rho * v
+        E = p / (GAS_GAMMA_EULER - 1.0) + 0.5 * rho * (u^2 + v^2)
+        return (rho, mx, my, E)
+    end
+    return (
+        primToCons(quadrant_data[1]...),
+        primToCons(quadrant_data[2]...),
+        primToCons(quadrant_data[3]...),
+        primToCons(quadrant_data[4]...)
+    )
+end
+
+# =========================================================================
+# MAIN SIMULATION SETUP
+# =========================================================================
+
 function get_config()
-    methods = get_master_method_dict()
-    # Assuming `sod_euler_params` and `ignore_relax` are defined as in your original script
-    # push!(methods, ...) (Keep your method pushes here)
+    relax_vel, relax_idx = generate_relax_params(4.0, 2, 4)
     
-    varied_params = create_varied_dict()
-    
-    # Setup shared variables
-    relax_vel, relax_idx = generate_relax_params(3.0, 1, 3)
-    dummy_eq = EulerEquation(Val(1), Float64, GAS_GAMMA_EULER)
-    
-    # 1. Define Sod Shock Tube in Primitive Variables (rho, u, p)
-    V_L = State{3}(1.0, 0.0, 1.0)
-    V_R = State{3}(0.125, 0.0, 0.1)
-    
-    # 2. Convert to Conservative Variables (rho, m, E) for the solver
-    U_L = prim2cons(dummy_eq, V_L)
-    U_R = prim2cons(dummy_eq, V_R)
+    # 1. Choose your test case
+    # test_ic = convertQuadrantInit(implosionNewOrder)
+    test_ic = convertQuadrantInit(clain_riemann_init)
     
     shared = Dict{Symbol, Any}(
         :PDE_name => :euler,
-        :PDE_D => 1,
+        :PDE_D => 2,
         
         :sim_func_name => :run_simulation,
-        :tmax => 0.2,
-        :snapshots => 51,
+        :tmax => 0.3,
+        :snapshots => 20,
         
         # Grid parameters mapping
         :Grid_domain => :rectangular,
-        :Grid_mins => (-0.5,),
-        :Grid_maxs => (0.5,),
-        :Grid_Ns => (330,),
-        :Grid_bc => Dict(1 => :fixed_dirichlet, 2 => :outflow),
-        :Grid_randomness_factor => (0.2,),
-        :Grid_seed => 10,
+        :Grid_mins => (0.0, 0.0),
+        :Grid_maxs => (1.0, 1.0),
+        :Grid_Ns => (100, 100),
+        :Grid_bc => :outflow,
+        :Grid_randomness_factor => (0.2, 0.2),
+        :Grid_seed => 42,
         :Grid_mover => :none,
         
         # Weight Function API mappings
         :Weight_name => :exponential,
         :Weight_alpha => 1.0,
-        :Weight_range => 5.5,
+        :Weight_range => 2.5,
         
-        # Initial Condition mappings aligned to Riemann{D, M}
-        :IC_name => :riemann,
-        :IC_uL => Tuple(U_L),
-        :IC_uR => Tuple(U_R),
-        :IC_p0 => (0.0,),
+        # Initial Condition mappings aligned to QRiemann{D, M, N}
+        :IC_name => :q_riemann,
+        :IC_states => test_ic,
+        :IC_p0 => (0.5, 0.5),
         
-        :Time_CFL => 0.2,
-        :MLS_order => 4,
+        :Time_CFL => 0.1,
+        :MLS_order => 2,
         
-        # Relaxation parameters
+        # Relaxation & Numerics
         :relax_velocities => relax_vel,
-        :relax_indices => relax_idx, 
-        :relax_epsilon => 1e-6
+        :relax_indices => relax_idx,
+        :relax_epsilon => 1e-6,
+        :merge_factor => 0.0
     )
 
-    defaults = ["RK2Upwind1", "RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "Analytical Solution"]
+    method_dict = get_master_method_dict()
+    defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1"]
     
-    return SimulationConfig(shared, methods, defaults; varied_params = varied_params, ref_func_name = "analytical_solution")
+    return SimulationConfig(shared, method_dict, defaults)
 end
-get_config()
