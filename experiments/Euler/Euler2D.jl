@@ -14,7 +14,7 @@ const implosionInit_raw = (
     (0.5313, 0.4, 0.0, 0.0)
 )
 const implosionNewOrder = Tuple((item[1], item[3], item[4], item[2]) for item in implosionInit_raw)
-
+GAS_GAMMA_EULER = 1.4
 function convertQuadrantInit(quadrant_data::NTuple{4, NTuple{4, T}}) where T <: AbstractFloat
     function primToCons(rho, u, v, p)
         mx = rho * u
@@ -44,8 +44,9 @@ function get_config()
     shared = Dict{Symbol, Any}(
         :PDE_name => :euler,
         :PDE_D => 2,
+         :PDE_gamma => GAS_GAMMA_EULER,
         
-        :sim_func_name => :run_simulation,
+        :sim_func_name => :run_direct_simulation,
         :tmax => 0.3,
         :snapshots => 20,
         
@@ -53,7 +54,7 @@ function get_config()
         :Grid_domain => :rectangular,
         :Grid_mins => (0.0, 0.0),
         :Grid_maxs => (1.0, 1.0),
-        :Grid_Ns => (100, 100),
+        :Grid_Ns => (800, 800),
         :Grid_bc => :outflow,
         :Grid_randomness_factor => (0.2, 0.2),
         :Grid_seed => 42,

@@ -4,7 +4,7 @@ function get_config()
     # push!(methods, ...) (Keep your method pushes here)
     
     varied_params = create_varied_dict()
-    
+    GAS_GAMMA_EULER = 1.4
     # Setup shared variables
     relax_vel, relax_idx = generate_relax_params(3.0, 1, 3)
     dummy_eq = EulerEquation(Val(1), Float64, GAS_GAMMA_EULER)
@@ -20,8 +20,9 @@ function get_config()
     shared = Dict{Symbol, Any}(
         :PDE_name => :euler,
         :PDE_D => 1,
+         :PDE_gamma => GAS_GAMMA_EULER,
         
-        :sim_func_name => :run_simulation,
+        :sim_func_name => :run_direct_simulation,
         :tmax => 0.2,
         :snapshots => 51,
         
@@ -47,7 +48,7 @@ function get_config()
         :IC_p0 => (0.0,),
         
         :Time_CFL => 0.2,
-        :MLS_order => 4,
+        :MLS_order => 2,
         
         # Relaxation parameters
         :relax_velocities => relax_vel,
@@ -57,6 +58,6 @@ function get_config()
 
     defaults = ["RK2Upwind1", "RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "Analytical Solution"]
     
-    return SimulationConfig(shared, methods, defaults; varied_params = varied_params, ref_func_name = "analytical_solution")
+    return SimulationConfig(shared, methods, defaults; varied = varied_params, reference = "analytical_solution")
 end
 get_config()

@@ -8,7 +8,7 @@ function get_config()
         :PDE_name => :burgers,
         :PDE_D => 2,
         
-        :sim_func_name => :run_simulation,
+        :sim_func_name => :run_direct_simulation,
         :tmax => 1.0,
         :snapshots => 5,
         
@@ -35,16 +35,11 @@ function get_config()
         :IC_width => 2.0,         # Pulse width
         
         :Time_CFL => 0.2,
-        :MLS_order => 1,
-        
-        # Relaxation parameters
-        :relax_velocities => relax_vel, 
-        :relax_indices => relax_idx,
-        :relax_epsilon => 1e-6, 
+        :MLS_order => 0,
     )
 
     base_methods = get_master_method_dict()
-    defaults = ["Analytical Solution", "RK4MUSCL2", "RK4MUSCL3", "RK4MUSCL4", "RK4MUSCL5"]
+    defaults = ["RK4MUSCL2", "RK4MUSCL3", "RK4MUSCL4", "RK4MUSCL5"]
     
-    return SimulationConfig(shared, base_methods, defaults; varied_params = varied_params, ref_func_name = "analytical_solution")
+    return SimulationConfig(shared, base_methods, defaults; varied = varied_params, reference = "analytical_solution")
 end

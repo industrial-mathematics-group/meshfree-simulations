@@ -1,6 +1,7 @@
 *.jld2
 *.csv
 
+*/backups
 # ---> Images
 # JPEG
 *.jpg

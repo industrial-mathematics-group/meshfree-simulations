@@ -47,5 +47,5 @@ function get_config()
     base_methods = get_master_method_dict()
     defaults = ["RK4MUSCL2", "RK4MUSCL3", "RK4MUSCL4", "RK4MUSCL5"]
     
-    return SimulationConfig(shared, base_methods, defaults; varied_params = varied_params, ref_func_name = "analytical_solution")
+    return SimulationConfig(shared, base_methods, defaults; varied = varied_params, reference = "analytical_solution")
 end

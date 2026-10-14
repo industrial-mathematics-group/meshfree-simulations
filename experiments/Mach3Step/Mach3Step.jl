@@ -110,7 +110,7 @@ function euler_2d_mach3step()
         :PDE_D => 2,
         :PDE_gamma => 1.4,
 
-        :sim_func_name => :run_simulation,                
+        :sim_func_name => :run_direct_simulation,                
         :tmax => 4.0,
         :snapshots => 40,
         
@@ -142,7 +142,7 @@ function euler_2d_mach3step()
 
     # 2. Modernized Method Configurations
     methods = get_master_method_dict()
-    defaults = ["RK2MUSCL2(EPD2)"]
+    defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1"]
     
     return SimulationConfig(shared, methods, defaults)
 end

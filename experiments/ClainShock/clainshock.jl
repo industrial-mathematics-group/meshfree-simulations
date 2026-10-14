@@ -52,7 +52,7 @@ function get_config()
          :PDE_gamma => GAS_GAMMA_EULER,
         :PDE_D => 2,
         
-        :sim_func_name => :run_simulation,
+        :sim_func_name => :run_direct_simulation,
         :tmax => 0.3,
         :snapshots => 20,
         
@@ -60,7 +60,7 @@ function get_config()
         :Grid_domain => :rectangular,
         :Grid_mins => (0.0, 0.0),
         :Grid_maxs => (1.0, 1.0),
-        :Grid_Ns => (80, 80),
+        :Grid_Ns => (800, 800),
         :Grid_bc => bc_map,
         :Grid_randomness_factor => (0.2, 0.2),
         :Grid_seed => 42,
