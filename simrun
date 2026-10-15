@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+# simrun: launch a Julia simulation pinned to a NUMA node inside a detached tmux
+# session, with Matrix notifications on start / completion / failure / kill and
+# periodic status reports (last lines of the pane).
+#
+# Usage:
+#   simrun [-n NODE] [-i MINUTES] [-f] SIM_NAME [extra julia options...]
+#
+#   -n NODE      NUMA node to bind to (default: 0)
+#   -i MINUTES   status-report interval in minutes (default: 60, 0 = off)
+#   -f           start even if another sim is already running on that node
+#
+# Examples:
+#   simrun my_sim                  # node 0, runs `@sim my_sim`
+#   simrun -n 1 -i 30 my_sim       # node 1, status every 30 min
+#   tmux attach -t sim-n1-my_sim   # watch it (detach with Ctrl-b d)
+#
+# When the run ends, the session is renamed to done-… or FAILED-… and the pane
+# stays open so you can inspect it. Full output is logged to $LOG_DIR.
+
+set -euo pipefail
+
+# ---- configuration ---------------------------------------------------------
+SIM_DIR="$HOME/Simulations"
+PROJECT="$SIM_DIR/env_headless"
+STARTUP="$SIM_DIR/startup.jl"
+LOG_DIR="$SIM_DIR/logs"
+NOTIFY="$HOME/bin/matrix_notify.sh"   # called as: matrix_notify.sh "message"
+TAIL_STATUS=3                          # lines in periodic status reports
+TAIL_END=10                            # lines in completion/failure reports
+# ----------------------------------------------------------------------------
+
+notify() {
+    # A notification problem must never take down the simulation.
+    timeout 30 "$NOTIFY" "$1" >/dev/null 2>&1 || true
+}
+
+numa_cpus() {
+    # One logical CPU per physical core on node $1, comma-separated.
+    lscpu -p=CPU,CORE,NODE | awk -F, -v node="$1" \
+        '!/^#/ && $3 == node && !seen[$2]++ { print $1 }' | paste -sd, -
+}
+
+fmt_dur() { printf '%dh%02dm' $(($1 / 3600)) $(($1 % 3600 / 60)); }
+
+pane_tail() {
+    # Last N non-empty lines as currently shown in the pane (clean, no \r noise).
+    tmux capture-pane -p -J -t "$TMUX_PANE" -S -500 2>/dev/null \
+        | grep -v '^[[:space:]]*$' | tail -n "$1"
+}
+
+# ---- runs inside the tmux pane ---------------------------------------------
+run_inner() {
+    local node="$1" name="$2" log="$3" interval="$4"
+    shift 4
+
+    cd "$SIM_DIR"
+    export JULIA_SIM_MODE="headless"
+
+    local cpus nthreads session tag start
+    cpus=$(numa_cpus "$node")
+    nthreads=$(awk -F, '{ print NF }' <<<"$cpus")
+    session=$(tmux display-message -p -t "$TMUX_PANE" '#S')
+    tag="[$(hostname -s):$session]"
+    start=$(date +%s)
+
+    # Log everything that appears in the pane.
+    tmux pipe-pane -o -t "$TMUX_PANE" "cat >> $(printf '%q' "$log")"
+
+    # Periodic status reports.
+    local hb_pid=""
+    if ((interval > 0)); then
+        (
+            while sleep $((interval * 60)); do
+                notify "⏳ $tag running for $(fmt_dur $(($(date +%s) - start)))
+$(pane_tail "$TAIL_STATUS")"
+            done
+        ) &
+        hb_pid=$!
+    fi
+
+    cleanup() { [[ -n "$hb_pid" ]] && kill "$hb_pid" 2>/dev/null || true; }
+    on_kill() {
+        cleanup
+        notify "🛑 $tag killed after $(fmt_dur $(($(date +%s) - start)))"
+        exit 129
+    }
+    trap on_kill HUP TERM
+
+    notify "🚀 $tag started: @sim $name on NUMA $node ($nthreads threads)
+log: $log"
+
+    local expr
+    expr="include(\"$STARTUP\")"$'\n'"@sim $name"
+
+    set +e
+    numactl --cpunodebind="$node" --membind="$node" \
+        taskset -c "$cpus" \
+        julia -t "$nthreads" --project="$PROJECT" "$@" -e "$expr"
+    local rc=$?
+    set -e
+
+    cleanup
+    trap - HUP TERM
+    local dur
+    dur=$(fmt_dur $(($(date +%s) - start)))
+
+    if ((rc == 0)); then
+        notify "✅ $tag completed in $dur
+$(pane_tail "$TAIL_END")"
+        tmux rename-session -t "$session" "done-${session#sim-}" 2>/dev/null || true
+    else
+        notify "❌ $tag FAILED (exit $rc) after $dur
+$(pane_tail "$TAIL_END")"
+        tmux rename-session -t "$session" "FAILED-${session#sim-}" 2>/dev/null || true
+    fi
+
+    echo
+    echo "=== simulation exited with code $rc after $dur — log: $log ==="
+    exec bash -i
+}
+
+# ---- launcher --------------------------------------------------------------
+usage() { sed -n '2,22p' "$0" | sed 's/^# \{0,1\}//'; exit "${1:-0}"; }
+
+main() {
+    local node=0 interval=60 force=0 opt
+    while getopts ":n:i:fh" opt; do
+        case $opt in
+            n) node=$OPTARG ;;
+            i) interval=$OPTARG ;;
+            f) force=1 ;;
+            h) usage 0 ;;
+            *) usage 1 ;;
+        esac
+    done
+    shift $((OPTIND - 1))
+    (($# >= 1)) || usage 1
+    local name="$1"
+    shift
+
+    [[ "$node" =~ ^[0-9]+$ ]]     || { echo "Error: NUMA node must be an integer" >&2; exit 1; }
+    [[ "$interval" =~ ^[0-9]+$ ]] || { echo "Error: interval must be whole minutes" >&2; exit 1; }
+    [[ -n "$(numa_cpus "$node")" ]] || { echo "Error: no CPUs found for NUMA node $node" >&2; exit 1; }
+    command -v tmux >/dev/null      || { echo "Error: tmux not found" >&2; exit 1; }
+
+    local session="sim-n${node}-${name//[.:]/_}"
+
+    if tmux has-session -t "=$session" 2>/dev/null; then
+        echo "Error: session '$session' already exists (tmux attach -t $session)" >&2
+        exit 1
+    fi
+    if ((!force)) && tmux ls -F '#S' 2>/dev/null | grep -q "^sim-n${node}-"; then
+        echo "Error: a simulation is already running on NUMA node $node:" >&2
+        tmux ls -F '  #S' | grep "sim-n${node}-" >&2
+        echo "Use -f to start anyway." >&2
+        exit 1
+    fi
+
+    mkdir -p "$LOG_DIR"
+    local log="$LOG_DIR/${name//[^A-Za-z0-9_-]/_}_n${node}_$(date +%Y%m%d-%H%M%S).log"
+    local self
+    self=$(realpath "$0")
+
+    tmux new-session -d -s "$session" -c "$SIM_DIR" \
+        "$(printf '%q ' bash "$self" __run "$node" "$name" "$log" "$interval" "$@")"
+
+    echo "Started '$session'  →  tmux attach -t $session"
+    echo "Log: $log"
+}
+
+if [[ "${1:-}" == "__run" ]]; then
+    shift
+    run_inner "$@"
+else
+    main "$@"
+fi
