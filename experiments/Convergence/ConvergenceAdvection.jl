@@ -2,11 +2,11 @@ function get_config()
     relax_vel, relax_idx = generate_relax_params(2.0, 2, 1)
 
     varied_params = create_varied_dict()
-    push!(varied_params, :Ns__1 => [ceil.(Int,N) for N = 10 .^(1.5:.1:3.0)])
+    push!(varied_params, :Grid_Ns => [(N, N) for N in ceil.(Int, 10 .^ (1.5:.1:3.0))])
     
     shared = Dict{Symbol, Any}(
         :PDE_name => :linear,
-        :PDE_velocities => ((1,),(1,))
+        :PDE_velocities => ((1.0,), (1.0,)),
         :PDE_D => 2,
         
         :sim_func_name => :run_direct_simulation,
@@ -36,7 +36,7 @@ function get_config()
         :IC_width => 2.0,         # Pulse width
         
         :Time_CFL => 0.2,
-        :MLS_order => 0,
+        :Scheme_MLS_order => 0,
         
     )
 

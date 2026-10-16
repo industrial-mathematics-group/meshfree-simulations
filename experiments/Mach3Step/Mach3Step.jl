@@ -9,27 +9,28 @@ const MACH3_INFLOW = State{4, Float64}(1.4, 4.2, 0.0, 8.8)
 # 1. CUSTOM BOUNDARY CONDITIONS
 # =========================================================================
 
+# Kernels (`foreach_particle`), so the walls work on every backend and in the precision of the run.
+@inline function _flip_momentum!(i, buf, tags, is_boundary, tag, d)
+    if is_boundary[i] && tags[i] == tag
+        U = buf[i]
+        buf[i] = typeof(U)(U[1], d == 1 ? -U[2] : U[2], d == 2 ? -U[3] : U[3], U[4])
+    end
+    return nothing
+end
+
 struct HorizontalSlipWall <: AbstractBoundaryCondition end
 function (::HorizontalSlipWall)(pg, rhos_buffer, tag::Int, ts, eq, t::Real)
     OutflowBC()(pg, rhos_buffer, tag, ts, eq, t) # Extrapolate from interior first
-    @inbounds for i in 1:pg.meta.N
-        if pg.core.tags[i] == tag && pg.core.is_boundary[i]
-            U = rhos_buffer[i]
-            rhos_buffer[i] = State{4, Float64}(U[1], U[2], -U[3], U[4]) # Flip Y-momentum
-        end
-    end
+    foreach_particle(_flip_momentum!, get_backend(), pg.meta.N,
+                     (rhos_buffer, pg.core.tags, pg.core.is_boundary, tag, 2)) # Flip Y-momentum
     return nothing
 end
 
 struct VerticalSlipWall <: AbstractBoundaryCondition end
 function (::VerticalSlipWall)(pg, rhos_buffer, tag::Int, ts, eq, t::Real)
     OutflowBC()(pg, rhos_buffer, tag, ts, eq, t) # Extrapolate from interior first
-    @inbounds for i in 1:pg.meta.N
-        if pg.core.tags[i] == tag && pg.core.is_boundary[i]
-            U = rhos_buffer[i]
-            rhos_buffer[i] = State{4, Float64}(U[1], -U[2], U[3], U[4]) # Flip X-momentum
-        end
-    end
+    foreach_particle(_flip_momentum!, get_backend(), pg.meta.N,
+                     (rhos_buffer, pg.core.tags, pg.core.is_boundary, tag, 1)) # Flip X-momentum
     return nothing
 end
 
@@ -37,13 +38,13 @@ end
 # 2. CUSTOM DOMAIN CONSTRUCTOR
 # =========================================================================
 
-function get_mach3step_domain( 
-    mins::NTuple{2, Real}, 
+function get_mach3step_domain(
+    ::Type{T},
+    mins::NTuple{2, Real},
     maxs::NTuple{2, Real},
     bc_map::Dict{Int, AbstractBoundaryCondition}
-)
-    T = Float64
-    
+) where {T}
+
     mins_f = Space{2, T}(mins...)
     maxs_f = Space{2, T}(maxs...)
     
@@ -75,9 +76,9 @@ function get_mach3step_domain(
         elseif x > maxs_f[1] + eps_tol; return 2   # Outflow
         elseif y > maxs_f[2] + eps_tol; return 4   # Top Wall
         elseif x >= step_x - eps_tol && y <= step_y + eps_tol
-            if x < step_x + eps_tol; return 5      # Step Front
-            else; return 6                         # Step Top
-            end
+            # Inside the step: the nearest face decides (a band of width eps_tol around x = step_x
+            # catches no particle on a jittered lattice, the front face would act as a step top)
+            return x - step_x < step_y - y ? 5 : 6  # Step Front : Step Top
         elseif y < mins_f[2] - eps_tol; return 3   # Bottom Wall
         else; return 2                             # Fallback
         end
@@ -86,6 +87,14 @@ function get_mach3step_domain(
     # Added SVector{2, Bool}(false, false) to satisfy the new GeometricDomain signature
     return GeometricDomain(Val(:Mach3Step), mins_f, maxs_f, SVector{2, Bool}(false, false), is_interior_func, actual_tag_func, bc_map)
 end
+
+# Area of the channel minus the step (needed for the volume normalisation).
+HyperCloud.HyperCloudCore.domain_volume(geom::GeometricDomain{Val{:Mach3Step}, 2, T}) where {T} =
+    prod(geom.maxs .- geom.mins) - (geom.maxs[1] - T(0.6)) * T(0.2)
+
+# `:Grid_domain => :mach3step` builds the domain in the precision of the run (`:T`).
+HyperCloud.build_domain(::Val{:mach3step}, conf::Dict, ctx::Dict) =
+    get_mach3step_domain(real_type(ctx), conf[:mins], conf[:maxs], parse_bc(conf))
 
 # =========================================================================
 # 3. MAIN SIMULATION SETUP
@@ -115,7 +124,8 @@ function euler_2d_mach3step()
         :snapshots => 40,
         
         # Grid parameters mapping
-        :Grid_domain => get_mach3step_domain(mins, maxs, bc_map),
+        :Grid_domain => :mach3step,
+        :Grid_bc_map => bc_map,
         :Grid_mins => mins,
         :Grid_maxs => maxs,
         :Grid_Ns => (1800, 600),
@@ -137,7 +147,7 @@ function euler_2d_mach3step()
         :IC_maxs => maxs,
 
         :Time_CFL => 0.2,
-        :MLS_order => 2
+        :Scheme_MLS_order => 2
     )
 
     # 2. Modernized Method Configurations
