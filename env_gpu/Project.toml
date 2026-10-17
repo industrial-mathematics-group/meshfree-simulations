@@ -1,0 +1,16 @@
+[deps]
+AMDGPU = "21141c5a-9bdb-4563-92ae-f87d6854732e"
+HyperCloud = "46243fee-3493-4f45-a265-764054f6ddcc"
+HyperCloudCore = "61b85536-db47-4754-9d50-4ccb1001a5ed"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+PDEStudioCore = "93766fa7-4b93-4712-aa47-391c0d405e89"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+ThreadPinning = "811555cd-349b-4f26-b7bc-1f208b848042"
+
+[sources]
+HyperCloud = {path = "../../HyperCloud.jl"}
+HyperCloudCore = {path = "../../HyperCloudCore.jl"}
+PDEStudioCore = {path = "../../PDEStudioCore.jl"}
+
+[compat]
+AMDGPU = "2.9"

@@ -119,3 +119,6 @@ ipython_config.py
 # Local run output
 results/
 logs/
+results_pad/
+figures/
+env_pad/
