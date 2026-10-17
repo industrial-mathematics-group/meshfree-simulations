@@ -15,18 +15,25 @@ const DMR_POST_SHOCK = State{4, Float64}(8.0, 57.15767664977295, -33.0, 563.5)
 # CUSTOM BOUNDARY CONDITION FUNCTORS
 # =========================================================================
 
+# The conditions run as kernels (`foreach_particle`), so they work on every backend (CPU and GPU) and in
+# the precision of the run: the states are converted to the element type of the buffer.
+
 # 1. TOP WALL: Time-Dependent Exact Shock Condition
 struct DMRTopBC <: AbstractBoundaryCondition end
 
 function (::DMRTopBC)(pg, rhos_buffer, tag::Int, ts, eq, t::Real)
-    pos = pg.core.positions
-    @inbounds for i in 1:pg.meta.N
-        if pg.core.tags[i] == tag && pg.core.is_boundary[i]
-            x, y = pos[i][1], pos[i][2]
-            
-            x_shock = 1.0/6.0 + (y + 20.0 * t) / sqrt(3.0)
-            rhos_buffer[i] = x < x_shock ? DMR_POST_SHOCK : DMR_PRE_SHOCK
-        end
+    S = eltype(rhos_buffer)
+    foreach_particle(_dmr_top!, get_backend(), pg.meta.N,
+                     (rhos_buffer, pg.core.positions, pg.core.tags, pg.core.is_boundary, tag,
+                      eltype(S)(t), S(DMR_POST_SHOCK), S(DMR_PRE_SHOCK)))
+    return nothing
+end
+
+@inline function _dmr_top!(i, buf, pos, tags, is_boundary, tag, t, post, pre)
+    if is_boundary[i] && tags[i] == tag
+        x, y = pos[i][1], pos[i][2]
+        x_shock = oftype(t, 1 / 6) + (y + 20 * t) / sqrt(oftype(t, 3))
+        buf[i] = x < x_shock ? post : pre
     end
     return nothing
 end
@@ -37,19 +44,20 @@ struct DMRBottomBC <: AbstractBoundaryCondition end
 function (::DMRBottomBC)(pg, rhos_buffer, tag::Int, ts, eq, t::Real)
     # Step 1: Run the standard OutflowBC to populate the ghost cells
     OutflowBC()(pg, rhos_buffer, tag, ts, eq, t)
-    
-    pos = pg.core.positions
-    @inbounds for i in 1:pg.meta.N
-        if pg.core.tags[i] == tag && pg.core.is_boundary[i]
-            x = pos[i][1]
-            
-            if x < 1.0/6.0
-                rhos_buffer[i] = DMR_POST_SHOCK
-            else
-                # Slip wall: flip Y-momentum!
-                U_ghost = rhos_buffer[i]
-                rhos_buffer[i] = State{4, Float64}(U_ghost[1], U_ghost[2], -U_ghost[3], U_ghost[4])
-            end
+    S = eltype(rhos_buffer)
+    foreach_particle(_dmr_bottom!, get_backend(), pg.meta.N,
+                     (rhos_buffer, pg.core.positions, pg.core.tags, pg.core.is_boundary, tag, S(DMR_POST_SHOCK)))
+    return nothing
+end
+
+@inline function _dmr_bottom!(i, buf, pos, tags, is_boundary, tag, post)
+    if is_boundary[i] && tags[i] == tag
+        if pos[i][1] < 1 / 6
+            buf[i] = post
+        else
+            # Slip wall: flip Y-momentum!
+            U = buf[i]
+            buf[i] = typeof(U)(U[1], U[2], -U[3], U[4])
         end
     end
     return nothing
@@ -59,11 +67,14 @@ end
 struct DMRLeftBC <: AbstractBoundaryCondition end
 
 function (::DMRLeftBC)(pg, rhos_buffer, tag::Int, ts, eq, t::Real)
-    @inbounds for i in 1:pg.meta.N
-        if pg.core.tags[i] == tag && pg.core.is_boundary[i]
-            rhos_buffer[i] = DMR_POST_SHOCK
-        end
-    end
+    S = eltype(rhos_buffer)
+    foreach_particle(_dmr_left!, get_backend(), pg.meta.N,
+                     (rhos_buffer, pg.core.tags, pg.core.is_boundary, tag, S(DMR_POST_SHOCK)))
+    return nothing
+end
+
+@inline function _dmr_left!(i, buf, tags, is_boundary, tag, post)
+    (is_boundary[i] && tags[i] == tag) && (buf[i] = post)
     return nothing
 end
 

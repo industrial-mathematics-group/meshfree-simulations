@@ -55,7 +55,7 @@ function get_config()
         :Grid_mins => (0.0, 0.0),
         :Grid_maxs => (1.0, 1.0),
         :Grid_Ns => (800, 800),
-        :Grid_bc => :outflow,
+        :Grid_bc => Dict(tag => :outflow for tag in 1:5),
         :Grid_randomness_factor => (0.2, 0.2),
         :Grid_seed => 42,
         :Grid_mover => :none,
@@ -71,7 +71,7 @@ function get_config()
         :IC_p0 => (0.5, 0.5),
         
         :Time_CFL => 0.1,
-        :MLS_order => 2,
+        :Scheme_MLS_order => 2,
         
         # Relaxation & Numerics
         :relax_velocities => relax_vel,

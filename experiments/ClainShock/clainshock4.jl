@@ -77,7 +77,7 @@ function get_config()
         :IC_p0 => (0.5, 0.5),
         
         :Time_CFL => 0.01,
-        :MLS_order => 4,
+        :Scheme_MLS_order => 4,
         
         # Relaxation & Numerics
         :relax_velocities => relax_vel,
