@@ -145,3 +145,27 @@ so it should scale with eps(T).
    normal-direction Riemann solver): exactly conservative, second order, positive first-order fallback,
    one sparse solve per geometry (static grids). Moving grids would need an iterative, warm-started solve.
 5. Odd orders: divergence degree o for MUSCL(o) with odd o. Regularisation ∝ eps(T).
+
+## 6. Implemented (HyperCloudCore PR #10, stacked on #9)
+
+Recommendations 3 (intercept fit) and 5 (odd orders, regularisation) are in the library. The odd-order
+bump only applies where the stencil has ≥ 1.5× as many neighbours as unknowns (1-D MUSCL3 needs
+R ≥ 3.5Δx: an exactly determined degree-3 fit is fragile on moving grids), up to degree 3 in 3-D.
+Library before (`env_base`, seam fix only) vs after (`env_study`), `e10_library_after.jl`, `out/e10.txt`
+(periodic, 20 % jitter):
+
+| | before | after |
+|---|---|---|
+| 1-D MUSCL1, R 2.5 / 5.5, drift after the shock | 6.6e-5 / 1.9e-5 | 4.7e-6 / 1.1e-6 |
+| 1-D MUSCL2 VK, R 2.5 / 5.5 | 1.0e-3 / 3.4e-4 | 1.1e-4 / 7.5e-5 |
+| 2-D MUSCL2 VK, R 2.5 / 5.5 | 1.7e-4 / 1.7e-6 | 7.0e-5 / 7.9e-6 |
+| 1-D MUSCL4 MOOD MLS 4, R 2.5 / 5.5 | 9.4e-3 / 2.2e-4 | 1.8e-2 / 3.4e-5 |
+| 1-D MUSCL3 MOOD MLS 3, R 2.5 / 5.5 | 4.9e-4 / 9.8e-5 | 3.7e-4 / 3.8e-4 |
+| 2-D MUSCL3 MOOD MLS 3, R 2.5 / 5.5 | 2.8e-5 / 3.5e-5 | 2.3e-5 / 3.8e-6 |
+| smooth MUSCL3 EOC, 1-D R 3.5 / 2-D R 2.5 | 2.0 / 2.1 | 3.0 / 3.0 |
+| smooth MUSCL4 (2-D R 2.5), L1 at 128² | 4.2e-7 | 2.4e-7 |
+
+Worse: 1-D MUSCL4 at R = 2.5 (4 neighbours for 4 unknowns: an exactly determined fit; that setup was
+already poor, and also fails on moving grids before the change), 1-D MUSCL3 MOOD at R = 5.5 (degree-3
+fits are more asymmetric than degree 2), 2-D MUSCL2 at R = 5.5 (tiny either way). The 2-D Euler
+quadrant (400²) and DMR (960×300) runs on the GPU (Float32) are unchanged in extrema and step counts.
