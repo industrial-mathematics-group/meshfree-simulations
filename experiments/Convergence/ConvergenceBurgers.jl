@@ -32,7 +32,7 @@ function get_config()
         :IC_name => :gauss,
         :IC_a => (1.0,),          # Amplitude (Tuple wrapper for State{1})
         :IC_b => (0.0, 0.0),      # Center point
-        :IC_width => 2.0,         # Pulse width
+        :IC_width => 1.0,         # Pulse width (1.0: smooth across the periodic boundary to 1e-11)
         
         :Time_CFL => 0.2,
         :Scheme_MLS_order => 0,
