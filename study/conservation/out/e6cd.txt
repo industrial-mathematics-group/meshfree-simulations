@@ -1,0 +1,42 @@
+┌ Warning: Assignment to `eq` in soft scope is ambiguous because a global variable by the same name exists: `eq` will be treated as a new local. Disambiguate by using `local eq` to suppress this warning or `global eq` to assign to the existing global variable.
+└ @ /workspace/Simulations/study/conservation/e6_misc.jl:39
+┌ Warning: Assignment to `pg` in soft scope is ambiguous because a global variable by the same name exists: `pg` will be treated as a new local. Disambiguate by using `local pg` to suppress this warning or `global pg` to assign to the existing global variable.
+└ @ /workspace/Simulations/study/conservation/e6_misc.jl:39
+┌ Warning: Assignment to `ts` in soft scope is ambiguous because a global variable by the same name exists: `ts` will be treated as a new local. Disambiguate by using `local ts` to suppress this warning or `global ts` to assign to the existing global variable.
+└ @ /workspace/Simulations/study/conservation/e6_misc.jl:39
+(c) time history, 1-D N=400 rf=0.2 R=2.5, MUSCL2 VK (shock forms at t = 1/π ≈ 0.32)
+  t=0.1  ΔΣVU/ΣVU = -2.791e-05
+  t=0.2  ΔΣVU/ΣVU = -2.854e-05
+  t=0.3  ΔΣVU/ΣVU = -4.058e-05
+  t=0.4  ΔΣVU/ΣVU = -9.322e-05
+  t=0.5  ΔΣVU/ΣVU = -2.934e-04
+  t=0.6  ΔΣVU/ΣVU = -5.139e-04
+  t=0.7  ΔΣVU/ΣVU = -6.411e-04
+  t=0.8  ΔΣVU/ΣVU = -7.773e-04
+  t=0.9  ΔΣVU/ΣVU = -9.072e-04
+  t=1.0  ΔΣVU/ΣVU = -1.044e-03
+  t=1.1  ΔΣVU/ΣVU = -1.268e-03
+  t=1.2  ΔΣVU/ΣVU = -1.284e-03
+  t=1.3  ΔΣVU/ΣVU = -1.450e-03
+  t=1.4  ΔΣVU/ΣVU = -1.485e-03
+  t=1.5  ΔΣVU/ΣVU = -1.620e-03
+  t=1.6  ΔΣVU/ΣVU = -1.676e-03
+  t=1.7  ΔΣVU/ΣVU = -1.730e-03
+  t=1.8  ΔΣVU/ΣVU = -1.752e-03
+  t=1.9  ΔΣVU/ΣVU = -1.835e-03
+  t=2.0  ΔΣVU/ΣVU = -1.924e-03
+  t=2.1  ΔΣVU/ΣVU = -2.030e-03
+  t=2.2  ΔΣVU/ΣVU = -2.000e-03
+  t=2.3  ΔΣVU/ΣVU = -2.110e-03
+  t=2.4  ΔΣVU/ΣVU = -2.109e-03
+  t=2.5  ΔΣVU/ΣVU = -2.192e-03
+  t=2.6  ΔΣVU/ΣVU = -2.202e-03
+  t=2.7  ΔΣVU/ΣVU = -2.247e-03
+  t=2.8  ΔΣVU/ΣVU = -2.242e-03
+  t=2.9  ΔΣVU/ΣVU = -2.302e-03
+  t=3.0  ΔΣVU/ΣVU = -2.372e-03
+(d) best weights: V minimising Σ_pairs |V_i c_ij + V_j c_ji|² (Σ V = |Ω|) vs Shepard volumes, 1-D N=400 R=2.5
+  rf=0.05  defect with Shepard V: 9.42e-03   with best V: 4.22e-16   (min/max best V × N: 0.971 / 1.030)
+           drift after the shock: Shepard V 4.73e-05, best V 7.59e-05
+  rf=0.20  defect with Shepard V: 3.77e-02   with best V: 4.52e-16   (min/max best V × N: 0.882 / 1.117)
+           drift after the shock: Shepard V 1.04e-03, best V 1.23e-03

@@ -1,0 +1,62 @@
+######## env_base
+== drift after the shock (Burgers, rf = 0.2)
+  D=1 R=2.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=6.56e-05  [0.657, 1.339]
+  D=1 R=2.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=1.04e-03  [0.639, 1.358]
+  D=1 R=2.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=9.36e-03  [0.582, 1.354]
+  D=1 R=2.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=4.91e-04  [0.641, 1.362]
+  D=1 R=5.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=1.94e-05  [0.684, 1.308]
+  D=1 R=5.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=3.42e-04  [0.649, 1.349]
+  D=1 R=5.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=2.20e-04  [0.586, 1.364]
+  D=1 R=5.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=9.84e-05  [0.649, 1.354]
+  D=2 R=2.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=1.80e-04  [0.749, 1.204]
+  D=2 R=2.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=1.71e-04  [0.543, 1.431]
+  D=2 R=2.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=2.07e-04  [0.451, 1.526]
+  D=2 R=2.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=2.76e-05  [0.522, 1.469]
+  D=2 R=5.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=6.03e-05  [0.899, 1.088]
+  D=2 R=5.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=1.69e-06  [0.640, 1.325]
+  D=2 R=5.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=3.17e-05  [0.435, 1.532]
+  D=2 R=5.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=3.54e-05  [0.564, 1.428]
+== smooth advection, L1 at t = 0.5 (rf = 0.2)
+  D=1 R=2.5 MUSCL2: 9.88e-04 2.59e-04 7.73e-05  EOC 1.93 1.74
+  D=1 R=2.5 MUSCL3: 5.28e-04 1.30e-04 3.23e-05  EOC 2.02 2.01
+  D=1 R=2.5 MUSCL4: 9.32e-07 1.24e-07 1.30e-08  EOC 2.92 3.25
+  D=1 R=3.5 MUSCL2: 2.02e-03 5.05e-04 1.31e-04  EOC 2.00 1.95
+  D=1 R=3.5 MUSCL3: 1.07e-03 2.62e-04 6.50e-05  EOC 2.03 2.01
+  D=1 R=3.5 MUSCL4: 1.11e-06 1.11e-07 9.30e-09  EOC 3.32 3.57
+  D=2 R=2.5 MUSCL2: 1.57e-02 3.46e-03 8.36e-04  EOC 2.19 2.05
+  D=2 R=2.5 MUSCL3: 9.49e-03 1.95e-03 4.54e-04  EOC 2.28 2.10
+  D=2 R=2.5 MUSCL4: 5.76e-05 3.83e-06 4.22e-07  EOC 3.91 3.18
+  D=2 R=3.5 MUSCL2: 3.38e-02 7.26e-03 1.68e-03  EOC 2.22 2.11
+  D=2 R=3.5 MUSCL3: 2.09e-02 4.01e-03 8.86e-04  EOC 2.38 2.18
+  D=2 R=3.5 MUSCL4: 2.22e-04 1.29e-05 1.01e-06  EOC 4.11 3.68
+######## env_study
+== drift after the shock (Burgers, rf = 0.2)
+  D=1 R=2.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=4.71e-06  [0.658, 1.338]
+  D=1 R=2.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=1.06e-04  [0.640, 1.358]
+  D=1 R=2.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=1.75e-02  [0.587, 1.353]
+  D=1 R=2.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=3.70e-04  [0.640, 1.362]
+  D=1 R=5.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=1.08e-06  [0.684, 1.308]
+  D=1 R=5.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=7.51e-05  [0.650, 1.349]
+  D=1 R=5.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=3.36e-05  [0.589, 1.364]
+  D=1 R=5.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=3.84e-04  [0.586, 1.375]
+  D=2 R=2.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=1.87e-04  [0.750, 1.204]
+  D=2 R=2.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=7.00e-05  [0.544, 1.430]
+  D=2 R=2.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=1.88e-04  [0.451, 1.531]
+  D=2 R=2.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=2.30e-05  [0.460, 1.577]
+  D=2 R=5.5 RK2MUSCL1  none mood=none MLS=0  |dVU|=4.07e-05  [0.899, 1.088]
+  D=2 R=5.5 RK2MUSCL2  VK   mood=none MLS=0  |dVU|=7.88e-06  [0.640, 1.325]
+  D=2 R=5.5 RK4MUSCL4  none mood=U2   MLS=4  |dVU|=3.87e-05  [0.435, 1.533]
+  D=2 R=5.5 RK4MUSCL3  none mood=U2   MLS=3  |dVU|=3.83e-06  [0.501, 1.506]
+== smooth advection, L1 at t = 0.5 (rf = 0.2)
+  D=1 R=2.5 MUSCL2: 1.02e-03 2.55e-04 6.35e-05  EOC 2.00 2.01
+  D=1 R=2.5 MUSCL3: 5.25e-04 1.29e-04 3.21e-05  EOC 2.03 2.01
+  D=1 R=2.5 MUSCL4: 8.62e-07 1.21e-07 1.47e-08  EOC 2.83 3.04
+  D=1 R=3.5 MUSCL2: 2.08e-03 5.15e-04 1.28e-04  EOC 2.01 2.00
+  D=1 R=3.5 MUSCL3: 1.53e-04 1.91e-05 2.40e-06  EOC 3.00 2.99
+  D=1 R=3.5 MUSCL4: 8.04e-07 5.62e-08 6.15e-09  EOC 3.84 3.19
+  D=2 R=2.5 MUSCL2: 1.64e-02 3.66e-03 8.78e-04  EOC 2.16 2.06
+  D=2 R=2.5 MUSCL3: 3.91e-03 4.96e-04 6.25e-05  EOC 2.98 2.99
+  D=2 R=2.5 MUSCL4: 5.91e-05 3.51e-06 2.44e-07  EOC 4.08 3.84
+  D=2 R=3.5 MUSCL2: 3.42e-02 7.40e-03 1.72e-03  EOC 2.21 2.10
+  D=2 R=3.5 MUSCL3: 9.96e-03 1.30e-03 1.64e-04  EOC 2.94 2.98
+  D=2 R=3.5 MUSCL4: 2.33e-04 1.29e-05 8.42e-07  EOC 4.17 3.94
