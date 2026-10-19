@@ -51,6 +51,8 @@ function get_config()
         :PDE_name => :euler,
         :PDE_gamma => GAS_GAMMA_EULER,
         :PDE_D => 2,
+
+        :T => Float32,
         
         :sim_func_name => :run_direct_simulation,
         :tmax => 0.3,
@@ -76,7 +78,7 @@ function get_config()
         :IC_states => test_ic,
         :IC_p0 => (0.5, 0.5),
         
-        :Time_CFL => 0.01,
+        :Time_CFL => 0.2,
         :Scheme_MLS_order => 4,
         
         # Relaxation & Numerics
@@ -87,7 +89,21 @@ function get_config()
     )
 
     method_dict = get_master_method_dict()
-    defaults = ["RK4MUSCL4(EPD1)", "RK4MUSCL4(EPD2)"]
+
+    # Third order (MUSCL3 is third order since HyperCloudCore 0.6.2). At shocks a degree-3 divergence
+    # (weights of both signs) is not robust: MOOD must lower the divergence degree with the order, so
+    # these use the coupled MLS order (Scheme_MLS_order = 0); a fixed order 3 and the VK limiter blow up
+    # on the 2-D problems (see Simulations REPORT_2026-10-18.md).
+    for m in (create_method(:RK3, :MUSCL, 3; mood_criterion = :U2, mood_strategy = :EPD1, MOOD_delta_relax = 0.0,
+                            Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax),
+              create_method(:RK3, :MUSCL, 3; mood_criterion = :U2, mood_strategy = :EPD2, MOOD_delta_relax = 0.0,
+                            Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax))
+        push!(method_dict, m)
+    end
+    # MUSCL4 with the coupled MLS order (robust fallback) next to the configured fixed order 4
+    push!(method_dict, create_method(:RK4, :MUSCL, 4; mood_criterion = :U2, mood_strategy = :EPD1, MOOD_delta_relax = 0.0,
+                                     Scheme_MLS_order = 0, custom_label = "RK4MUSCL4(EPD1,MLS0)", ignore = HyperCloud.ignore_relax))
+    defaults = ["RK4MUSCL4(EPD1)", "RK4MUSCL4(EPD2)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK4MUSCL4(EPD1,MLS0)"]
     
     return SimulationConfig(shared, method_dict, defaults)
 end

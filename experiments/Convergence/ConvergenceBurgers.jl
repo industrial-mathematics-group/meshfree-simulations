@@ -9,7 +9,7 @@ function get_config()
         :PDE_D => 2,
         
         :sim_func_name => :run_direct_simulation,
-        :tmax => 1.0,
+        :tmax => 0.5,              # before the shock: width 1 breaks at t = e^(1/2) / 2 ≈ 0.82
         :snapshots => 5,
         
         # Grid parameters mapping

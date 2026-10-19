@@ -1,5 +1,20 @@
 function get_config()
     methods = get_master_method_dict()
+
+    # Third order (MUSCL3 is third order since HyperCloudCore 0.6.2). At shocks a degree-3 divergence
+    # (weights of both signs) is not robust: MOOD must lower the divergence degree with the order, so
+    # these use the coupled MLS order (Scheme_MLS_order = 0); a fixed order 3 and the VK limiter blow up
+    # on the 2-D problems (see Simulations REPORT_2026-10-18.md).
+    for m in (create_method(:RK3, :MUSCL, 3; mood_criterion = :U2, mood_strategy = :EPD1, MOOD_delta_relax = 0.0,
+                            Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax),
+              create_method(:RK3, :MUSCL, 3; mood_criterion = :U2, mood_strategy = :EPD2, MOOD_delta_relax = 0.0,
+                            Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax))
+        push!(methods, m)
+    end
+    # fixed MLS order 3 (conservative mixing, no robust fallback) and VK, for comparison
+    push!(methods, create_method(:RK3, :MUSCL, 3; mood_criterion = :U2, mood_strategy = :EPD1, MOOD_delta_relax = 0.0,
+                              Scheme_MLS_order = 3, custom_label = "RK3MUSCL3(EPD1,MLS3)", ignore = HyperCloud.ignore_relax))
+    push!(methods, create_method(:RK3, :MUSCL, 3; limiter = :VK, limiter_mode = :hard, Scheme_MLS_order = 3, ignore = HyperCloud.ignore_relax))
     # Assuming `sod_euler_params` and `ignore_relax` are defined as in your original script
     # push!(methods, ...) (Keep your method pushes here)
     
@@ -56,7 +71,7 @@ function get_config()
         :relax_epsilon => 1e-6
     )
 
-    defaults = ["RK2Upwind1", "RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "Analytical Solution"]
+    defaults = ["RK2Upwind1", "RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK3MUSCL3(EPD1,MLS3)", "RK3MUSCL3(VK)", "Analytical Solution"]
     
     return SimulationConfig(shared, methods, defaults; varied = varied_params, reference = "analytical_solution")
 end
