@@ -163,6 +163,14 @@ function euler_2d_mach3step()
                             Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax))
         push!(methods, m)
     end
+    # MLS (divergence) order variants: 0 couples the divergence degree to the MOOD order (can lose mass),
+    # a fixed order keeps it under order drops (conservative, but the fallback is no longer first order,
+    # so it can reach negative pressure; PAD in MOOD rejects those candidates).
+    for (o, mls) in ((3, 3), (3, 2), (4, 0), (4, 4))
+        push!(methods, create_method(Symbol(:RK, o), :MUSCL, o; mood_criterion = :U2, mood_strategy = :EPD1,
+                                     MOOD_delta_relax = 0.0, Scheme_MLS_order = mls,
+                                     custom_label = "RK$(o)MUSCL$(o)(EPD1,MLS$(mls))", ignore = HyperCloud.ignore_relax))
+    end
     defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     
     return SimulationConfig(shared, methods, defaults)

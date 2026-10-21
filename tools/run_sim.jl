@@ -77,9 +77,9 @@ function summary_line(params)
     if params[:PDE_name] == :euler
         γ = params[:PDE_gamma]
         p(s) = (γ - 1) * (s[end] - sum(abs2, s[2:end-1]) / (2s[1]))
-        pmin = minimum(p, u)
+        pmin, ip = findmin(p, u)
         ok &= pmin > 0
-        line *= @sprintf("  min(p)=%.3e", pmin)
+        line *= @sprintf("  min(p)=%.3e at x=(%s)", pmin, join((@sprintf("%.3f", c) for c in d.x[end][ip]), ","))
     end
     st = d.stats
     if haskey(st, :mass)

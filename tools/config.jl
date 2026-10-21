@@ -20,6 +20,7 @@ function label(p)
     l = "$(get(p, :Time_stepper, "?"))$(get(p, :Scheme_name, ""))$(get(p, :Scheme_order, ""))"
     get(p, :Limiter_name, :none) == :none || (l *= "($(p[:Limiter_name]))")
     get(p, :MOOD_criterion, :none) == :none || (l *= "($(p[:MOOD_strategy]),$(p[:MOOD_criterion]))")
+    haskey(p, :Scheme_MLS_order) && (l *= " MLS=$(p[:Scheme_MLS_order])")
     return l * " N=$(join(p[:Grid_Ns], "x"))" * " CFL=$(get(p, :Time_CFL, "-"))" * " R=$(get(p, :Weight_range, "-"))"
 end
 
