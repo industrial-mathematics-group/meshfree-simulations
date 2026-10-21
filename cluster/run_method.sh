@@ -16,6 +16,8 @@ declare -A METHODS=(
     [m3mls2]="RK3MUSCL3(EPD1,MLS2)"
     [m4]="RK4MUSCL4(EPD1,MLS0)"
     [m4mls4]="RK4MUSCL4(EPD1,MLS4)"
+    [m4epd2]="RK4MUSCL4(EPD2,MLS0)"
+    [m4mls2]="RK4MUSCL4(EPD1,MLS2)"
 )
 method=${METHODS[$key]:?unknown method key '$key' (known: ${!METHODS[*]})}
 env=$([ "$backend" = cuda ] && echo env_cuda || echo env_headless)
