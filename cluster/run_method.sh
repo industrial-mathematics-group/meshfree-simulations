@@ -8,8 +8,14 @@ set -eo pipefail
 source "$(dirname "$0")/common.sh"
 name=$1 key=$2 nx=$3 ny=$4 cfl=$5 backend=${6:-cuda} T=${7:-Float32} opts=,$8,
 declare -A METHODS=(
-    [m2vk]="RK2MUSCL2(VK)"
+    [m1]="RK2Upwind1"
+    [m2vk]="RK2MUSCL2(VK)"                # needs the vkpatch option on CUDA (HyperCloudCore 0.6.2)
+    [m2bj]="RK2MUSCL2(BJ)"                # same
     [m2]="RK2MUSCL2(EPD1)"
+    [m2epd2]="RK2MUSCL2(EPD2)"
+    [m2epd0]="RK2MUSCL2(EPD0)"
+    [m2sepd0]="RK2MUSCL2(SEPD0)"
+    [m2u1]="RK2MUSCL2(EPD1,U1)"           # MOOD criterion U1 (plain DMP) instead of U2
     [m3]="RK3MUSCL3(EPD1)"            # MLS 0 (coupled to the MOOD order)
     [m3epd2]="RK3MUSCL3(EPD2)"        # MLS 0
     [m3mls3]="RK3MUSCL3(EPD1,MLS3)"
