@@ -12,8 +12,6 @@ ThreadPinning = "811555cd-349b-4f26-b7bc-1f208b848042"
 [sources]
 CUDACore = {url = "https://github.com/JuliaGPU/CUDA.jl", rev = "main", subdir = "CUDACore"}
 
-[compat]
-HyperCloudCore = "0.6.2"
 
 # Preferences only apply to packages listed in the environment, hence the [extras] entry.
 [extras]
