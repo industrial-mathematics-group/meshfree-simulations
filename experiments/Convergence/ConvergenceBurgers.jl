@@ -7,6 +7,7 @@ function get_config()
     shared = Dict{Symbol, Any}(
         :PDE_name => :burgers,
         :PDE_D => 2,
+        :T => Float64,            # the sweeps of 2026-10-22 ran in Float64 (cluster, see reports/)
         
         :sim_func_name => :run_direct_simulation,
         :tmax => 0.5,              # before the shock: width 1 breaks at t = e^(1/2) / 2 ≈ 0.82
