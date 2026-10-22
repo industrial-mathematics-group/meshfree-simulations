@@ -148,10 +148,10 @@ function euler_2d_DMR()
     end
     # MUSCL4 with the MLS (divergence) order coupled to the MOOD order (0) or fixed (4: conservative, but the
     # fallback is not first order; 2: conservative with the degree-1 divergence of MUSCL2)
-    for (strategy, mls) in ((:EPD1, 0), (:EPD2, 0), (:EPD1, 4), (:EPD1, 2))
-        push!(methods, create_method(:RK4, :MUSCL, 4; mood_criterion = :U2, mood_strategy = strategy,
+    for (o, strategy, mls) in ((4, :EPD1, 0), (4, :EPD2, 0), (4, :EPD1, 4), (4, :EPD1, 2), (3, :EPD1, 2))
+        push!(methods, create_method(Symbol(:RK, o), :MUSCL, o; mood_criterion = :U2, mood_strategy = strategy,
                                      MOOD_delta_relax = 0.0, Scheme_MLS_order = mls,
-                                     custom_label = "RK4MUSCL4($strategy,MLS$mls)", ignore = HyperCloud.ignore_relax))
+                                     custom_label = "RK$(o)MUSCL$(o)($strategy,MLS$mls)", ignore = HyperCloud.ignore_relax))
     end
     defaults = ["RK2MUSCL2(EPD1)", "RK2MUSCL2(EPD2)", "RK2MUSCL2(VK)", "RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     return SimulationConfig(shared, methods, defaults; sources = [@__FILE__])
