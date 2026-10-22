@@ -173,5 +173,5 @@ function euler_2d_mach3step()
     end
     defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     
-    return SimulationConfig(shared, methods, defaults)
+    return SimulationConfig(shared, methods, defaults; sources = [@__FILE__])
 end

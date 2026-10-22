@@ -2,7 +2,7 @@ function get_config()
     relax_vel, relax_idx = generate_relax_params(2.0, 2, 1)
 
     varied_params = create_varied_dict()
-    push!(varied_params, :Grid_Ns => [(N, N) for N in ceil.(Int, 10 .^ (1.5:.1:3.0))])
+    push!(varied_params, :Grid_Ns__all => collect(ceil.(Int, 10 .^ (1.5:.1:3.0))))
     
     shared = Dict{Symbol, Any}(
         :PDE_name => :burgers,

@@ -13,5 +13,6 @@ function get_config()
     push!(config.defaults, Symbol("RK2MUSCL2(EPD1) Float64"))
     config.methods[Symbol("RK4MUSCL4(EPD1,MLS0) Float64")] = merge(config.methods[Symbol("RK4MUSCL4(EPD1,MLS0)")], Dict{Symbol, Any}(:T => Float64))
     push!(config.defaults, Symbol("RK4MUSCL4(EPD1,MLS0) Float64"))
+    push!(config.sources,@__FILE__)
     return config
 end

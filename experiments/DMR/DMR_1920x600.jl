@@ -9,5 +9,6 @@ function get_config()
     config = euler_2d_DMR()
     merge!(config.shared, Dict{Symbol, Any}(:T => Float32, :Grid_Ns => (1920, 600), :Time_CFL => 0.8))
     config.defaults = ["RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "RK2MUSCL2(EPD2)", "RK2MUSCL2(EPD0)", "RK2MUSCL2(SEPD0)", "RK2MUSCL2(EPD1,U1)", "RK2MUSCL2(BJ)", "RK2Upwind1", "RK4MUSCL4(EPD1,MLS0)", "RK4MUSCL4(EPD2,MLS0)", "RK4MUSCL4(EPD1,MLS2)"]
+    push!(config.sources,@__FILE__)
     return config
 end

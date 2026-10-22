@@ -19,5 +19,6 @@ function get_config()
     push!(config.defaults, Symbol("RK3MUSCL3(EPD1,MLS3) CFL0.1"))
     config.methods[Symbol("RK4MUSCL4(EPD1,MLS4) CFL0.1")] = merge(config.methods[Symbol("RK4MUSCL4(EPD1,MLS4)")], Dict{Symbol, Any}(:Time_CFL => 0.1))
     push!(config.defaults, Symbol("RK4MUSCL4(EPD1,MLS4) CFL0.1"))
+    push!(config.sources,@__FILE__)
     return config
 end
