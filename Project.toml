@@ -1,0 +1,13 @@
+# Julia workspace for the cluster (slurm instantiate installs the root project): one shared
+# Manifest.toml for the listed environments, which are still used via --project=env_xxx.
+[workspace]
+projects = ["env_headless", "env_cuda"]
+
+# Pins the CUDA runtime, so instantiate downloads it on the login node (no GPU there).
+# Needs an NVIDIA driver that supports CUDA 12 (>= 525).
+# Preferences only apply to packages listed in the environment, hence the [extras] entry.
+[extras]
+CUDA_Runtime_jll = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"
+
+[preferences.CUDA_Runtime_jll]
+version = "12.9"

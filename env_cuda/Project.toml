@@ -1,0 +1,23 @@
+[deps]
+CUDACore = "bd0ed864-bdfe-4181-a5ed-ce625a5fdea2"
+HyperCloud = "46243fee-3493-4f45-a265-764054f6ddcc"
+HyperCloudCore = "61b85536-db47-4754-9d50-4ccb1001a5ed"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+PDEStudioCore = "93766fa7-4b93-4712-aa47-391c0d405e89"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+ThreadPinning = "811555cd-349b-4f26-b7bc-1f208b848042"
+
+# Released CUDA.jl only supports KernelAbstractions 0.9; HyperCloudCore 0.6.2 needs 0.10, which
+# CUDACore on the main branch supports. Only CUDACore (not the CUDA.jl umbrella) is needed.
+[sources]
+CUDACore = {url = "https://github.com/JuliaGPU/CUDA.jl", rev = "main", subdir = "CUDACore"}
+
+[compat]
+HyperCloudCore = "0.6.2"
+
+# Preferences only apply to packages listed in the environment, hence the [extras] entry.
+[extras]
+CUDA_Runtime_jll = "76a88914-d11a-5bdc-97e0-2f5a05c973a2"
+
+[preferences.CUDA_Runtime_jll]
+version = "12.9"

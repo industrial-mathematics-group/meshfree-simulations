@@ -122,3 +122,6 @@ logs/
 results_pad/
 figures/
 env_pad/
+
+# Results fetched from the cluster (slurm fetch)
+data/

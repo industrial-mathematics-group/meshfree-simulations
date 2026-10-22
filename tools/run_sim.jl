@@ -1,10 +1,12 @@
 # Runs one experiment of experiments/ (like `@sim NAME`) on a chosen backend / precision, then prints
 # a health summary of every run (final time, NaNs, min density / pressure, mass drift, runtime).
 #
-#     julia -t 6 --project=env_gpu tools/run_sim.jl NAME
+#     julia -t 6 --project=env_gpu tools/run_sim.jl NAME                       (AMD GPU)
+#     SIM_BACKEND=cuda julia -t 6 --project=env_cuda tools/run_sim.jl NAME   (NVIDIA GPU)
 #
 # Environment variables:
-#   SIM_BACKEND = gpu | cpu          (default gpu: KABackend(ROCBackend()), cpu: PolyesterBackend())
+#   SIM_BACKEND = gpu | cuda | cpu   (default gpu: KABackend(ROCBackend()), cuda: KABackend(CUDABackend()) via CUDACore,
+#                                     cpu: PolyesterBackend())
 #   SIM_T       = Float32 | Float64  (default Float32; stored as :T in the run parameters)
 #   SIM_METHODS = "m1;m2"            replaces the config's default methods (';' since names contain ',')
 #   SIM_VARY    = "Time_CFL=[0.1, 0.2]; Grid_Ns=[(100,100)]"  replaces the sweep of the config
@@ -14,8 +16,11 @@
 #   SIM_SKIP_RUN = 1 only prints the summary of the cached runs
 using Logging, Printf
 using HyperCloud, StaticArrays
-const GPU = get(ENV, "SIM_BACKEND", "gpu") == "gpu"
-GPU && @eval using AMDGPU
+const BACKEND = get(ENV, "SIM_BACKEND", "gpu")
+BACKEND in ("gpu", "cuda", "cpu") || error("SIM_BACKEND must be gpu, cuda or cpu, got $BACKEND")
+const GPU = BACKEND != "cpu"
+BACKEND == "gpu"  && @eval using AMDGPU
+BACKEND == "cuda" && @eval using CUDACore
 
 # Flushes after every message, so progress shows up in a log file (stderr to a file is block-buffered)
 struct FlushingLogger <: AbstractLogger
@@ -36,9 +41,12 @@ HyperCloud.CONFIG_ROOT_OVERWRITE[] = joinpath(@__DIR__, "..")
 set_progress_interval!(parse(Float64, get(ENV, "SIM_PROGRESS", "60")))
 enable_progress_bar!(false)
 
-if GPU
+if BACKEND == "gpu"
     AMDGPU.allowscalar(false)
     set_backend!(KABackend(ROCBackend()))
+elseif BACKEND == "cuda"
+    CUDACore.allowscalar(false)
+    set_backend!(KABackend(CUDABackend()))
 else
     set_backend!(PolyesterBackend())
     # Float32 neighbour sums underflow to subnormals, which x86 cores process very slowly
@@ -69,9 +77,9 @@ function summary_line(params)
     if params[:PDE_name] == :euler
         γ = params[:PDE_gamma]
         p(s) = (γ - 1) * (s[end] - sum(abs2, s[2:end-1]) / (2s[1]))
-        pmin = minimum(p, u)
+        pmin, ip = findmin(p, u)
         ok &= pmin > 0
-        line *= @sprintf("  min(p)=%.3e", pmin)
+        line *= @sprintf("  min(p)=%.3e at x=(%s)", pmin, join((@sprintf("%.3f", c) for c in d.x[end][ip]), ","))
     end
     st = d.stats
     if haskey(st, :mass)
