@@ -16,4 +16,4 @@ CUDACore = {url = "https://github.com/JuliaGPU/CUDA.jl", rev = "main", subdir = 
 HyperCloudCore = "0.6.2"
 
 [preferences.CUDA_Runtime_jll]
-version = "12.6"
+version = "12.9"
