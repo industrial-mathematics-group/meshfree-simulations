@@ -88,9 +88,62 @@ start (the outer states flow in through the boundaries), Δmass relative to the 
   each scheme resolves the boundary states, so Δmass is a cruder measure on this problem.
 - Cost at 800² on a V100: MUSCL2 2.6 min, MUSCL3 MLS 2 6 min, MUSCL3 MLS 0 18–22 min, MUSCL4 MLS 0 37–45 min.
 
+## 2b. Float64 vs Float32 on CPU: the MLS-0 conservation error is not a precision artefact (2026-10-23)
+
+Because the CUDA path is suspect in Float64 (§1b), the MUSCL3 Euler cases were rerun on the **CPU nodes**
+(32 cores) in both precisions, CFL 0.8: ClainShock 800², Mach3Step 600×200, DMR 960×300; MUSCL2 EPD1 as the
+reference, MUSCL3 with MLS 0 (EPD1, EPD2) and fixed MLS 2. Δmass relative to the final mass of the reference
+in the same precision (Float32 and Float64 are different point clouds, the jitter is drawn in T). Jobs
+24562745–755, 24562851 (Float64), 24562854–24564109 (Float32).
+
+| Case | Method | Float64: min p / mass / Δ | Float32: min p / mass / Δ | Float32 on V100 (earlier) |
+|---|---|---|---|---|
+| ClainShock 800² | MUSCL2 EPD1 | 0.017 / 0.381 / – | 0.019 / 0.379 / – | 0.018 / 0.379 |
+| | MUSCL3 EPD1, MLS 0 | 0.0025 / 0.419 / **+2.8 %** | 0.0034 / 0.422 / **+3.1 %** | 0.0028 / 0.424 |
+| | MUSCL3 EPD2, MLS 0 | 0.0071 / 0.367 / −1.0 % | 0.020 / 0.372 / −0.5 % | 0.010 / 0.372 |
+| | MUSCL3 EPD1, MLS 2 | 0.017 / 0.378 / −0.2 % | 0.015 / 0.377 / −0.1 % | 0.015 / 0.377 |
+| Mach3Step 600×200 | MUSCL2 EPD1 | 0.445 / 0.795 / – | 0.334 / 0.773 / – | (CFL 0.4: 0.771) |
+| | MUSCL3 EPD1, MLS 0 | 0.148 / 0.896 / **+5.6 %** | 0.196 / 0.922 / **+8.4 %** | 0.294 / 0.907 |
+| | MUSCL3 EPD2, MLS 0 | 0.380 / 0.745 / −2.8 % | 0.179 / 0.746 / −1.5 % | 0.223 / 0.747 |
+| | MUSCL3 EPD1, MLS 2 | 0.606 / 0.791 / −0.2 % | 0.335 / 0.770 / −0.2 % | 0.337 / 0.770 |
+| DMR 960×300 | MUSCL2 EPD1 | 1.000 / 3.05 / – | 1.000 / 3.05 / – | 1.000 / 3.05 |
+| | MUSCL3 EPD1, MLS 0 | 0.991 / 3.19 / **+3.5 %** | 0.990 / 3.19 / **+3.5 %** | 1.000 / 3.19 |
+| | MUSCL3 EPD2, MLS 0 | 0.936 / 3.15 / +2.5 % | 0.985 / 3.15 / +2.5 % | – |
+| | MUSCL3 EPD1, MLS 2 | 1.000 / 3.05 / 0 | 1.000 / 3.05 / 0 | – |
+
+Higher resolutions, same setup (jobs 24562865–24564077):
+
+| Case | Method | Float64: min p / mass / Δ | Float32: min p / mass / Δ |
+|---|---|---|---|
+| Mach3Step 900×300 | MUSCL2 EPD1 | 0.185 / 0.799 / – | 0.185 / 0.803 / – |
+| | MUSCL3 EPD1, MLS 0 | 0.191 / 0.882 / **+4.6 %** | **0.00025** / 0.990 / **+10.4 %** |
+| | MUSCL3 EPD2, MLS 0 | 0.115 / 0.735 / −3.6 % | 0.039 / 0.745 / −3.2 % |
+| | MUSCL3 EPD1, MLS 2 | 0.193 / 0.798 / −0.1 % | 0.193 / 0.804 / +0.1 % |
+| DMR 1440×450 | MUSCL2 EPD1 | 1.000 / 3.04 / – | 1.000 / 3.05 / – |
+| | MUSCL3 EPD1, MLS 0 | 0.997 / 3.19 / +3.7 % | 0.963 / 3.19 / +3.5 % |
+| | MUSCL3 EPD2, MLS 0 | 0.969 / 3.15 / +2.7 % | 0.966 / 3.15 / +2.5 % |
+| | MUSCL3 EPD1, MLS 2 | 1.000 / 3.05 / +0.2 % | 1.000 / 3.05 / 0 |
+
+- **Precision does not change the picture**: MLS 0 + EPD1 gains mass in Float64 too (ClainShock +2.8 %,
+  DMR +3.5/+3.7 %, Mach3Step +5.6/+4.6 %), EPD2 is within ±4 %, the fixed MLS 2 within 0.2 % of the
+  reference, on all three problems and both resolutions. DMR is identical to three digits in both
+  precisions. On Mach3Step, Float64 does make MLS 0 + EPD1 *better behaved* (900×300: +4.6 % instead of
+  +10.4 %, min p 0.19 instead of 2.5e-4, which was close to failing), so part of its erratic behaviour on
+  that problem is Float32 sensitivity at the step corner, but the conservation error itself remains.
+- Float32 on CPU vs Float32 on the V100 (same point cloud): identical for the conservative variants and
+  for EPD2 (mass to 3 digits, step counts ±1), but **not for MLS 0 + EPD1** (Mach3Step: mass 0.922 vs
+  0.907, min p 0.196 vs 0.294; ClainShock 0.422 vs 0.424). The single-precision effect in the device
+  path (§1b) therefore also shows in Float32 runs, through the MOOD decisions of the most sensitive
+  variant; the fixed-order results are reproducible across CPU and GPU.
+- Cost on 32 EPYC cores: MUSCL2 3–13 min, MUSCL3 MLS 2 5–27 min, MUSCL3 MLS 0 23–140 min (Float64 ≈
+  1.2–1.5 × Float32); Mach3Step 900×300 and DMR 1440×450 are the largest sizes that fit the 300 min limit
+  for MLS 0 in Float64.
+
 ## 3. Verdict
 
 - Convergence: PASS for all orders on CPU (2.0 / 3.0 / 4.0 / 5.0); **FAIL for the GPU path at orders 4–5 in
   2-D** (error floor ~2e-7 mean, Float32-like, while T = Float64). Needs a fix in the CUDA path.
 - ClainShock: fixed MLS order 3/4 FAIL (boundary discontinuity); all MLS 0 / MLS 2 variants PASS (positive
   pressure, t = 0.3), with the known conservation error of MLS 0 + EPD1.
+- Float64 CPU reruns (§2b): the MLS-0 conservation error is real, not a Float32 or GPU artefact; PASS for
+  the fixed-order variants in both precisions.

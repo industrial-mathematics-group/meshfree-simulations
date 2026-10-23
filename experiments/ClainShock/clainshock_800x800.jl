@@ -12,5 +12,14 @@ function get_config()
     merge!(config.shared, Dict{Symbol, Any}(:T => Float32, :Grid_Ns => (800, 800), :Time_CFL => 0.8))
     config.defaults = ["RK2MUSCL2(EPD1)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK3MUSCL3(EPD1,MLS2)", "RK3MUSCL3(EPD1,MLS3)",
                        "RK4MUSCL4(EPD1,MLS0)", "RK4MUSCL4(EPD2,MLS0)", "RK4MUSCL4(EPD1,MLS2)", "RK4MUSCL4(EPD1,MLS4)"]
+    config.methods[Symbol("RK2MUSCL2(EPD1) Float64")] = merge(config.methods[Symbol("RK2MUSCL2(EPD1)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK2MUSCL2(EPD1) Float64"))
+    config.methods[Symbol("RK3MUSCL3(EPD1) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD1)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK3MUSCL3(EPD1) Float64"))
+    config.methods[Symbol("RK3MUSCL3(EPD2) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD2)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK3MUSCL3(EPD2) Float64"))
+    config.methods[Symbol("RK3MUSCL3(EPD1,MLS2) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD1,MLS2)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK3MUSCL3(EPD1,MLS2) Float64"))
+    push!(config.sources, @__FILE__)
     return config
 end
