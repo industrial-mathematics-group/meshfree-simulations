@@ -98,6 +98,13 @@ function get_config()
                             Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax))
         push!(method_dict, m)
     end
+    # MLS (divergence) order variants as in Mach3Step/DMR: 0 couples the divergence degree to the MOOD order,
+    # a fixed order keeps it under order drops (conservative, but the fallback is not first order)
+    for (o, strategy, mls) in ((3, :EPD1, 3), (3, :EPD1, 2), (4, :EPD1, 0), (4, :EPD1, 4), (4, :EPD2, 0), (4, :EPD1, 2))
+        push!(method_dict, create_method(Symbol(:RK, o), :MUSCL, o; mood_criterion = :U2, mood_strategy = strategy,
+                                         MOOD_delta_relax = 0.0, Scheme_MLS_order = mls,
+                                         custom_label = "RK$(o)MUSCL$(o)($strategy,MLS$(mls))", ignore = HyperCloud.ignore_relax))
+    end
     defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     
     return SimulationConfig(shared, method_dict, defaults)

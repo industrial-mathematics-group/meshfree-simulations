@@ -9,7 +9,7 @@ source "$(dirname "$0")/common.sh"
 name=$1 key=$2 nx=$3 ny=$4 cfl=$5 backend=${6:-cuda} T=${7:-Float32} opts=,$8,
 declare -A METHODS=(
     [m1]="RK2Upwind1"
-    [m2vk]="RK2MUSCL2(VK)"                # needs the vkpatch option on CUDA (HyperCloudCore 0.6.2)
+    [m2vk]="RK2MUSCL2(VK)"                # HyperCloudCore 0.6.2 needed the vkpatch option on CUDA (fixed in 0.7.0)
     [m2bj]="RK2MUSCL2(BJ)"                # same
     [m2]="RK2MUSCL2(EPD1)"
     [m2epd2]="RK2MUSCL2(EPD2)"

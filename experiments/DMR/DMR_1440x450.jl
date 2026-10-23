@@ -8,7 +8,15 @@ isdefined(@__MODULE__, :euler_2d_DMR) || Base.include(@__MODULE__, joinpath(@__D
 function get_config()
     config = euler_2d_DMR()
     merge!(config.shared, Dict{Symbol, Any}(:T => Float32, :Grid_Ns => (1440, 450), :Time_CFL => 0.8))
-    config.defaults = ["RK2MUSCL2(EPD1)", "RK4MUSCL4(EPD1,MLS0)", "RK4MUSCL4(EPD2,MLS0)", "RK4MUSCL4(EPD1,MLS2)"]
+    config.defaults = ["RK2MUSCL2(EPD1)", "RK4MUSCL4(EPD1,MLS0)", "RK4MUSCL4(EPD2,MLS0)", "RK4MUSCL4(EPD1,MLS2)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK3MUSCL3(EPD1,MLS2)"]
     push!(config.sources,@__FILE__)
+    config.methods[Symbol("RK2MUSCL2(EPD1) Float64")] = merge(config.methods[Symbol("RK2MUSCL2(EPD1)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK2MUSCL2(EPD1) Float64"))
+    config.methods[Symbol("RK3MUSCL3(EPD1) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD1)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK3MUSCL3(EPD1) Float64"))
+    config.methods[Symbol("RK3MUSCL3(EPD2) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD2)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK3MUSCL3(EPD2) Float64"))
+    config.methods[Symbol("RK3MUSCL3(EPD1,MLS2) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD1,MLS2)")], Dict{Symbol, Any}(:T => Float64))
+    push!(config.defaults, Symbol("RK3MUSCL3(EPD1,MLS2) Float64"))
     return config
 end

@@ -8,6 +8,7 @@ function get_config()
         :PDE_name => :linear,
         :PDE_velocities => ((1.0,),),
         :PDE_D => 1,
+        :T => Float64,            # the sweeps of 2026-10-22 ran in Float64 (cluster, see reports/)
         
         :sim_func_name => :run_direct_simulation,
         :tmax => 10.0,
