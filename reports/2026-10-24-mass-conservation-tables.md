@@ -1,4 +1,4 @@
-# Mass conservation (data/mass/data, 1710 runs)
+# Mass conservation (data/mass/data, 1713 runs)
 
 Conservation defect = (m(t_end) − m(0) − exact boundary flux) / m(t_end) from the discrete mass Σ V_i u_i (sampling-free; the exact flux is 0 for periodic domains and (f(u_L) − f(u_R)) t_end for the outflow Riemann problem). The relative mass error of the hyperbolic stat preset (numerical / sampled reference − 1) is given for comparison; it contains the O(Δx) sampling error of a discontinuous reference. The order is that of |defect| over the last three refinements.
 
@@ -24,6 +24,7 @@ Conservation defect = (m(t_end) − m(0) − exact boundary flux) / m(t_end) fro
 | 1-D burgers (t = 10.0) | RK4MUSCL2(EPD2) | 0.4 | 5.5 | 1.0 | 0 | 32–3163 (21) | -5.54e-04 | 0.50 | -9.49e-04 / 9.87e-04 |
 | 1-D burgers (t = 10.0) | RK4MUSCL2(EPD2) | 0.4 | 5.5 | 1.0 | 2 | 32–3163 (21) | -5.54e-04 | 0.50 | -9.49e-04 / 9.87e-04 |
 | 1-D burgers (t = 10.0) | RK4MUSCL2(VK) | 0.4 | 5.5 | 1.0 | 2 | 32–3163 (21) | -4.30e-04 | 0.60 | -8.25e-04 / 8.44e-04 |
+| 1-D burgers (t = 10.0) | RK4MUSCL2(minmod) | 0.4 | 5.5 | 1.0 | 2 | 1996–3163 (3) | -3.60e-04 | -1.10 | -7.55e-04 / 7.89e-04 |
 | 1-D burgers (t = 10.0) | RK4MUSCL3 | 0.4 | 5.5 | 1.0 | 3 | 32–3163 (21) | +2.25e-04 | -1.85 | -1.71e-04 / 5.90e-04 |
 | 1-D burgers (t = 10.0) | RK4MUSCL3(EPD1) | 0.4 | 5.5 | 1.0 | 0 | 32–3163 (21) | -2.79e-02 | 0.01 | -2.75e-02 / 2.75e-02 |
 | 1-D burgers (t = 10.0) | RK4MUSCL3(EPD1) | 0.4 | 5.5 | 1.0 | 3 | 32–3163 (21) | +5.42e-03 | 0.07 | +5.05e-03 / 5.05e-03 |
@@ -626,6 +627,14 @@ Conservation defect = (m(t_end) − m(0) − exact boundary flux) / m(t_end) fro
 | 1996 | -2.917e-04 | 3.49 | -1.231e-03 | 1.272e-03 | -9.634e-04 | 1.176e-02 |
 | 2512 | -1.955e-04 | 1.74 | -4.443e-04 | 6.332e-04 | -4.342e-04 | 7.115e-03 |
 | 3163 | -4.300e-04 | -3.42 | -8.249e-04 | 8.441e-04 | -6.306e-04 | 7.980e-03 |
+
+### 1-D burgers (t = 10.0), RK4MUSCL2(minmod), jitter 0.4, R = 5.5, α = 1.0, MLS 2 (Float64)
+
+| N | conservation defect | order | rel. mass error (end) | max over t | space-time | L1 error |
+|---|---|---|---|---|---|---|
+| 1996 | -2.170e-04 | – | -1.156e-03 | 1.210e-03 | -9.105e-04 | 1.076e-02 |
+| 2512 | -1.170e-04 | 2.69 | -3.658e-04 | 5.763e-04 | -3.793e-04 | 6.147e-03 |
+| 3163 | -3.600e-04 | -4.88 | -7.550e-04 | 7.893e-04 | -5.593e-04 | 7.283e-03 |
 
 ### 1-D burgers (t = 10.0), RK4MUSCL3, jitter 0.4, R = 5.5, α = 1.0, MLS 3 (Float64)
 

@@ -53,7 +53,7 @@ Same setting (jitter 0.4, R = 5.5), fixed MLS = scheme order, defect at N = 3163
 | EPD1 (MOOD U2) | −3.8e-4 | +5.4e-3 | +8.4e-5 | −1.2e-2 |
 | EPD2 (MOOD U2) | −5.5e-4 | +1.7e-3 | +7.6e-4 | −3.5e-4 |
 | VK | −4.3e-4 | +5.1e-4 | −7.2e-4 | −3.6e-3 |
-| minmod | (rerun, see §6) | +2.0e-3 | +1.5e-3 | −3.8e-3 |
+| minmod | -3.60e-04 | +2.0e-3 | +1.5e-3 | −3.8e-3 |
 
 - **Floor of the test:** on the regular lattice (jitter 0) the plain and EPD1 schemes of order 2 and 4 all give
   the *same* defect, −2.0e-4 at N = 3163, O(Δx) (order 1.00), and exactly 0 (1e-13) at some N (100, 159, 200,
@@ -152,7 +152,7 @@ weight (α = 4) is slightly worse.
 ## 6. Open points
 
 - RK4MUSCL2(minmod), 1-D shock: the minmod limiter at order 2 is very slow (30 min per run at N ≥ 2000); the
-  job hit its 2 h limit, the missing N are rerun as single jobs (results in the full tables when done).
+  job hit its 2 h limit, the missing N = 1996, 2512, 3163 were rerun as single jobs (included).
 - Why the lattice shock runs give exactly 0 at some N and O(Δx) at others (boundary flux vs shock position) was
   not traced; it does not affect the comparisons above (all at the same N and setup).
 - Not covered: Euler (the Mach3Step/DMR/ClainShock mass results are in the earlier reports), moving grids,
