@@ -60,6 +60,32 @@ Float64 value is still below the Float32 ones).
 The GPU-based ClainShock/Mach3Step/DMR runs are Float32 anyway, so they are not affected by this beyond their
 own precision; the convergence conclusions for MUSCL4/5 in 2-D must be taken from the CPU runs.
 
+## 1c. Jittered points (randomness factor 0.2), Float64, CPU (2026-10-23/24)
+
+All three sweeps repeated with `Grid_randomness_factor` 0.2 (the Euler cases' jitter) on the CPU nodes (22 jobs,
+24596733–24596779; data in `data/convergence_jitter02/`, full table `reports/2026-10-24-convergence-table-jitter02.md`,
+side-by-side errors `reports/2026-10-24-convergence-lattice-vs-jitter.md`). Mean EOC of the last three
+refinements, lattice vs jitter:
+
+| Experiment | Method | mean EOC lattice (last 3) | mean EOC jitter0.2 (last 3) |
+|---|---|---|---|
+| 1-D linear (t = 10.0) | RK4MUSCL2 | 2.00 | 2.00 |
+| 1-D linear (t = 10.0) | RK4MUSCL3 | 3.00 | 3.00 |
+| 1-D linear (t = 10.0) | RK4MUSCL4 | 4.00 | 3.98 |
+| 1-D linear (t = 10.0) | RK4MUSCL5 | 5.00 | 4.98 |
+| 2-D burgers (t = 0.5) | RK4MUSCL2 | 2.15 | 2.14 |
+| 2-D burgers (t = 0.5) | RK4MUSCL3 | 2.93 | 2.93 |
+| 2-D burgers (t = 0.5) | RK4MUSCL4 | 4.30 | 4.28 |
+| 2-D burgers (t = 0.5) | RK4MUSCL5 | 4.85 | 4.85 |
+| 2-D linear (t = 1.0) | RK4MUSCL2 | 2.08 | 2.09 |
+| 2-D linear (t = 1.0) | RK4MUSCL3 | 3.00 | 3.00 |
+| 2-D linear (t = 1.0) | RK4MUSCL4 | 4.03 | 4.02 |
+| 2-D linear (t = 1.0) | RK4MUSCL5 | 5.00 | 4.99 |
+
+The orders are unchanged by the jitter (differences ≤ 0.1 in the EOC, errors within a few percent of the
+lattice values at every N). Mass is no longer conserved to machine precision on the irregular points (drift
+1e-3 … 1e-2 instead of 1e-16), as known from the 2026-10-17 study.
+
 ## 2. ClainShock 800² (Lax–Liu 3), CFL 0.8, Float32, t = 0.3, MLS-order variants
 
 Jobs 24557467–472, 24557550, 24557635, 24557812 (V100, dgx001 / gpu004). "mass" = final mass relative to the
