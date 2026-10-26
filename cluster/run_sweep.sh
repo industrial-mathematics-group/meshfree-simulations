@@ -9,9 +9,11 @@
 set -eo pipefail
 source "$(dirname "$0")/common.sh"
 name=$1 method=$2 nmin=$3 nmax=$4 backend=${5:-cpu} T=${6:-Float64} opt=$7   # opt: jitter<f>, see below
+m=$(review_method "$method") && method=$m                                        # k<K>.<variant>.<ar|ru>.mls<m> keys
 case $name in
     Convergence1D) vary="Grid_Ns__1=filter(n -> $nmin <= n <= $nmax, [ceil(Int, N) for N in 10 .^ (1.5:.1:3.5)])" ;;
     Convergence*)  vary="Grid_Ns__all=filter(n -> $nmin <= n <= $nmax, collect(ceil.(Int, 10 .^ (1.5:.1:3.0))))" ;;
+    IsentropicVortex) vary="Grid_Ns__all=filter(n -> $nmin <= n <= $nmax, [50, 71, 100, 141, 200, 283, 400])" ;;
     *) echo "unknown sweep experiment $name"; exit 2 ;;
 esac
 env=$([ "$backend" = cuda ] && echo env_cuda || echo env_headless)

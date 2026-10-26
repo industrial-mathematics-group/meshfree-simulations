@@ -1,3 +1,4 @@
+isdefined(@__MODULE__, :add_review_methods!) || Base.include(@__MODULE__, joinpath(@__DIR__, "..", "methods_review.jl"))
 # =========================================================================
 # EXACT CONSTANTS FOR DOUBLE MACH REFLECTION
 # =========================================================================
@@ -135,6 +136,7 @@ function euler_2d_DMR()
 
     # 2. Modernized Method Configurations
     methods = get_master_method_dict()
+    add_review_methods!(methods)   # SSP steppers, AlignedRusanov flux, MLS 0/2/K (2026-10-26 setup)
 
     # Third order (MUSCL3 is third order since HyperCloudCore 0.6.2). At shocks a degree-3 divergence
     # (weights of both signs) is not robust: MOOD must lower the divergence degree with the order, so
@@ -153,6 +155,6 @@ function euler_2d_DMR()
                                      MOOD_delta_relax = 0.0, Scheme_MLS_order = mls,
                                      custom_label = "RK$(o)MUSCL$(o)($strategy,MLS$mls)", ignore = HyperCloud.ignore_relax))
     end
-    defaults = ["RK2MUSCL2(EPD1)", "RK2MUSCL2(EPD2)", "RK2MUSCL2(VK)", "RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
+    defaults = ["RK2MUSCL2(EPD1)", "RK2MUSCL2(EPD2)", "RK2MUSCL2(VK)", "RK2MUSCL1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     return SimulationConfig(shared, methods, defaults; sources = [@__FILE__])
 end

@@ -1,5 +1,7 @@
+isdefined(@__MODULE__, :add_review_methods!) || Base.include(@__MODULE__, joinpath(@__DIR__, "..", "methods_review.jl"))
 function get_config()
     methods = get_master_method_dict()
+    add_review_methods!(methods)   # SSP steppers, AlignedRusanov flux, MLS 0/2/K (2026-10-26 setup)
 
     # Third order (MUSCL3 is third order since HyperCloudCore 0.6.2). At shocks a degree-3 divergence
     # (weights of both signs) is not robust: MOOD must lower the divergence degree with the order, so
@@ -71,7 +73,7 @@ function get_config()
         :relax_epsilon => 1e-6
     )
 
-    defaults = ["RK2Upwind1", "RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK3MUSCL3(EPD1,MLS3)", "RK3MUSCL3(VK)", "Analytical Solution"]
+    defaults = ["RK2MUSCL1", "RK2MUSCL2(EPD1)", "RK2MUSCL2(VK)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK3MUSCL3(EPD1,MLS3)", "RK3MUSCL3(VK)", "Analytical Solution"]
     
     return SimulationConfig(shared, methods, defaults; varied = varied_params, reference = "analytical_solution")
 end

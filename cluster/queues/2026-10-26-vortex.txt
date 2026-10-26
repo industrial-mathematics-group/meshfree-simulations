@@ -1,0 +1,13 @@
+# isentropic vortex, MOOD on, one period, Float64 and Float32
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls2 1 400 cpu Float64
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls4 1 400 cpu Float64
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.none.ar.mls4 1 400 cpu Float64
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.epd2.ar.mls2 1 400 cpu Float64
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.none.ar.mls3 1 400 cpu Float64
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k2.epd2.ar.mls2 1 400 cpu Float64
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls2 1 400 cpu Float32
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls4 1 400 cpu Float32
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.none.ar.mls4 1 400 cpu Float32
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.epd2.ar.mls2 1 400 cpu Float32
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.none.ar.mls3 1 400 cpu Float32
+cpus=32 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k2.epd2.ar.mls2 1 400 cpu Float32
