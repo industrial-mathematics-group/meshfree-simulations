@@ -6,8 +6,9 @@ cd "$(dirname "$0")/../.."
 while IFS= read -r line; do
     [[ -z $line || $line == \#* ]] && continue
     res=${line%% :: *}; args=${line#* :: }
+    script=${args%% *}; sargs=${args#* }      # "cluster/run_x.sh a b c" -> script, script args
     while :; do
-        out=$(slurm submit $res -- $args 2>&1)
+        out=$(slurm submit $script $res -- $sargs 2>&1 < /dev/null)   # stdin closed: ssh must not eat the queue file
         if echo "$out" | grep -q Submitted; then echo "$(echo "$out" | grep -oP 'job \K\d+') $line" >> "$log"; break
         elif echo "$out" | grep -q "active gateway jobs"; then sleep 60
         else echo "FAILED $line :: $out" >> "$log"; break; fi
