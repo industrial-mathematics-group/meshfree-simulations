@@ -1,3 +1,4 @@
+isdefined(@__MODULE__, :add_review_methods!) || Base.include(@__MODULE__, joinpath(@__DIR__, "..", "methods_review.jl"))
 export euler_2d_mach3step
 
 # State: (rho, rho*u, rho*v, E)
@@ -51,9 +52,6 @@ function get_mach3step_domain(
     step_x = T(0.6)
     step_y = T(0.2)
     
-    # Scale a small tolerance based on domain size for boundary tagging
-    eps_tol = T(1e-5) * (maxs_f[1] - mins_f[1])
-
     is_interior_func = (pos) -> begin
         x, y = pos[1], pos[2]
         if x < mins_f[1] || x > maxs_f[1] || y < mins_f[2] || y > maxs_f[2]
@@ -66,21 +64,21 @@ function get_mach3step_domain(
         return true
     end
 
+    # Ghost tags, exactly complementary to `is_interior_func` (no tolerance bands: a ghost that lies on a boundary
+    # line, e.g. x = 0 or y = 1 up to rounding, belonged to the "fallback" outflow tag before, ~60 ghosts at
+    # 1800x600; paper review 2026-10-26).
     actual_tag_func = (pos) -> begin
         if is_interior_func(pos)
             return 0
         end
         x, y = pos[1], pos[2]
-        
-        if x < mins_f[1] - eps_tol; return 1       # Inflow
-        elseif x > maxs_f[1] + eps_tol; return 2   # Outflow
-        elseif y > maxs_f[2] + eps_tol; return 4   # Top Wall
-        elseif x >= step_x - eps_tol && y <= step_y + eps_tol
-            # Inside the step: the nearest face decides (a band of width eps_tol around x = step_x
-            # catches no particle on a jittered lattice, the front face would act as a step top)
+        if x < mins_f[1]; return 1                 # Inflow
+        elseif x > maxs_f[1]; return 2             # Outflow
+        elseif y > maxs_f[2]; return 4             # Top Wall
+        elseif x >= step_x && y <= step_y
+            # Inside the step block: the nearest face decides (front x = step_x vs top y = step_y)
             return x - step_x < step_y - y ? 5 : 6  # Step Front : Step Top
-        elseif y < mins_f[2] - eps_tol; return 3   # Bottom Wall
-        else; return 2                             # Fallback
+        else; return 3                             # Bottom Wall (y <= mins)
         end
     end
 
@@ -152,6 +150,7 @@ function euler_2d_mach3step()
 
     # 2. Modernized Method Configurations
     methods = get_master_method_dict()
+    add_review_methods!(methods)   # SSP steppers, AlignedRusanov flux, MLS 0/2/K (2026-10-26 setup)
 
     # Third order (MUSCL3 is third order since HyperCloudCore 0.6.2). At shocks a degree-3 divergence
     # (weights of both signs) is not robust: MOOD must lower the divergence degree with the order, so
@@ -171,7 +170,7 @@ function euler_2d_mach3step()
                                      MOOD_delta_relax = 0.0, Scheme_MLS_order = mls,
                                      custom_label = "RK$(o)MUSCL$(o)($strategy,MLS$(mls))", ignore = HyperCloud.ignore_relax))
     end
-    defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
+    defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2MUSCL1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     
     return SimulationConfig(shared, methods, defaults; sources = [@__FILE__])
 end

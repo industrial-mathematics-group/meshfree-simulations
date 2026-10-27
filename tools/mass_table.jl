@@ -29,15 +29,26 @@ for f in sort(filter(endswith(".jld2"), readdir(dir; join = true)))
     # Conservation defect from the discrete mass Σ V_i u_i itself (sampling-free): the change of the mass minus
     # the exact boundary flux (zero for periodic domains; (f(u_L) - f(u_R)) t for a Riemann problem with outflow
     # boundaries whose shock stays inside, f = u²/2 for Burgers, u·a for linear advection), relative to the mass.
-    m = [x[1] for x in st[:mass]]
-    expected = 0.0
+    # Component 1 (mass; for Euler also momentum and energy below) of Σ V_i U_i over time
+    mvec = st[:mass]; M = length(mvec[1])
+    m = [x[1] for x in mvec]
+    expected = zeros(M)
     if !get(p, :Grid_periodic, false) && get(p, :IC_name, :none) == :riemann
-        uL, uR = p[:IC_uL][1], p[:IC_uR][1]
-        f(u) = p[:PDE_name] == :burgers ? u^2 / 2 : u * p[:PDE_velocities][1][1]
-        expected = (f(uL) - f(uR)) * d.t[end]
+        UL, UR = collect(Float64, p[:IC_uL]), collect(Float64, p[:IC_uR])
+        if p[:PDE_name] == :burgers
+            expected[1] = (UL[1]^2 - UR[1]^2) / 2 * d.t[end]
+        elseif p[:PDE_name] == :linear
+            expected[1] = (UL[1] - UR[1]) * p[:PDE_velocities][1][1] * d.t[end]
+        elseif p[:PDE_name] == :euler && M == 3      # 1-D Euler: F = (ρu, ρu² + p, u(E + p)), p = (γ-1)(E - ½ρu²)
+            γ = p[:PDE_gamma]
+            F(U) = (u = U[2] / U[1]; pr = (γ - 1) * (U[3] - U[2]^2 / (2U[1])); [U[2], U[2] * u + pr, u * (U[3] + pr)])
+            expected .= (F(UL) .- F(UR)) .* d.t[end]
+        end
     end
-    defect = (m[end] - m[1] - expected) / abs(m[end])
-    get!(runs, k, Dict{Int, NamedTuple}())[p[:Grid_Ns][1]] = (rel_end = rel_end, rel_max = rel_max, rel_st = rel_st, l1 = l1, defect = defect, T = string(p[:T]))
+    defect = (m[end] - m[1] - expected[1]) / abs(m[end])
+    # per-component defects (Euler: mass, momentum, energy), relative to max(|m_c(t_end)|, |m_c(0)|, 1e-300)
+    defects = [(mvec[end][c] - mvec[1][c] - expected[c]) / max(abs(mvec[end][c]), abs(mvec[1][c]), 1e-300) for c in 1:M]
+    get!(runs, k, Dict{Int, NamedTuple}())[p[:Grid_Ns][1]] = (rel_end = rel_end, rel_max = rel_max, rel_st = rel_st, l1 = l1, defect = defect, defects = defects, T = string(p[:T]))
 end
 
 md = IOBuffer(); csv = IOBuffer()
@@ -54,7 +65,8 @@ for k in sort(collect(keys(runs)))
         r = d[N]
         o = i == 1 ? NaN : log(abs(d[Ns[i-1]].defect) / abs(r.defect)) / log(N / Ns[i-1])
         i > 1 && push!(orders, o)
-        println(md, "| $N | ", @sprintf("%+.3e", r.defect), " | ", i == 1 ? "–" : @sprintf("%.2f", o), " | ", @sprintf("%+.3e", r.rel_end), " | ",
+        comp = length(r.defects) > 1 ? " (components: " * join((@sprintf("%+.2e", x) for x in r.defects), ", ") * ")" : ""
+        println(md, "| $N | ", @sprintf("%+.3e", r.defect), comp, " | ", i == 1 ? "–" : @sprintf("%.2f", o), " | ", @sprintf("%+.3e", r.rel_end), " | ",
                 @sprintf("%.3e", r.rel_max), " | ", @sprintf("%+.3e", r.rel_st), " | ", @sprintf("%.3e", r.l1), " |")
         println(csv, join((k.exp, k.method, k.jitter, k.range, k.alpha, k.mls, N, r.T, r.defect, r.rel_end, r.rel_max, r.rel_st, r.l1), ","))
     end

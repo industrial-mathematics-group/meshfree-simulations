@@ -8,7 +8,7 @@ set -eo pipefail
 source "$(dirname "$0")/common.sh"
 name=$1 key=$2 nx=$3 ny=$4 cfl=$5 backend=${6:-cuda} T=${7:-Float32} opts=,$8,
 declare -A METHODS=(
-    [m1]="RK2Upwind1"
+    [m1]="RK2MUSCL1"                      # K = 1 (the paper defines MUSCL1, not the Upwind scheme)
     [m2vk]="RK2MUSCL2(VK)"                # HyperCloudCore 0.6.2 needed the vkpatch option on CUDA (fixed in 0.7.0)
     [m2bj]="RK2MUSCL2(BJ)"                # same
     [m2]="RK2MUSCL2(EPD1)"
@@ -25,7 +25,7 @@ declare -A METHODS=(
     [m4epd2]="RK4MUSCL4(EPD2,MLS0)"
     [m4mls2]="RK4MUSCL4(EPD1,MLS2)"
 )
-method=${METHODS[$key]:?unknown method key '$key' (known: ${!METHODS[*]})}
+method=$(review_method "$key") || method=${METHODS[$key]:?unknown method key '$key' (known: ${!METHODS[*]} and k<K>.<variant>.<ar|ru>.mls<m>)}
 env=$([ "$backend" = cuda ] && echo env_cuda || echo env_headless)
 echo "$name / $method  N=${nx}x${ny} CFL=$cfl  $backend $T  host=$(hostname) threads=$JULIA_NUM_THREADS job=$SLURM_JOB_ID"
 export SIM_BACKEND=$backend SIM_T=$T SIM_METHODS="$method" SIM_SET="Grid_Ns=($nx,$ny); Time_CFL=$cfl"

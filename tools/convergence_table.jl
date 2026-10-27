@@ -8,7 +8,7 @@ using HyperCloud, StaticArrays, Printf
 const JLD2 = HyperCloud.PDEStudioCore.JLD2
 
 dir = joinpath(get(ARGS, 1, "data/convergence"), "data")
-runs = Dict{Tuple{String, String}, Dict{Int, Tuple{Float64, String}}}()   # (experiment, method) => N => (error, T)
+runs = Dict{Tuple{String, String}, Dict{Int, Tuple{Float64, String}}}()   # (experiment, method + parameters) => N => (error, T)
 for f in sort(filter(endswith(".jld2"), readdir(dir; join = true)))
     file = JLD2.load(f)
     p, st = file["params"], file["raw"].stats
@@ -19,6 +19,9 @@ for f in sort(filter(endswith(".jld2"), readdir(dir; join = true)))
              (get(p, :Limiter_name, :none) == :none ? "" : "($(p[:Limiter_name]))")
     N = p[:Grid_Ns][1]
     err = last(st[:l1error])[1]
+    # the point-cloud parameters that vary between sweeps (jitter, interpolation range, flux) are part of the key
+    method *= " jitter $(p[:Grid_randomness_factor][1]) R $(p[:Weight_range])" *
+              (get(p, :Flux_name, :Rusanov) == :Rusanov ? "" : " $(p[:Flux_name])")
     d = get!(runs, (exp, method), Dict{Int, Tuple{Float64, String}}())
     haskey(d, N) && @warn "duplicate run" exp method N
     d[N] = (err, string(p[:T]))

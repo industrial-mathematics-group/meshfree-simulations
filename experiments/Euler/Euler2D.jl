@@ -92,7 +92,7 @@ function get_config()
                             Scheme_MLS_order = 0, ignore = HyperCloud.ignore_relax))
         push!(method_dict, m)
     end
-    defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2Upwind1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
+    defaults = ["RK2MUSCL2(EPD1)","RK2MUSCL2(EPD2)","RK2MUSCL2(VK)","RK2MUSCL1", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)"]
     
     return SimulationConfig(shared, method_dict, defaults)
 end

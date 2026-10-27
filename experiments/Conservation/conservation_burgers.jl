@@ -1,3 +1,4 @@
+isdefined(@__MODULE__, :add_review_methods!) || Base.include(@__MODULE__, joinpath(@__DIR__, "..", "methods_review.jl"))
 function get_config()
     relax_vel, relax_idx = generate_relax_params(2.0, 1, 1)
     
@@ -47,6 +48,8 @@ function get_config()
     )
 
     base_methods = get_master_method_dict()
+
+    add_review_methods!(base_methods)   # SSP steppers, AlignedRusanov flux, MLS 0/2/K (2026-10-26 setup)
     defaults = ["RK4MUSCL4(EPD1)", "RK4MUSCL4(EPD2)"]
     
     return SimulationConfig(shared, base_methods, defaults; varied = varied_params, reference = "analytical_solution")
