@@ -1,4 +1,4 @@
-# Convergence table (data/review/convergence/data, 735 runs)
+# Convergence table (data/review/convergence/data, 742 runs)
 
 | Experiment | Method | runs (N) | error at N_max | mean EOC (last 3) |
 |---|---|---|---|---|
@@ -26,7 +26,7 @@
 | 2-D burgers (t = 0.5) | RK3MUSCL3 jitter 0.2 R 5.5 AlignedRusanov | 16 (32–1000) | 8.79e-05 | 2.93 |
 | 2-D burgers (t = 0.5) | RK4SSPMUSCL4 jitter 0.0 R 2.5 AlignedRusanov | 16 (32–1000) | 4.20e-08 | 4.12 |
 | 2-D burgers (t = 0.5) | RK4SSPMUSCL4 jitter 0.0 R 5.5 AlignedRusanov | 16 (32–1000) | 1.33e-06 | 4.30 |
-| 2-D burgers (t = 0.5) | RK4SSPMUSCL4 jitter 0.2 R 2.5 AlignedRusanov | 9 (32–200) | 5.75e-05 | 3.89 |
+| 2-D burgers (t = 0.5) | RK4SSPMUSCL4 jitter 0.2 R 2.5 AlignedRusanov | 16 (32–1000) | 1.06e-07 | 3.78 |
 | 2-D burgers (t = 0.5) | RK4SSPMUSCL4 jitter 0.2 R 5.5 AlignedRusanov | 16 (32–1000) | 1.40e-06 | 4.28 |
 | 2-D burgers (t = 0.5) | RK4SSPMUSCL5 jitter 0.0 R 5.5 AlignedRusanov | 16 (32–1000) | 5.34e-07 | 4.85 |
 | 2-D burgers (t = 0.5) | RK4SSPMUSCL5 jitter 0.2 R 5.5 AlignedRusanov | 16 (32–1000) | 5.37e-07 | 4.85 |
@@ -619,7 +619,7 @@
 | 795 | 3.532e-06 | 4.32 |
 | 1000 | 1.328e-06 | 4.26 |
 
-### 2-D burgers (t = 0.5), RK4SSPMUSCL4 jitter 0.2 R 2.5 AlignedRusanov (Float64, 9 runs)
+### 2-D burgers (t = 0.5), RK4SSPMUSCL4 jitter 0.2 R 2.5 AlignedRusanov (Float64, 16 runs)
 
 | N | L1 error | EOC |
 |---|---|---|
@@ -632,6 +632,13 @@
 | 126 | 3.125e-04 | 4.35 |
 | 159 | 1.417e-04 | 3.40 |
 | 200 | 5.748e-05 | 3.93 |
+| 252 | 2.148e-05 | 4.26 |
+| 317 | 8.394e-06 | 4.09 |
+| 399 | 3.613e-06 | 3.66 |
+| 502 | 1.435e-06 | 4.02 |
+| 631 | 6.057e-07 | 3.77 |
+| 795 | 2.539e-07 | 3.76 |
+| 1000 | 1.062e-07 | 3.80 |
 
 ### 2-D burgers (t = 0.5), RK4SSPMUSCL4 jitter 0.2 R 5.5 AlignedRusanov (Float64, 16 runs)
 

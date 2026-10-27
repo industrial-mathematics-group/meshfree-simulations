@@ -50,8 +50,7 @@ SSP steppers + AR, lattice and jitter 0.2, **R = 5.5 (as before) and R = 2.5 (th
   R = 5.5 (e.g. 2-D advection MUSCL4: 2.0e-8 vs 6.0e-7 at 1000²), as the smaller stencil weights the near
   neighbours. In 1-D, MUSCL3 is only second order at R = 2.5 (both lattice and jitter): the degree-3 divergence
   fit needs 3.5 Δx in 1-D (docs), so it falls back to degree 2.
-- **R = 2.5 on jittered points costs order for K = 4**: 2.98 in 1-D, 3.24 on 2-D advection (3.9 on Burgers up to
-  200²; the N ≥ 251 line of that sweep is still running), while K = 2, 3 keep 2.0 / 2.9. With 0.2 jitter some
+- **R = 2.5 on jittered points costs order for K = 4**: 2.98 in 1-D, 3.24 on 2-D advection (3.78 on Burgers, 1.1e-7 at 1000²), while K = 2, 3 keep 2.0 / 2.9. With 0.2 jitter some
   stencils of radius 2.5 Δx have too few points for the degree-3 fit and drop a degree. So the shock-run range is
   fine for K ≤ 3 and for K = 4 on lattices; on perturbed clouds K = 4 wants R ≈ 3.5–5.5 (or more particles in the
   neighbourhood).
@@ -119,12 +118,78 @@ boundary fluxes (0, 0.9 t, 0):**
 
 ## 3. Euler shock problems (points 1, 2, 5)
 
-EULER_SECTION
+Mach3Step 900×300, DMR 1440×450 (coupled K = 4 at 960×300), ClainShock 800² with the exact boundaries, CFL 0.8,
+Float64, CPU. Δmass = final mass relative to RK2MUSCL2(EPD1,AR,MLS2). Full tables:
+`reports/2026-10-27-euler-review-tables.md` (`tools/euler_table.jl`).
+
+| Method | Mach3Step: min p / Δmass / steps | DMR: min p / Δmass | ClainShock: min p / Δmass |
+|---|---|---|---|
+| MUSCL1 (K = 1) | 1.00 / +0.2 % / 13166 | 1.00 / −0.2 % | 0.029 / −0.0 % |
+| MUSCL2 EPD1 / EPD2 / VK (AR, MLS 2) | 0.19 / 0.27 / 0.23, ±0.3 % | 1.00, ±0.0 % | 0.026–0.029, ±0.0 % |
+| **MUSCL3 EPD1 / EPD2, frozen MLS 2** | 0.19 / 0.28, −0.1 / +0.3 % / 13.6k | 1.00, ±0.0 % | 0.021 / 0.029, ±0.0 % |
+| MUSCL3 EPD1 / EPD2, frozen MLS 3 | 0.21 / 0.17, **−1.7 / −2.0 %** / 40.5k | 0.98 / 1.00, −0.1 / 0.0 % | 0.018 / 0.025, ±0.0 % |
+| MUSCL3 EPD1 / EPD2, coupled MLS 0 | **fails (t ≈ 0.003)** | **fails (t ≈ 0.005)** | **fails (t ≈ 0.001)** |
+| **MUSCL4 EPD1 / EPD2, frozen MLS 2** | 0.068 / 0.26, −0.2 / +0.1 % / 13.6k | 1.00, ±0.0 % | 0.027 / 0.029, ±0.0 % |
+| MUSCL4 EPD1 / EPD2, frozen MLS 4 | 0.14 / (EPD2 not run to the end), **−2.1 %** / 41.3k | 1.00 / 0.99, 0.0 % | 0.022 / 0.028, ±0.0 % |
+| MUSCL4 EPD1 / EPD2, coupled MLS 0 | **fails** | **fails** (960×300) | **fails** |
+| MUSCL2/3/4 EPD2, MLS 2, **plain Rusanov** | = AR to 3 digits | = AR | = AR |
+
+- **Positivity with a frozen divergence order is fixed** (review point 2): every frozen-K run (MLS 3 for K = 3,
+  MLS 4 for K = 4) now completes with positive pressure on all three problems, where all of them blew up within
+  ~500 steps with the old flux (REPORT_2026-10-21, …-22). The cost: 3× the steps (the CFL uses the degree-3/4
+  divergence) and, on Mach3Step, a −1.7 … −2.1 % mass defect (on DMR and ClainShock ≤ 0.1 %).
+- **Frozen MLS 2 + EPD2 — the review's candidate default — runs on the step and the DMR** (point 1) with positive
+  pressure, mass within ±0.3 % of the second-order reference, and MUSCL2 cost (13.6k steps on the step).
+- **The coupled mode fails everywhere with the aligned flux** (within 14 … 300 steps; the DMR K = 4 EPD2 at
+  t = 0.145): it should not be offered with this flux.
+- Aligned and plain Rusanov give identical results with frozen MLS 2 (the flux only differs on pairs with an order
+  drop below the full divergence degree, which frozen 2 never has for K ≥ 2).
+- ClainShock exact vs extrapolating boundaries (EPD2, MLS 2): final mass +0.3850 vs +0.3788 (K = 2), +0.3850 vs
+  +0.3787 (K = 3), +0.3850 vs +0.3732 (K = 4): **with the exact boundary states the mass is the same for every
+  order (to 4 digits), with the outflow boundaries it depends on the order (up to 3 %)** — the boundary was the
+  error source the paper suspected (§7.5), now a result.
+- Not run to the end: Mach3Step RK4SSPMUSCL4(EPD2,AR,MLS4) (would have needed ~5.8 h; skipped, rerun at a smaller
+  grid if needed). Runtimes on 32 EPYC cores: MUSCL2 10–20 min, frozen-2 MUSCL3/4 25–85 min, frozen-K 1.5–5 h.
 
 ## 4. Isentropic vortex with MOOD (point 3)
 
-VORTEX_SECTION
+Periodic [0, 10]², one period (t = 10), jitter 0.2, R = 2.5, CFL 0.8, N = 50 … 400; L1(ρ) error against the
+initial condition (integral, ×100 of the mean), `reports/2026-10-27-vortex-review-table.md`.
+
+| Method | Float64: error at 400² / order (last 3) | Float32: error at 400² / order |
+|---|---|---|
+| MUSCL3, no MOOD (MLS 3) | 3.0e-3 / 2.9 | 8.6e-3 / floor from 283² |
+| MUSCL4, no MOOD (MLS 4) | 1.6e-5 / 3.6 | **floor 2–5e-3 from 141²** (single precision) |
+| MUSCL2 EPD2 (MLS 2) | 0.53 / 1.0 | 0.52 / 1.0 |
+| MUSCL3 EPD2 (MLS 2) | 0.62 / 0.9 | 0.63 / 0.9 |
+| MUSCL4 EPD2 (MLS 2) | 0.63 / 0.8 | 0.63 / 0.8 |
+| MUSCL4 EPD2 (MLS 4) | 0.44 / 1.0 | 0.48 / 0.8 |
+
+- **MOOD does not leave smooth flow at full order** (review point 3): with EPD2 (U2, δ = 1e-4 Δx²) every scheme is
+  **first order** with errors 100–40 000× larger than without MOOD; the vortex core is smeared (min ρ 0.58 at 400²
+  vs the exact 0.49 that the unlimited schemes keep). MOOD flags the smooth extremum of the vortex; the U2
+  smooth-extremum test does not rescue it here. This is the most important new result for the paper: the
+  high-order claim for shock runs with MOOD needs either a working smooth-extremum detection (order maps would
+  show where it drops — point 4) or a larger δ.
+- Without MOOD the schemes reach 2.9 (K = 3) and 3.4–3.9 (K = 4) at R = 2.5 in Float64; **in Float32 the K = 4
+  error saturates at 2–5e-3 from 141²** (the single-precision effect the review asked about in point 4), and
+  with MOOD on Float32 and Float64 are indistinguishable.
+- Mass: 1e-5 … 4e-4 with MOOD (jittered points), 1e-8 … 1e-10 without.
 
 ## 5. Summary and verdicts
 
-SUMMARY_SECTION
+| Review point | Result | Verdict |
+|---|---|---|
+| 1 coupled mode / frozen k_div = 2 | coupled MLS 0 + aligned flux: 6–16 % flat mass defect (1-D), fails on all 2-D problems and on Sod at R 2.5; frozen 2 + EPD2 runs on step and DMR, conservative to ±0.3 % | coupled mode not usable; **frozen 2 + EPD2 recommended** |
+| 1 measure conservation directly | Sod m/momentum/E defects with exact fluxes; 2-D mass vs reference; vortex | done (§2, §3) |
+| 2 positivity with frozen degree | frozen MLS 3/4 now positive on all three 2-D problems (aligned flux) | PASS, at 3× cost and −2 % mass on the step |
+| 3 κ = 2.5 high order | lattice: full order, 5–30× smaller errors; jitter 0.2: K = 4 drops to 3.2–3.8 | PASS K ≤ 3; K = 4 needs R > 2.5 on perturbed clouds |
+| 3 MOOD on smooth flow | vortex with EPD2: first order for every K | **FAIL** — MOOD degrades smooth flow |
+| 3 SSP RK4 | SSPRK(5,4) used for all K = 4 runs | done |
+| 4 single precision | vortex K = 4 without MOOD: Float32 floor 2–5e-3 | confirmed |
+| 5 Mach 3 step ghosts | 0 misclassified (was ~60) | fixed |
+| 5 RK2Upwind1 | replaced by RK2MUSCL1 | done |
+| 5 2-D Riemann boundaries | exact plane-shock states; mass then independent of K (outflow: up to 3 % K-dependence) | done, attribution confirmed |
+
+Overall: **INCONCLUSIVE** for the paper's high-order claims with MOOD (the vortex result), PASS for positivity and
+the frozen-2 default.
