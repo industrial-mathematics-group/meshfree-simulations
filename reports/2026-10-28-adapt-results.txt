@@ -1,0 +1,778 @@
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=32 N=100->100 inserted=0 removed=0 min_u1=1.5108e-11 runtime=5.0s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.066e-01 rel_remap_sum=+0.000e+00 rel_step_sum=-1.066e-01 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=43 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.9s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-6.223e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-6.223e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=63 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=5.2s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-4.552e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-4.552e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=5.2s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-4.617e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-4.617e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=140 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=5.1s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-2.161e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-2.161e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=208 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=5.2s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-2.680e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-2.680e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=308 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=5.5s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-3.580e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.580e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=450 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=6.9s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-3.544e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.544e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=669 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=12.2s
+RESULT tag=b1_K2_shepard_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-3.574e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.574e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=29 N=100->105 inserted=27 removed=22 min_u1=-8.4021e-10 runtime=6.4s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.326e-02 rel_remap_sum=-5.007e-16 rel_step_sum=-2.326e-02 max_abs_remap=8.882e-16
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=42 N=141->150 inserted=39 removed=30 min_u1=1.4743e-11 runtime=6.3s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.789e-02 rel_remap_sum=-5.012e-16 rel_step_sum=-1.789e-02 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=63 N=200->225 inserted=31 removed=6 min_u1=1.4486e-11 runtime=6.5s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-2.832e-02 rel_remap_sum=+1.251e-15 rel_step_sum=-2.832e-02 max_abs_remap=1.332e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=92 N=283->314 inserted=47 removed=16 min_u1=1.4308e-11 runtime=6.4s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-3.027e-02 rel_remap_sum=-1.378e-15 rel_step_sum=-3.027e-02 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=134 N=400->435 inserted=73 removed=38 min_u1=1.4184e-11 runtime=6.7s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-2.212e-02 rel_remap_sum=-1.629e-15 rel_step_sum=-2.212e-02 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=189 N=566->604 inserted=148 removed=110 min_u1=1.4096e-11 runtime=6.6s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.507e-02 rel_remap_sum=-1.503e-15 rel_step_sum=-1.507e-02 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=276 N=800->845 inserted=197 removed=152 min_u1=1.4035e-11 runtime=6.5s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-2.392e-02 rel_remap_sum=+1.754e-15 rel_step_sum=-2.392e-02 max_abs_remap=2.665e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=392 N=1131->1190 inserted=303 removed=244 min_u1=1.3992e-11 runtime=6.8s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.893e-02 rel_remap_sum=-3.884e-15 rel_step_sum=-1.893e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=542 N=1600->1647 inserted=479 removed=432 min_u1=1.3961e-11 runtime=7.3s
+RESULT tag=b1_K2_shepard_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-1.865e-02 rel_remap_sum=+3.758e-16 rel_step_sum=-1.865e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=32 N=100->100 inserted=0 removed=0 min_u1=1.5108e-11 runtime=4.2s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.844e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.844e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=43 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.2s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.867e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.867e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=63 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=4.2s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-9.378e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-9.378e-03 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=4.3s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-9.571e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-9.571e-03 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=140 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=4.3s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-1.117e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.117e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=208 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=4.5s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.380e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.380e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=308 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=4.8s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.596e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.596e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=450 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=6.2s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.951e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.951e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=669 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=11.4s
+RESULT tag=b1_K2_mls_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-2.159e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-2.159e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=30 N=100->110 inserted=18 removed=8 min_u1=1.5108e-11 runtime=5.1s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.051e-02 rel_remap_sum=+6.263e-16 rel_step_sum=-1.051e-02 max_abs_remap=6.661e-16
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=43 N=141->157 inserted=30 removed=14 min_u1=1.4743e-11 runtime=5.1s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-3.130e-03 rel_remap_sum=-1.002e-15 rel_step_sum=-3.130e-03 max_abs_remap=8.882e-16
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=62 N=200->224 inserted=34 removed=10 min_u1=1.4486e-11 runtime=5.1s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-5.987e-03 rel_remap_sum=-2.505e-16 rel_step_sum=-5.987e-03 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=92 N=283->315 inserted=46 removed=14 min_u1=1.4308e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-8.487e-03 rel_remap_sum=+8.769e-16 rel_step_sum=-8.487e-03 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=133 N=400->432 inserted=74 removed=42 min_u1=1.4184e-11 runtime=5.1s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-8.238e-03 rel_remap_sum=+5.011e-16 rel_step_sum=-8.238e-03 max_abs_remap=1.554e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=195 N=566->612 inserted=132 removed=86 min_u1=1.4096e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-4.690e-03 rel_remap_sum=+1.629e-15 rel_step_sum=-4.690e-03 max_abs_remap=1.554e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=280 N=800->851 inserted=195 removed=144 min_u1=1.4035e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.073e-02 rel_remap_sum=-1.253e-15 rel_step_sum=-1.073e-02 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=396 N=1131->1194 inserted=299 removed=236 min_u1=1.3992e-11 runtime=5.6s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.076e-02 rel_remap_sum=+1.754e-15 rel_step_sum=-1.076e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=567 N=1600->1676 inserted=450 removed=374 min_u1=1.3961e-11 runtime=6.0s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-1.027e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.027e-02 max_abs_remap=2.442e-15
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=29 N=100->100 inserted=0 removed=0 min_u1=1.5109e-11 runtime=5.1s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.534e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-7.534e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=42 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=5.0s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-5.400e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-5.400e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=63 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=5.0s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-4.631e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-4.631e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=5.1s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-4.566e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-4.566e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=141 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=5.2s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-2.489e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-2.489e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=212 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=5.5s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-3.203e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.203e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=319 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=6.6s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-3.454e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.454e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=471 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=10.6s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-3.311e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.311e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=705 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=26.4s
+RESULT tag=b1_K4_shepard_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-3.411e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.411e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=31 N=100->106 inserted=12 removed=6 min_u1=1.5109e-11 runtime=5.7s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-3.959e-02 rel_remap_sum=+8.762e-16 rel_step_sum=-3.959e-02 max_abs_remap=1.332e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=42 N=141->153 inserted=16 removed=4 min_u1=1.4743e-11 runtime=6.0s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-4.447e-02 rel_remap_sum=-1.504e-15 rel_step_sum=-4.447e-02 max_abs_remap=6.661e-16
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=62 N=200->224 inserted=40 removed=16 min_u1=1.4486e-11 runtime=6.1s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-3.005e-02 rel_remap_sum=+7.509e-16 rel_step_sum=-3.005e-02 max_abs_remap=1.110e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=88 N=283->307 inserted=70 removed=46 min_u1=1.4308e-11 runtime=6.0s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-2.727e-02 rel_remap_sum=+1.253e-16 rel_step_sum=-2.727e-02 max_abs_remap=1.110e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=126 N=400->388 inserted=136 removed=148 min_u1=1.4184e-11 runtime=6.0s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-4.271e-03 rel_remap_sum=-5.138e-15 rel_step_sum=-4.271e-03 max_abs_remap=1.776e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=180 N=566->555 inserted=203 removed=214 min_u1=1.4096e-11 runtime=6.2s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-5.776e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-5.776e-03 max_abs_remap=2.220e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=261 N=800->804 inserted=252 removed=248 min_u1=1.4035e-11 runtime=6.2s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-2.056e-02 rel_remap_sum=-1.002e-15 rel_step_sum=-2.056e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=365 N=1131->1135 inserted=372 removed=368 min_u1=1.3992e-11 runtime=6.3s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.175e-02 rel_remap_sum=+7.266e-15 rel_step_sum=-1.175e-02 max_abs_remap=2.442e-15
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=527 N=1600->1603 inserted=523 removed=520 min_u1=1.3961e-11 runtime=6.6s
+RESULT tag=b1_K4_shepard_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-1.283e-02 rel_remap_sum=+3.382e-15 rel_step_sum=-1.283e-02 max_abs_remap=1.998e-15
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=29 N=100->100 inserted=0 removed=0 min_u1=1.5109e-11 runtime=4.5s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.789e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.789e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=42 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.5s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-2.175e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-2.175e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=63 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=4.6s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.438e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.438e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=4.6s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-1.446e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.446e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=141 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=4.7s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-1.350e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.350e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=212 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=5.0s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.417e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.417e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=319 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=6.1s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.551e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.551e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=471 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=10.2s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.729e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.729e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=705 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=26.4s
+RESULT tag=b1_K4_mls_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-1.897e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.897e-02 max_abs_remap=0.000e+00
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=30 N=100->105 inserted=11 removed=6 min_u1=1.5109e-11 runtime=5.4s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.263e-02 rel_remap_sum=-1.253e-16 rel_step_sum=-2.263e-02 max_abs_remap=4.441e-16
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=42 N=141->153 inserted=16 removed=4 min_u1=1.4743e-11 runtime=5.4s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.333e-02 rel_remap_sum=-1.002e-15 rel_step_sum=-1.333e-02 max_abs_remap=4.441e-16
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=62 N=200->227 inserted=35 removed=8 min_u1=1.4486e-11 runtime=5.4s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.055e-02 rel_remap_sum=+1.127e-15 rel_step_sum=-1.055e-02 max_abs_remap=8.882e-16
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=89 N=283->307 inserted=72 removed=48 min_u1=1.4308e-11 runtime=5.4s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-1.042e-02 rel_remap_sum=+6.264e-16 rel_step_sum=-1.042e-02 max_abs_remap=1.332e-15
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=128 N=400->409 inserted=111 removed=102 min_u1=1.4184e-11 runtime=5.5s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-7.141e-03 rel_remap_sum=-1.253e-16 rel_step_sum=-7.141e-03 max_abs_remap=1.776e-15
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=182 N=566->576 inserted=180 removed=170 min_u1=1.4096e-11 runtime=5.6s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-6.022e-03 rel_remap_sum=+1.754e-15 rel_step_sum=-6.022e-03 max_abs_remap=1.776e-15
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=262 N=800->810 inserted=242 removed=232 min_u1=1.4035e-11 runtime=5.7s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.019e-02 rel_remap_sum=-6.389e-15 rel_step_sum=-1.019e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=364 N=1131->1127 inserted=374 removed=378 min_u1=1.3992e-11 runtime=5.8s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-5.991e-03 rel_remap_sum=+1.065e-14 rel_step_sum=-5.991e-03 max_abs_remap=1.998e-15
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=524 N=1600->1599 inserted=543 removed=544 min_u1=1.3961e-11 runtime=6.2s
+RESULT tag=b1_K4_mls_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-6.302e-03 rel_remap_sum=+3.758e-15 rel_step_sum=-6.302e-03 max_abs_remap=2.887e-15
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->100 inserted=0 removed=0 min_u1=1.5109e-11 runtime=4.6s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.409e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-7.409e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.7s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-3.145e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-3.145e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=4.6s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.435e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.435e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=4.7s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-7.166e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-7.166e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=4.6s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-4.100e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-4.100e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=4.6s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N566 rel_mass_change=+3.544e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+3.544e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=4.6s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N800 rel_mass_change=+4.117e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+4.117e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=4.7s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=+3.056e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+3.056e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=4.7s
+RESULT tag=b1pre_K2_shepard_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=+2.267e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+2.267e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->103 inserted=3 removed=0 min_u1=1.5109e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-5.081e-03 rel_remap_sum=-1.252e-16 rel_step_sum=-5.081e-03 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->144 inserted=5 removed=2 min_u1=1.4743e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-5.120e-04 rel_remap_sum=-5.012e-16 rel_step_sum=-5.120e-04 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->204 inserted=4 removed=0 min_u1=1.4486e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-4.266e-03 rel_remap_sum=+2.503e-16 rel_step_sum=-4.266e-03 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->284 inserted=9 removed=8 min_u1=1.4308e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=+1.868e-05 rel_remap_sum=+1.253e-15 rel_step_sum=+1.868e-05 max_abs_remap=1.110e-15
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->409 inserted=13 removed=4 min_u1=1.4184e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-1.729e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.729e-03 max_abs_remap=1.110e-15
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->570 inserted=18 removed=14 min_u1=1.4096e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N566 rel_mass_change=+7.801e-04 rel_remap_sum=-2.505e-16 rel_step_sum=+7.801e-04 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->813 inserted=31 removed=18 min_u1=1.4035e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N800 rel_mass_change=+3.002e-03 rel_remap_sum=+1.754e-15 rel_step_sum=+3.002e-03 max_abs_remap=1.554e-15
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1140 inserted=45 removed=36 min_u1=1.3992e-11 runtime=5.5s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.918e-03 rel_remap_sum=+6.264e-16 rel_step_sum=-1.918e-03 max_abs_remap=1.554e-15
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1622 inserted=64 removed=42 min_u1=1.3961e-11 runtime=5.6s
+RESULT tag=b1pre_K2_shepard_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-5.675e-05 rel_remap_sum=-2.255e-15 rel_step_sum=-5.675e-05 max_abs_remap=1.554e-15
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->100 inserted=0 removed=0 min_u1=1.5109e-11 runtime=4.3s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=+1.288e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+1.288e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.2s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=+3.514e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+3.514e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=4.3s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.103e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-1.103e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=4.3s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=+2.017e-05 rel_remap_sum=+0.000e+00 rel_step_sum=+2.017e-05 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=4.4s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-1.822e-06 rel_remap_sum=+0.000e+00 rel_step_sum=-1.822e-06 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=4.5s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-6.784e-07 rel_remap_sum=+0.000e+00 rel_step_sum=-6.784e-07 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=4.3s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N800 rel_mass_change=+9.857e-08 rel_remap_sum=+0.000e+00 rel_step_sum=+9.857e-08 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=4.3s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-2.116e-08 rel_remap_sum=+0.000e+00 rel_step_sum=-2.116e-08 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=4.3s
+RESULT tag=b1pre_K2_mls_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=+4.780e-08 rel_remap_sum=+0.000e+00 rel_step_sum=+4.780e-08 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->103 inserted=3 removed=0 min_u1=1.5109e-11 runtime=5.2s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=+1.298e-03 rel_remap_sum=-1.253e-16 rel_step_sum=+1.298e-03 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->144 inserted=5 removed=2 min_u1=1.4743e-11 runtime=5.2s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-3.906e-04 rel_remap_sum=-6.264e-16 rel_step_sum=-3.906e-04 max_abs_remap=8.882e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->204 inserted=4 removed=0 min_u1=1.4486e-11 runtime=5.2s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.126e-03 rel_remap_sum=-3.758e-16 rel_step_sum=-1.126e-03 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->285 inserted=8 removed=6 min_u1=1.4308e-11 runtime=5.1s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=+2.369e-04 rel_remap_sum=+5.011e-16 rel_step_sum=+2.369e-04 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->409 inserted=13 removed=4 min_u1=1.4184e-11 runtime=5.1s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N400 rel_mass_change=+5.872e-05 rel_remap_sum=+6.264e-16 rel_step_sum=+5.872e-05 max_abs_remap=8.882e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->569 inserted=17 removed=14 min_u1=1.4096e-11 runtime=5.1s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.640e-05 rel_remap_sum=-7.517e-16 rel_step_sum=-1.640e-05 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->813 inserted=31 removed=18 min_u1=1.4035e-11 runtime=5.3s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N800 rel_mass_change=+1.423e-05 rel_remap_sum=+8.769e-16 rel_step_sum=+1.423e-05 max_abs_remap=1.998e-15
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1140 inserted=45 removed=36 min_u1=1.3992e-11 runtime=5.5s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=+9.149e-06 rel_remap_sum=+6.264e-16 rel_step_sum=+9.149e-06 max_abs_remap=8.882e-16
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1622 inserted=64 removed=42 min_u1=1.3961e-11 runtime=5.5s
+RESULT tag=b1pre_K2_mls_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-4.424e-06 rel_remap_sum=+1.629e-15 rel_step_sum=-4.424e-06 max_abs_remap=2.442e-15
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->100 inserted=0 removed=0 min_u1=1.5109e-11 runtime=4.9s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.016e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-7.016e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.9s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-3.206e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-3.206e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=4.9s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.389e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.389e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=4.9s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-6.886e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-6.886e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=5.0s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-4.736e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-4.736e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=5.0s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N566 rel_mass_change=+3.545e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+3.545e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=5.0s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N800 rel_mass_change=+4.116e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+4.116e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=4.9s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-9.796e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-9.796e-05 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=5.0s
+RESULT tag=b1pre_K4_shepard_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=+2.266e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+2.266e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->101 inserted=1 removed=0 min_u1=1.5109e-11 runtime=5.8s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.811e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-2.811e-03 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->144 inserted=5 removed=2 min_u1=1.4743e-11 runtime=5.8s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-7.051e-04 rel_remap_sum=-5.012e-16 rel_step_sum=-7.051e-04 max_abs_remap=8.882e-16
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->204 inserted=4 removed=0 min_u1=1.4486e-11 runtime=5.7s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-2.948e-03 rel_remap_sum=-5.006e-16 rel_step_sum=-2.948e-03 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->284 inserted=9 removed=8 min_u1=1.4308e-11 runtime=5.8s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=+9.763e-06 rel_remap_sum=-7.517e-16 rel_step_sum=+9.763e-06 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->409 inserted=13 removed=4 min_u1=1.4184e-11 runtime=5.7s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-1.726e-03 rel_remap_sum=-1.253e-16 rel_step_sum=-1.726e-03 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->570 inserted=18 removed=14 min_u1=1.4096e-11 runtime=5.7s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N566 rel_mass_change=+7.796e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+7.796e-04 max_abs_remap=6.661e-16
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->813 inserted=31 removed=18 min_u1=1.4035e-11 runtime=5.8s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N800 rel_mass_change=+3.153e-03 rel_remap_sum=+3.507e-15 rel_step_sum=+3.153e-03 max_abs_remap=1.776e-15
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1140 inserted=45 removed=36 min_u1=1.3992e-11 runtime=5.9s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-2.323e-03 rel_remap_sum=+5.011e-16 rel_step_sum=-2.323e-03 max_abs_remap=1.110e-15
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1622 inserted=64 removed=42 min_u1=1.3961e-11 runtime=5.9s
+RESULT tag=b1pre_K4_shepard_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-1.721e-04 rel_remap_sum=-1.503e-15 rel_step_sum=-1.721e-04 max_abs_remap=1.554e-15
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->100 inserted=0 removed=0 min_u1=1.5109e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.092e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-2.092e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->141 inserted=0 removed=0 min_u1=1.4743e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=+2.912e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+2.912e-04 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->200 inserted=0 removed=0 min_u1=1.4486e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-3.272e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-3.272e-05 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->283 inserted=0 removed=0 min_u1=1.4308e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=+1.427e-05 rel_remap_sum=+0.000e+00 rel_step_sum=+1.427e-05 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->400 inserted=0 removed=0 min_u1=1.4184e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N400 rel_mass_change=+4.365e-07 rel_remap_sum=+0.000e+00 rel_step_sum=+4.365e-07 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->566 inserted=0 removed=0 min_u1=1.4096e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-9.982e-08 rel_remap_sum=+0.000e+00 rel_step_sum=-9.982e-08 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->800 inserted=0 removed=0 min_u1=1.4035e-11 runtime=4.7s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N800 rel_mass_change=+1.678e-07 rel_remap_sum=+0.000e+00 rel_step_sum=+1.678e-07 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1131 inserted=0 removed=0 min_u1=1.3992e-11 runtime=4.6s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=+3.528e-08 rel_remap_sum=+0.000e+00 rel_step_sum=+3.528e-08 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1600 inserted=0 removed=0 min_u1=1.3961e-11 runtime=4.7s
+RESULT tag=b1pre_K4_mls_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=+5.250e-08 rel_remap_sum=+0.000e+00 rel_step_sum=+5.250e-08 max_abs_remap=0.000e+00
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=0.5/0.5 steps=8 N=100->101 inserted=1 removed=0 min_u1=1.5109e-11 runtime=5.4s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.820e-03 rel_remap_sum=+2.505e-16 rel_step_sum=-2.820e-03 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=0.5/0.5 steps=11 N=141->144 inserted=5 removed=2 min_u1=1.4743e-11 runtime=5.4s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-5.627e-04 rel_remap_sum=-8.769e-16 rel_step_sum=-5.627e-04 max_abs_remap=8.882e-16
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=0.5/0.5 steps=16 N=200->204 inserted=4 removed=0 min_u1=1.4486e-11 runtime=5.5s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-8.360e-04 rel_remap_sum=-1.253e-16 rel_step_sum=-8.360e-04 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=0.5/0.5 steps=22 N=283->284 inserted=9 removed=8 min_u1=1.4308e-11 runtime=5.4s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=+3.921e-04 rel_remap_sum=+6.264e-16 rel_step_sum=+3.921e-04 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N400 status=ok t=0.5/0.5 steps=32 N=400->409 inserted=13 removed=4 min_u1=1.4184e-11 runtime=5.5s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N400 rel_mass_change=+6.130e-05 rel_remap_sum=+3.758e-16 rel_step_sum=+6.130e-05 max_abs_remap=4.441e-16
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N566 status=ok t=0.5/0.5 steps=45 N=566->569 inserted=17 removed=14 min_u1=1.4096e-11 runtime=5.4s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.714e-05 rel_remap_sum=-2.506e-16 rel_step_sum=-1.714e-05 max_abs_remap=1.110e-15
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N800 status=ok t=0.5/0.5 steps=64 N=800->813 inserted=31 removed=18 min_u1=1.4035e-11 runtime=5.4s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N800 rel_mass_change=+1.461e-05 rel_remap_sum=+1.002e-15 rel_step_sum=+1.461e-05 max_abs_remap=1.554e-15
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N1131 status=ok t=0.5/0.5 steps=90 N=1131->1140 inserted=45 removed=36 min_u1=1.3992e-11 runtime=5.6s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=+9.434e-06 rel_remap_sum=+2.255e-15 rel_step_sum=+9.434e-06 max_abs_remap=1.998e-15
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N1600 status=ok t=0.5/0.5 steps=128 N=1600->1622 inserted=64 removed=42 min_u1=1.3961e-11 runtime=5.6s
+RESULT tag=b1pre_K4_mls_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-6.469e-06 rel_remap_sum=-3.007e-15 rel_step_sum=-6.469e-06 max_abs_remap=1.332e-15
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=33 N=100->100 inserted=0 removed=0 min_u1=-1.5837e-05 runtime=4.9s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.717e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.717e-02 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N100 quad_exact_rel=-1.123e-03 scheme_vs_exact_rel=-1.605e-02 (relative to the exact mass 1.773961)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=46 N=141->141 inserted=0 removed=0 min_u1=-1.7763e-05 runtime=4.8s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-8.490e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-8.490e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N141 quad_exact_rel=-3.235e-03 scheme_vs_exact_rel=-5.256e-03 (relative to the exact mass 1.772078)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=66 N=200->200 inserted=0 removed=0 min_u1=-2.3441e-05 runtime=4.8s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=+4.555e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+4.555e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N200 quad_exact_rel=+5.985e-03 scheme_vs_exact_rel=-1.430e-03 (relative to the exact mass 1.774335)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=-4.7472e-05 runtime=4.8s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=+2.984e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+2.984e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N283 quad_exact_rel=+4.183e-03 scheme_vs_exact_rel=-1.199e-03 (relative to the exact mass 1.772394)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=134 N=400->400 inserted=0 removed=0 min_u1=-6.2711e-08 runtime=4.8s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-4.461e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-4.461e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N400 quad_exact_rel=-4.086e-03 scheme_vs_exact_rel=-3.753e-04 (relative to the exact mass 1.771754)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=190 N=566->566 inserted=0 removed=0 min_u1=6.1877e-12 runtime=4.8s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N566 rel_mass_change=+6.610e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+6.610e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N566 quad_exact_rel=+9.232e-04 scheme_vs_exact_rel=-2.623e-04 (relative to the exact mass 1.772651)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=270 N=800->800 inserted=0 removed=0 min_u1=1.5487e-11 runtime=4.9s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.572e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.572e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.518e-03 scheme_vs_exact_rel=-5.462e-05 (relative to the exact mass 1.772622)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=383 N=1131->1131 inserted=0 removed=0 min_u1=1.7059e-11 runtime=4.9s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=+6.540e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+6.540e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+6.597e-04 scheme_vs_exact_rel=-5.687e-06 (relative to the exact mass 1.772328)
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=543 N=1600->1600 inserted=0 removed=0 min_u1=1.7399e-11 runtime=5.0s
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-5.118e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-5.118e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_shepard_off_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-5.111e-04 scheme_vs_exact_rel=-7.168e-07 (relative to the exact mass 1.772564)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=34 N=100->108 inserted=10 removed=2 min_u1=-1.7563e-05 runtime=5.5s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.149e-02 rel_remap_sum=+5.007e-16 rel_step_sum=-2.149e-02 max_abs_remap=6.661e-16
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N100 quad_exact_rel=-5.922e-03 scheme_vs_exact_rel=-1.557e-02 (relative to the exact mass 1.773961)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=47 N=141->158 inserted=23 removed=6 min_u1=-1.3262e-05 runtime=5.4s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.890e-02 rel_remap_sum=-6.265e-16 rel_step_sum=-1.890e-02 max_abs_remap=6.661e-16
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N141 quad_exact_rel=-1.148e-02 scheme_vs_exact_rel=-7.421e-03 (relative to the exact mass 1.772078)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=67 N=200->220 inserted=48 removed=28 min_u1=-1.8889e-05 runtime=5.5s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-2.954e-03 rel_remap_sum=+8.760e-16 rel_step_sum=-2.954e-03 max_abs_remap=1.110e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N200 quad_exact_rel=-5.026e-04 scheme_vs_exact_rel=-2.451e-03 (relative to the exact mass 1.774335)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=96 N=283->313 inserted=68 removed=38 min_u1=-3.1194e-05 runtime=5.5s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=+1.864e-04 rel_remap_sum=-1.754e-15 rel_step_sum=+1.864e-04 max_abs_remap=1.998e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N283 quad_exact_rel=+2.812e-03 scheme_vs_exact_rel=-2.626e-03 (relative to the exact mass 1.772394)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=136 N=400->438 inserted=104 removed=66 min_u1=-1.3212e-08 runtime=5.6s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-3.939e-03 rel_remap_sum=-5.013e-16 rel_step_sum=-3.939e-03 max_abs_remap=1.110e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N400 quad_exact_rel=-2.999e-03 scheme_vs_exact_rel=-9.399e-04 (relative to the exact mass 1.771754)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=194 N=566->619 inserted=139 removed=86 min_u1=-3.7404e-12 runtime=5.6s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.499e-03 rel_remap_sum=-3.758e-16 rel_step_sum=-1.499e-03 max_abs_remap=1.110e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N566 quad_exact_rel=-1.036e-03 scheme_vs_exact_rel=-4.633e-04 (relative to the exact mass 1.772651)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=275 N=800->878 inserted=200 removed=122 min_u1=1.4881e-11 runtime=5.6s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.946e-03 rel_remap_sum=-2.505e-15 rel_step_sum=-1.946e-03 max_abs_remap=1.554e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.773e-03 scheme_vs_exact_rel=-1.724e-04 (relative to the exact mass 1.772622)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=394 N=1131->1238 inserted=287 removed=180 min_u1=1.6257e-11 runtime=5.7s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-7.418e-05 rel_remap_sum=+4.510e-15 rel_step_sum=-7.418e-05 max_abs_remap=1.554e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+6.385e-07 scheme_vs_exact_rel=-7.482e-05 (relative to the exact mass 1.772328)
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=556 N=1600->1751 inserted=407 removed=256 min_u1=1.7626e-11 runtime=6.0s
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-6.340e-04 rel_remap_sum=+2.631e-15 rel_step_sum=-6.340e-04 max_abs_remap=1.332e-15
+RESULT tag=lin_K2_shepard_on_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-5.870e-04 scheme_vs_exact_rel=-4.698e-05 (relative to the exact mass 1.772564)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=33 N=100->100 inserted=0 removed=0 min_u1=-1.5837e-05 runtime=4.2s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.754e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.754e-02 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N100 quad_exact_rel=-3.021e-04 scheme_vs_exact_rel=-1.724e-02 (relative to the exact mass 1.772741)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=46 N=141->141 inserted=0 removed=0 min_u1=-1.7763e-05 runtime=4.4s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-6.339e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-6.339e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N141 quad_exact_rel=-2.802e-05 scheme_vs_exact_rel=-6.311e-03 (relative to the exact mass 1.772460)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=66 N=200->200 inserted=0 removed=0 min_u1=-2.3441e-05 runtime=4.4s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-2.294e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-2.294e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N200 quad_exact_rel=-2.118e-05 scheme_vs_exact_rel=-2.272e-03 (relative to the exact mass 1.772496)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=-4.7472e-05 runtime=4.4s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-1.105e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.105e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N283 quad_exact_rel=-6.325e-06 scheme_vs_exact_rel=-1.098e-03 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=134 N=400->400 inserted=0 removed=0 min_u1=-6.2711e-08 runtime=4.4s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-4.014e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-4.014e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N400 quad_exact_rel=+1.461e-06 scheme_vs_exact_rel=-4.029e-04 (relative to the exact mass 1.772450)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=190 N=566->566 inserted=0 removed=0 min_u1=6.1877e-12 runtime=4.5s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-2.791e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-2.791e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N566 quad_exact_rel=-4.861e-07 scheme_vs_exact_rel=-2.787e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=270 N=800->800 inserted=0 removed=0 min_u1=1.5487e-11 runtime=4.5s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-6.113e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-6.113e-05 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.272e-07 scheme_vs_exact_rel=-6.100e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=383 N=1131->1131 inserted=0 removed=0 min_u1=1.7059e-11 runtime=4.6s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-1.176e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-1.176e-05 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+1.298e-07 scheme_vs_exact_rel=-1.189e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=543 N=1600->1600 inserted=0 removed=0 min_u1=1.7399e-11 runtime=4.8s
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-4.789e-06 rel_remap_sum=+0.000e+00 rel_step_sum=-4.789e-06 max_abs_remap=0.000e+00
+RESULT tag=lin_K2_mls_off_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-2.965e-08 scheme_vs_exact_rel=-4.760e-06 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=34 N=100->108 inserted=10 removed=2 min_u1=-1.7612e-05 runtime=5.1s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-1.744e-02 rel_remap_sum=-3.758e-16 rel_step_sum=-1.744e-02 max_abs_remap=8.882e-16
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N100 quad_exact_rel=-3.150e-04 scheme_vs_exact_rel=-1.712e-02 (relative to the exact mass 1.772741)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=47 N=141->158 inserted=23 removed=6 min_u1=-1.3418e-05 runtime=5.3s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-7.404e-03 rel_remap_sum=+1.253e-16 rel_step_sum=-7.404e-03 max_abs_remap=8.882e-16
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N141 quad_exact_rel=-8.429e-05 scheme_vs_exact_rel=-7.320e-03 (relative to the exact mass 1.772460)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=67 N=200->220 inserted=48 removed=28 min_u1=-1.9355e-05 runtime=5.3s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-3.289e-03 rel_remap_sum=+8.769e-16 rel_step_sum=-3.289e-03 max_abs_remap=8.882e-16
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N200 quad_exact_rel=-3.235e-04 scheme_vs_exact_rel=-2.965e-03 (relative to the exact mass 1.772496)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=96 N=283->313 inserted=68 removed=38 min_u1=-3.4105e-05 runtime=5.2s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-2.050e-03 rel_remap_sum=+6.264e-16 rel_step_sum=-2.050e-03 max_abs_remap=8.882e-16
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N283 quad_exact_rel=-7.858e-05 scheme_vs_exact_rel=-1.971e-03 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=136 N=400->438 inserted=104 removed=66 min_u1=-1.3245e-08 runtime=5.3s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-6.473e-04 rel_remap_sum=+1.378e-15 rel_step_sum=-6.473e-04 max_abs_remap=1.110e-15
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N400 quad_exact_rel=+2.300e-06 scheme_vs_exact_rel=-6.496e-04 (relative to the exact mass 1.772450)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=194 N=566->619 inserted=139 removed=86 min_u1=-3.4940e-12 runtime=5.3s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-3.773e-04 rel_remap_sum=-2.506e-16 rel_step_sum=-3.773e-04 max_abs_remap=8.882e-16
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N566 quad_exact_rel=-1.506e-05 scheme_vs_exact_rel=-3.623e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=275 N=800->878 inserted=200 removed=122 min_u1=1.4853e-11 runtime=5.5s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.277e-04 rel_remap_sum=-4.134e-15 rel_step_sum=-1.277e-04 max_abs_remap=1.554e-15
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.689e-07 scheme_vs_exact_rel=-1.276e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=394 N=1131->1238 inserted=287 removed=180 min_u1=1.6202e-11 runtime=5.6s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-3.281e-05 rel_remap_sum=-3.884e-15 rel_step_sum=-3.281e-05 max_abs_remap=1.332e-15
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+1.161e-07 scheme_vs_exact_rel=-3.292e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=556 N=1600->1751 inserted=407 removed=256 min_u1=1.7629e-11 runtime=6.1s
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-4.184e-05 rel_remap_sum=+7.517e-16 rel_step_sum=-4.184e-05 max_abs_remap=1.998e-15
+RESULT tag=lin_K2_mls_on_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-3.093e-08 scheme_vs_exact_rel=-4.181e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=33 N=100->100 inserted=0 removed=0 min_u1=-2.1844e-05 runtime=5.0s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.874e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-7.874e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N100 quad_exact_rel=-1.120e-03 scheme_vs_exact_rel=-6.753e-03 (relative to the exact mass 1.773961)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=46 N=141->141 inserted=0 removed=0 min_u1=-2.9326e-06 runtime=5.0s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-5.835e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-5.835e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N141 quad_exact_rel=-3.233e-03 scheme_vs_exact_rel=-2.601e-03 (relative to the exact mass 1.772078)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=66 N=200->200 inserted=0 removed=0 min_u1=-1.2791e-07 runtime=4.9s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=+4.656e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+4.656e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N200 quad_exact_rel=+5.986e-03 scheme_vs_exact_rel=-1.329e-03 (relative to the exact mass 1.774335)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=-5.0130e-09 runtime=4.9s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=+3.635e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+3.635e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N283 quad_exact_rel=+4.184e-03 scheme_vs_exact_rel=-5.488e-04 (relative to the exact mass 1.772394)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=134 N=400->400 inserted=0 removed=0 min_u1=6.9056e-13 runtime=5.0s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-4.341e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-4.341e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N400 quad_exact_rel=-4.086e-03 scheme_vs_exact_rel=-2.547e-04 (relative to the exact mass 1.771754)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=190 N=566->566 inserted=0 removed=0 min_u1=1.9527e-11 runtime=5.0s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N566 rel_mass_change=+7.569e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+7.569e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N566 quad_exact_rel=+9.233e-04 scheme_vs_exact_rel=-1.665e-04 (relative to the exact mass 1.772651)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=270 N=800->800 inserted=0 removed=0 min_u1=1.8550e-11 runtime=5.1s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.602e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.602e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.518e-03 scheme_vs_exact_rel=-8.441e-05 (relative to the exact mass 1.772622)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=383 N=1131->1131 inserted=0 removed=0 min_u1=1.7247e-11 runtime=5.2s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=+6.223e-04 rel_remap_sum=+0.000e+00 rel_step_sum=+6.223e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+6.597e-04 scheme_vs_exact_rel=-3.737e-05 (relative to the exact mass 1.772328)
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=543 N=1600->1600 inserted=0 removed=0 min_u1=1.6632e-11 runtime=5.4s
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-5.306e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-5.306e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_shepard_off_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-5.111e-04 scheme_vs_exact_rel=-1.948e-05 (relative to the exact mass 1.772564)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=33 N=100->117 inserted=19 removed=2 min_u1=-3.5657e-05 runtime=5.9s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-2.758e-02 rel_remap_sum=+2.253e-15 rel_step_sum=-2.758e-02 max_abs_remap=8.882e-16
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N100 quad_exact_rel=-2.056e-02 scheme_vs_exact_rel=-7.024e-03 (relative to the exact mass 1.773961)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=47 N=141->165 inserted=30 removed=6 min_u1=-9.8076e-06 runtime=5.9s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.546e-02 rel_remap_sum=-1.253e-16 rel_step_sum=-1.546e-02 max_abs_remap=8.882e-16
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N141 quad_exact_rel=-1.560e-02 scheme_vs_exact_rel=+1.373e-04 (relative to the exact mass 1.772078)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=67 N=200->218 inserted=50 removed=32 min_u1=-3.1043e-05 runtime=5.8s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-2.013e-03 rel_remap_sum=+1.502e-15 rel_step_sum=-2.013e-03 max_abs_remap=8.882e-16
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N200 quad_exact_rel=+6.454e-04 scheme_vs_exact_rel=-2.659e-03 (relative to the exact mass 1.774335)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=96 N=283->313 inserted=68 removed=38 min_u1=-3.4967e-09 runtime=6.1s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=+1.635e-03 rel_remap_sum=-1.503e-15 rel_step_sum=+1.635e-03 max_abs_remap=1.110e-15
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N283 quad_exact_rel=+2.653e-03 scheme_vs_exact_rel=-1.018e-03 (relative to the exact mass 1.772394)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=136 N=400->438 inserted=104 removed=66 min_u1=-5.5068e-11 runtime=6.0s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-3.960e-03 rel_remap_sum=-7.519e-16 rel_step_sum=-3.960e-03 max_abs_remap=1.776e-15
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N400 quad_exact_rel=-2.999e-03 scheme_vs_exact_rel=-9.612e-04 (relative to the exact mass 1.771754)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=194 N=566->619 inserted=139 removed=86 min_u1=7.7938e-12 runtime=5.9s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.313e-03 rel_remap_sum=+1.754e-15 rel_step_sum=-1.313e-03 max_abs_remap=1.554e-15
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N566 quad_exact_rel=-1.035e-03 scheme_vs_exact_rel=-2.777e-04 (relative to the exact mass 1.772651)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=275 N=800->878 inserted=200 removed=122 min_u1=2.0435e-11 runtime=6.0s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.945e-03 rel_remap_sum=+2.255e-15 rel_step_sum=-1.945e-03 max_abs_remap=1.332e-15
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.773e-03 scheme_vs_exact_rel=-1.715e-04 (relative to the exact mass 1.772622)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=394 N=1131->1238 inserted=287 removed=180 min_u1=1.6447e-11 runtime=6.2s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-7.364e-05 rel_remap_sum=-1.754e-15 rel_step_sum=-7.364e-05 max_abs_remap=1.554e-15
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+6.613e-07 scheme_vs_exact_rel=-7.430e-05 (relative to the exact mass 1.772328)
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=556 N=1600->1751 inserted=407 removed=256 min_u1=1.7000e-11 runtime=6.5s
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-6.383e-04 rel_remap_sum=-1.253e-16 rel_step_sum=-6.383e-04 max_abs_remap=1.554e-15
+RESULT tag=lin_K4_shepard_on_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-5.870e-04 scheme_vs_exact_rel=-5.132e-05 (relative to the exact mass 1.772564)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=33 N=100->100 inserted=0 removed=0 min_u1=-2.1844e-05 runtime=4.8s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.080e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-7.080e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N100 quad_exact_rel=-3.022e-04 scheme_vs_exact_rel=-6.778e-03 (relative to the exact mass 1.772741)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=46 N=141->141 inserted=0 removed=0 min_u1=-2.9326e-06 runtime=4.9s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-2.777e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-2.777e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N141 quad_exact_rel=-2.804e-05 scheme_vs_exact_rel=-2.749e-03 (relative to the exact mass 1.772460)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=66 N=200->200 inserted=0 removed=0 min_u1=-1.2791e-07 runtime=4.7s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.243e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.243e-03 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N200 quad_exact_rel=-2.119e-05 scheme_vs_exact_rel=-1.222e-03 (relative to the exact mass 1.772496)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=94 N=283->283 inserted=0 removed=0 min_u1=-5.0130e-09 runtime=4.8s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-5.426e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-5.426e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N283 quad_exact_rel=-6.326e-06 scheme_vs_exact_rel=-5.362e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=134 N=400->400 inserted=0 removed=0 min_u1=6.9056e-13 runtime=4.9s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N400 rel_mass_change=-2.592e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-2.592e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N400 quad_exact_rel=+1.461e-06 scheme_vs_exact_rel=-2.606e-04 (relative to the exact mass 1.772450)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=190 N=566->566 inserted=0 removed=0 min_u1=1.9527e-11 runtime=4.8s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.655e-04 rel_remap_sum=+0.000e+00 rel_step_sum=-1.655e-04 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N566 quad_exact_rel=-4.861e-07 scheme_vs_exact_rel=-1.650e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=270 N=800->800 inserted=0 removed=0 min_u1=1.8550e-11 runtime=4.9s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N800 rel_mass_change=-8.308e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-8.308e-05 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.272e-07 scheme_vs_exact_rel=-8.295e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=383 N=1131->1131 inserted=0 removed=0 min_u1=1.7247e-11 runtime=5.1s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N1131 rel_mass_change=-3.692e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-3.692e-05 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+1.298e-07 scheme_vs_exact_rel=-3.705e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=543 N=1600->1600 inserted=0 removed=0 min_u1=1.6632e-11 runtime=5.4s
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N1600 rel_mass_change=-1.918e-05 rel_remap_sum=+0.000e+00 rel_step_sum=-1.918e-05 max_abs_remap=0.000e+00
+RESULT tag=lin_K4_mls_off_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-3.172e-08 scheme_vs_exact_rel=-1.914e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=2/2 steps=33 N=100->117 inserted=19 removed=2 min_u1=-3.3574e-05 runtime=5.6s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-8.836e-03 rel_remap_sum=-5.010e-16 rel_step_sum=-8.836e-03 max_abs_remap=8.882e-16
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N100 quad_exact_rel=-5.241e-04 scheme_vs_exact_rel=-8.311e-03 (relative to the exact mass 1.772741)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=2/2 steps=47 N=141->165 inserted=30 removed=6 min_u1=-3.6340e-06 runtime=5.5s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.831e-03 rel_remap_sum=-5.011e-16 rel_step_sum=-1.831e-03 max_abs_remap=1.776e-15
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N141 quad_exact_rel=-1.518e-04 scheme_vs_exact_rel=-1.679e-03 (relative to the exact mass 1.772460)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=2/2 steps=67 N=200->218 inserted=50 removed=32 min_u1=-2.2416e-05 runtime=5.5s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-2.049e-03 rel_remap_sum=-2.505e-16 rel_step_sum=-2.049e-03 max_abs_remap=6.661e-16
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N200 quad_exact_rel=+1.622e-04 scheme_vs_exact_rel=-2.211e-03 (relative to the exact mass 1.772496)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=2/2 steps=96 N=283->313 inserted=68 removed=38 min_u1=-3.4316e-09 runtime=5.5s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-1.074e-03 rel_remap_sum=-5.011e-16 rel_step_sum=-1.074e-03 max_abs_remap=8.882e-16
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N283 quad_exact_rel=-1.629e-04 scheme_vs_exact_rel=-9.111e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N400 status=ok t=2/2 steps=136 N=400->438 inserted=104 removed=66 min_u1=-6.0051e-11 runtime=5.5s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N400 rel_mass_change=-7.241e-04 rel_remap_sum=+6.264e-16 rel_step_sum=-7.241e-04 max_abs_remap=1.110e-15
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N400 quad_exact_rel=+2.299e-06 scheme_vs_exact_rel=-7.264e-04 (relative to the exact mass 1.772450)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N566 status=ok t=2/2 steps=194 N=566->619 inserted=139 removed=86 min_u1=7.3004e-12 runtime=5.6s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N566 rel_mass_change=-1.829e-04 rel_remap_sum=+2.380e-15 rel_step_sum=-1.829e-04 max_abs_remap=1.110e-15
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N566 quad_exact_rel=-1.506e-05 scheme_vs_exact_rel=-1.679e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N800 status=ok t=2/2 steps=275 N=800->878 inserted=200 removed=122 min_u1=2.0481e-11 runtime=5.7s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N800 rel_mass_change=-1.132e-04 rel_remap_sum=-2.756e-15 rel_step_sum=-1.132e-04 max_abs_remap=1.110e-15
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N800 quad_exact_rel=-1.689e-07 scheme_vs_exact_rel=-1.130e-04 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N1131 status=ok t=2/2 steps=394 N=1131->1238 inserted=287 removed=180 min_u1=1.6383e-11 runtime=6.0s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N1131 rel_mass_change=-3.611e-05 rel_remap_sum=+1.253e-15 rel_step_sum=-3.611e-05 max_abs_remap=1.110e-15
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N1131 quad_exact_rel=+1.161e-07 scheme_vs_exact_rel=-3.623e-05 (relative to the exact mass 1.772454)
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N1600 status=ok t=2/2 steps=556 N=1600->1751 inserted=407 removed=256 min_u1=1.7023e-11 runtime=6.3s
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N1600 rel_mass_change=-4.576e-05 rel_remap_sum=+8.769e-16 rel_step_sum=-4.576e-05 max_abs_remap=1.332e-15
+RESULT tag=lin_K4_mls_on_g1.6-0.5_s2_e1_N1600 quad_exact_rel=-3.279e-08 scheme_vs_exact_rel=-4.573e-05 (relative to the exact mass 1.772454)
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=40 N=2500->2500 inserted=0 removed=0 min_u1=-7.5450e-05 runtime=7.6s
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N50 rel_mass_change=-5.666e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-5.666e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=65 N=5041->5041 inserted=0 removed=0 min_u1=2.7739e-22 runtime=8.2s
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N71 rel_mass_change=-7.718e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-7.718e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->10000 inserted=0 removed=0 min_u1=2.4969e-22 runtime=10.0s
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.960e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-7.960e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=130 N=19881->19881 inserted=0 removed=0 min_u1=2.3165e-22 runtime=15.8s
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-6.257e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-6.257e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=193 N=40000->40000 inserted=0 removed=0 min_u1=2.1947e-22 runtime=38.2s
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-4.884e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-4.884e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=283 N=80089->80089 inserted=0 removed=0 min_u1=2.1132e-22 runtime=122.3s
+RESULT tag=b2_K2_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-3.808e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-3.808e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=40 N=2500->2524 inserted=24 removed=0 min_u1=-7.6368e-05 runtime=8.8s
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N50 rel_mass_change=-5.694e-02 rel_remap_sum=+1.420e-15 rel_step_sum=-5.694e-02 max_abs_remap=4.885e-15
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=65 N=5041->5474 inserted=443 removed=10 min_u1=-2.6952e-06 runtime=14.7s
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N71 rel_mass_change=-7.059e-02 rel_remap_sum=+1.639e-14 rel_step_sum=-7.059e-02 max_abs_remap=2.220e-14
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->11382 inserted=1404 removed=22 min_u1=-2.9947e-08 runtime=29.3s
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.124e-02 rel_remap_sum=-6.922e-15 rel_step_sum=-7.124e-02 max_abs_remap=3.153e-14
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=133 N=19881->23752 inserted=3933 removed=62 min_u1=-2.4879e-19 runtime=70.1s
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-6.046e-02 rel_remap_sum=+3.095e-14 rel_step_sum=-6.046e-02 max_abs_remap=4.308e-14
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=193 N=40000->49803 inserted=9917 removed=114 min_u1=2.1947e-22 runtime=200.9s
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-5.534e-02 rel_remap_sum=+7.280e-14 rel_step_sum=-5.534e-02 max_abs_remap=5.063e-14
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=283 N=80089->100784 inserted=21337 removed=642 min_u1=2.1132e-22 runtime=597.2s
+RESULT tag=b2_K2_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-4.188e-02 rel_remap_sum=+2.750e-09 rel_step_sum=-4.188e-02 max_abs_remap=1.366e-08
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=40 N=2500->2500 inserted=0 removed=0 min_u1=-7.5450e-05 runtime=8.0s
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N50 rel_mass_change=+2.034e-02 rel_remap_sum=+0.000e+00 rel_step_sum=+2.034e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=65 N=5041->5041 inserted=0 removed=0 min_u1=2.7739e-22 runtime=10.7s
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N71 rel_mass_change=+1.803e-02 rel_remap_sum=+0.000e+00 rel_step_sum=+1.803e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->10000 inserted=0 removed=0 min_u1=2.4969e-22 runtime=17.8s
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=+4.495e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+4.495e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=130 N=19881->19881 inserted=0 removed=0 min_u1=2.3165e-22 runtime=38.1s
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-3.295e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-3.295e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=193 N=40000->40000 inserted=0 removed=0 min_u1=2.1947e-22 runtime=105.3s
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-5.691e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-5.691e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=283 N=80089->80089 inserted=0 removed=0 min_u1=2.1132e-22 runtime=322.1s
+RESULT tag=b2_K2_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-6.572e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-6.572e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=40 N=2500->2524 inserted=24 removed=0 min_u1=-7.6375e-05 runtime=9.1s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N50 rel_mass_change=+2.056e-02 rel_remap_sum=-1.415e-15 rel_step_sum=+2.056e-02 max_abs_remap=1.110e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=65 N=5041->5478 inserted=447 removed=10 min_u1=-2.1988e-05 runtime=17.5s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N71 rel_mass_change=+2.046e-02 rel_remap_sum=+3.774e-14 rel_step_sum=+2.046e-02 max_abs_remap=1.554e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->11378 inserted=1402 removed=24 min_u1=-3.9662e-07 runtime=37.4s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=+1.689e-03 rel_remap_sum=+7.301e-11 rel_step_sum=+1.689e-03 max_abs_remap=2.295e-10
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=133 N=19881->23746 inserted=3921 removed=56 min_u1=-2.6387e-19 runtime=97.0s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-1.235e-03 rel_remap_sum=+2.898e-14 rel_step_sum=-1.235e-03 max_abs_remap=3.597e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=193 N=40000->49783 inserted=9897 removed=114 min_u1=2.1947e-22 runtime=277.8s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-6.669e-03 rel_remap_sum=+7.096e-14 rel_step_sum=-6.669e-03 max_abs_remap=6.573e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=284 N=80089->100783 inserted=21344 removed=650 min_u1=2.1132e-22 runtime=831.8s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-6.364e-03 rel_remap_sum=+3.697e-09 rel_step_sum=-6.364e-03 max_abs_remap=1.161e-08
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=43 N=2500->2500 inserted=0 removed=0 min_u1=3.2372e-22 runtime=9.3s
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N50 rel_mass_change=-7.750e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-7.750e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=62 N=5041->5041 inserted=0 removed=0 min_u1=2.7739e-22 runtime=11.2s
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N71 rel_mass_change=-8.358e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-8.358e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=88 N=10000->10000 inserted=0 removed=0 min_u1=2.4969e-22 runtime=17.0s
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.613e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-7.613e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=131 N=19881->19881 inserted=0 removed=0 min_u1=2.3165e-22 runtime=36.5s
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-6.724e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-6.724e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=199 N=40000->40000 inserted=0 removed=0 min_u1=2.1947e-22 runtime=111.8s
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-5.390e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-5.390e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=295 N=80089->80089 inserted=0 removed=0 min_u1=2.1132e-22 runtime=383.9s
+RESULT tag=b2_K4_shepard_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-4.253e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-4.253e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=43 N=2500->2606 inserted=106 removed=0 min_u1=-2.3023e-14 runtime=11.6s
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N50 rel_mass_change=-7.821e-02 rel_remap_sum=-2.557e-15 rel_step_sum=-7.821e-02 max_abs_remap=1.510e-14
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=62 N=5041->5389 inserted=348 removed=0 min_u1=-4.0061e-14 runtime=16.5s
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N71 rel_mass_change=-8.502e-02 rel_remap_sum=+4.311e-14 rel_step_sum=-8.502e-02 max_abs_remap=1.998e-14
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=88 N=10000->11227 inserted=1227 removed=0 min_u1=-3.8938e-20 runtime=33.8s
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.857e-02 rel_remap_sum=+2.515e-14 rel_step_sum=-7.857e-02 max_abs_remap=2.487e-14
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=131 N=19881->23663 inserted=3788 removed=6 min_u1=2.3165e-22 runtime=94.3s
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-7.648e-02 rel_remap_sum=-5.751e-14 rel_step_sum=-7.648e-02 max_abs_remap=3.642e-14
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=198 N=40000->49822 inserted=9970 removed=148 min_u1=2.1947e-22 runtime=324.4s
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-6.121e-02 rel_remap_sum=-5.923e-14 rel_step_sum=-6.121e-02 max_abs_remap=6.306e-14
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=293 N=80089->100797 inserted=21336 removed=628 min_u1=2.1132e-22 runtime=1072.5s
+RESULT tag=b2_K4_shepard_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-5.017e-02 rel_remap_sum=+1.491e-09 rel_step_sum=-5.017e-02 max_abs_remap=4.685e-09
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=43 N=2500->2500 inserted=0 removed=0 min_u1=3.2372e-22 runtime=9.7s
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N50 rel_mass_change=+7.431e-03 rel_remap_sum=+0.000e+00 rel_step_sum=+7.431e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=62 N=5041->5041 inserted=0 removed=0 min_u1=2.7739e-22 runtime=13.3s
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N71 rel_mass_change=-1.991e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-1.991e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=88 N=10000->10000 inserted=0 removed=0 min_u1=2.4969e-22 runtime=24.1s
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=-7.291e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-7.291e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=131 N=19881->19881 inserted=0 removed=0 min_u1=2.3165e-22 runtime=58.9s
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=-7.499e-03 rel_remap_sum=+0.000e+00 rel_step_sum=-7.499e-03 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=199 N=40000->40000 inserted=0 removed=0 min_u1=2.1947e-22 runtime=177.5s
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.019e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.019e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=295 N=80089->80089 inserted=0 removed=0 min_u1=2.1132e-22 runtime=585.2s
+RESULT tag=b2_K4_mls_off_g1.6-0.5_s2_e1_N283 rel_mass_change=-1.138e-02 rel_remap_sum=+0.000e+00 rel_step_sum=-1.138e-02 max_abs_remap=0.000e+00
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N50 status=ok t=1.5/1.5 steps=43 N=2500->2606 inserted=106 removed=0 min_u1=-2.3039e-14 runtime=12.0s
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N50 rel_mass_change=+7.984e-03 rel_remap_sum=-1.415e-15 rel_step_sum=+7.984e-03 max_abs_remap=1.243e-14
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N71 status=ok t=1.5/1.5 steps=62 N=5041->5389 inserted=348 removed=0 min_u1=-4.2385e-14 runtime=19.2s
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N71 rel_mass_change=-1.328e-03 rel_remap_sum=+4.396e-14 rel_step_sum=-1.328e-03 max_abs_remap=2.043e-14
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=88 N=10000->11227 inserted=1227 removed=0 min_u1=-1.2786e-19 runtime=42.1s
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=-3.985e-03 rel_remap_sum=+1.965e-14 rel_step_sum=-3.985e-03 max_abs_remap=2.798e-14
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=131 N=19881->23658 inserted=3785 removed=8 min_u1=2.3135e-22 runtime=121.5s
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=-5.435e-03 rel_remap_sum=+2.021e-14 rel_step_sum=-5.435e-03 max_abs_remap=3.553e-14
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=1.5/1.5 steps=198 N=40000->49839 inserted=9981 removed=142 min_u1=2.1947e-22 runtime=411.3s
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=-1.221e-02 rel_remap_sum=+8.340e-15 rel_step_sum=-1.221e-02 max_abs_remap=4.663e-14
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N283 status=ok t=1.5/1.5 steps=293 N=80089->100781 inserted=21330 removed=638 min_u1=2.1132e-22 runtime=1363.9s
+RESULT tag=b2_K4_mls_on_g1.6-0.5_s2_e1_N283 rel_mass_change=-1.423e-02 rel_remap_sum=-1.547e-09 rel_step_sum=-1.423e-02 max_abs_remap=4.861e-09
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=475 N=2500->2500 inserted=0 removed=0 min_u1=9.3448e-01 runtime=8.2s
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N50 rel_mass_change=+4.678e-04,+2.892e-04,-4.086e-04,+5.790e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+4.678e-04,+2.892e-04,-4.086e-04,+5.790e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=729 N=5041->5041 inserted=0 removed=0 min_u1=8.9690e-01 runtime=9.8s
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N71 rel_mass_change=+6.581e-04,+1.220e-03,+5.006e-06,+1.059e-03 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+6.581e-04,+1.220e-03,+5.006e-06,+1.059e-03 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1122 N=10000->10000 inserted=0 removed=0 min_u1=8.2527e-01 runtime=14.8s
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=+5.050e-04,+9.936e-04,+5.133e-05,+8.204e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.050e-04,+9.936e-04,+5.133e-05,+8.204e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1976 N=19881->19881 inserted=0 removed=0 min_u1=7.1862e-01 runtime=32.1s
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=+4.403e-04,+4.196e-04,+3.777e-04,+6.995e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+4.403e-04,+4.196e-04,+3.777e-04,+6.995e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=3074 N=40000->40000 inserted=0 removed=0 min_u1=6.3062e-01 runtime=87.6s
+RESULT tag=vortex_K2_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=+3.668e-04,+1.475e-04,+2.929e-04,+5.470e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+3.668e-04,+1.475e-04,+2.929e-04,+5.470e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=472 N=2500->2740 inserted=246 removed=6 min_u1=9.3589e-01 runtime=10.5s
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N50 rel_mass_change=+7.569e-04,+2.654e-04,-5.438e-05,+7.405e-04 rel_remap_sum=-7.811e-15,-3.760e-15,+1.663e-14,+1.006e-14 rel_step_sum=+7.569e-04,+2.654e-04,-5.438e-05,+7.405e-04 max_abs_remap=5.684e-13
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=713 N=5041->5632 inserted=835 removed=244 min_u1=8.9949e-01 runtime=15.9s
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N71 rel_mass_change=+7.683e-04,+1.363e-03,+4.013e-04,+1.134e-03 rel_remap_sum=+7.233e-15,-5.497e-15,+1.447e-14,+1.715e-14 rel_step_sum=+7.683e-04,+1.363e-03,+4.013e-04,+1.134e-03 max_abs_remap=1.080e-12
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1065 N=10000->11432 inserted=2534 removed=1102 min_u1=8.2503e-01 runtime=31.2s
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=+1.313e-03,+1.228e-03,+4.861e-04,+1.389e-03 rel_remap_sum=-2.133e-07,-1.971e-07,-2.570e-07,-2.231e-07 rel_step_sum=+1.313e-03,+1.228e-03,+4.864e-04,+1.389e-03 max_abs_remap=3.504e-05
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1505 N=19881->23094 inserted=8939 removed=5726 min_u1=7.1072e-01 runtime=78.3s
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=+1.053e-03,+5.857e-04,+6.286e-04,+1.285e-03 rel_remap_sum=-2.426e-07,-1.915e-07,-2.074e-07,-2.217e-07 rel_step_sum=+1.053e-03,+5.859e-04,+6.288e-04,+1.285e-03 max_abs_remap=2.109e-05
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=2138 N=40000->46721 inserted=23527 removed=16806 min_u1=6.2149e-01 runtime=199.7s
+RESULT tag=vortex_K2_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=+3.415e-04,-1.321e-04,+1.122e-04,+4.354e-04 rel_remap_sum=-4.390e-07,-3.964e-07,-4.251e-07,-4.343e-07 rel_step_sum=+3.420e-04,-1.317e-04,+1.126e-04,+4.358e-04 max_abs_remap=9.977e-06
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=475 N=2500->2500 inserted=0 removed=0 min_u1=9.3448e-01 runtime=11.2s
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N50 rel_mass_change=+6.091e-04,+5.456e-04,-8.421e-05,+7.829e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+6.091e-04,+5.456e-04,-8.421e-05,+7.829e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=729 N=5041->5041 inserted=0 removed=0 min_u1=8.9690e-01 runtime=19.4s
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N71 rel_mass_change=+7.958e-04,+1.342e-03,+9.664e-05,+1.129e-03 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+7.958e-04,+1.342e-03,+9.664e-05,+1.129e-03 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1122 N=10000->10000 inserted=0 removed=0 min_u1=8.2527e-01 runtime=44.8s
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=+6.116e-04,+1.138e-03,+2.139e-04,+9.119e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+6.116e-04,+1.138e-03,+2.139e-04,+9.119e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1976 N=19881->19881 inserted=0 removed=0 min_u1=7.1862e-01 runtime=138.4s
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=+5.556e-04,+7.582e-04,+4.839e-04,+8.403e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.556e-04,+7.582e-04,+4.839e-04,+8.403e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=3074 N=40000->40000 inserted=0 removed=0 min_u1=6.3062e-01 runtime=407.7s
+RESULT tag=vortex_K2_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=+5.255e-04,+3.633e-04,+4.348e-04,+7.088e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.255e-04,+3.633e-04,+4.348e-04,+7.088e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=473 N=2500->2730 inserted=238 removed=8 min_u1=9.3552e-01 runtime=13.3s
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N50 rel_mass_change=+8.157e-04,+4.797e-04,+1.346e-04,+8.862e-04 rel_remap_sum=+4.484e-15,+9.692e-15,+5.931e-15,+2.308e-15 rel_step_sum=+8.157e-04,+4.797e-04,+1.346e-04,+8.862e-04 max_abs_remap=5.684e-13
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=713 N=5041->5618 inserted=783 removed=206 min_u1=8.9889e-01 runtime=26.1s
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N71 rel_mass_change=+7.827e-04,+1.211e-03,+4.311e-04,+1.096e-03 rel_remap_sum=+6.931e-08,+7.602e-08,+7.611e-08,+7.307e-08 rel_step_sum=+7.826e-04,+1.211e-03,+4.310e-04,+1.096e-03 max_abs_remap=2.519e-05
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1071 N=10000->11399 inserted=2421 removed=1022 min_u1=8.2264e-01 runtime=65.6s
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=+1.283e-03,+1.556e-03,+2.608e-04,+1.370e-03 rel_remap_sum=-5.910e-08,-5.085e-08,-8.985e-08,-6.618e-08 rel_step_sum=+1.283e-03,+1.556e-03,+2.609e-04,+1.371e-03 max_abs_remap=3.156e-05
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1527 N=19881->23185 inserted=8906 removed=5602 min_u1=7.1375e-01 runtime=170.5s
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=+1.037e-03,+5.193e-04,+5.041e-04,+1.126e-03 rel_remap_sum=+8.168e-07,+7.965e-07,+9.596e-07,+8.619e-07 rel_step_sum=+1.036e-03,+5.185e-04,+5.031e-04,+1.125e-03 max_abs_remap=4.079e-05
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=2142 N=40000->46770 inserted=23566 removed=16796 min_u1=6.2228e-01 runtime=466.6s
+RESULT tag=vortex_K2_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=+4.856e-04,+5.453e-05,+2.594e-04,+5.217e-04 rel_remap_sum=+3.594e-07,+3.735e-07,+4.122e-07,+3.845e-07 rel_step_sum=+4.853e-04,+5.416e-05,+2.590e-04,+5.213e-04 max_abs_remap=2.031e-05
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=481 N=2500->2500 inserted=0 removed=0 min_u1=9.2714e-01 runtime=12.6s
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N50 rel_mass_change=+7.322e-04,+1.076e-03,-1.633e-04,+9.777e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+7.322e-04,+1.076e-03,-1.633e-04,+9.777e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=728 N=5041->5041 inserted=0 removed=0 min_u1=8.7586e-01 runtime=19.1s
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N71 rel_mass_change=+5.896e-04,+1.458e-03,-7.595e-05,+9.405e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.896e-04,+1.458e-03,-7.595e-05,+9.405e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1097 N=10000->10000 inserted=0 removed=0 min_u1=8.0304e-01 runtime=37.4s
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N100 rel_mass_change=+5.338e-04,+1.106e-03,+3.370e-04,+8.245e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.338e-04,+1.106e-03,+3.370e-04,+8.245e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1762 N=19881->19881 inserted=0 removed=0 min_u1=7.1757e-01 runtime=94.7s
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N141 rel_mass_change=+4.261e-04,+5.373e-04,+3.136e-04,+5.673e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+4.261e-04,+5.373e-04,+3.136e-04,+5.673e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=2872 N=40000->40000 inserted=0 removed=0 min_u1=6.3463e-01 runtime=271.9s
+RESULT tag=vortex_K4_shepard_off_g1.6-0.5_s2_e1_N200 rel_mass_change=+4.615e-04,+3.012e-04,+3.615e-04,+4.971e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+4.615e-04,+3.012e-04,+3.615e-04,+4.971e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=481 N=2500->2614 inserted=116 removed=2 min_u1=9.2512e-01 runtime=14.2s
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N50 rel_mass_change=+6.796e-04,+9.467e-04,-1.528e-04,+8.840e-04 rel_remap_sum=-2.170e-15,-5.785e-16,+2.025e-15,-6.594e-16 rel_step_sum=+6.796e-04,+9.467e-04,-1.528e-04,+8.840e-04 max_abs_remap=6.253e-13
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=730 N=5041->5301 inserted=296 removed=36 min_u1=8.7391e-01 runtime=23.8s
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N71 rel_mass_change=+5.980e-04,+1.512e-03,-6.222e-06,+9.586e-04 rel_remap_sum=+3.616e-15,+2.459e-15,-3.038e-15,+3.298e-16 rel_step_sum=+5.980e-04,+1.512e-03,-6.222e-06,+9.586e-04 max_abs_remap=1.023e-12
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1092 N=10000->10538 inserted=744 removed=206 min_u1=8.0482e-01 runtime=49.9s
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N100 rel_mass_change=+7.340e-04,+1.283e-03,+8.498e-05,+9.048e-04 rel_remap_sum=-4.091e-08,-4.036e-08,-4.287e-08,-4.001e-08 rel_step_sum=+7.340e-04,+1.283e-03,+8.503e-05,+9.048e-04 max_abs_remap=1.389e-05
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1559 N=19881->21746 inserted=5077 removed=3212 min_u1=7.0952e-01 runtime=157.5s
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N141 rel_mass_change=+6.658e-04,+5.530e-04,+1.535e-04,+8.877e-04 rel_remap_sum=-9.301e-08,-7.586e-08,-7.907e-08,-8.567e-08 rel_step_sum=+6.659e-04,+5.530e-04,+1.536e-04,+8.878e-04 max_abs_remap=1.046e-05
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=2516 N=40000->44402 inserted=16708 removed=12306 min_u1=6.1982e-01 runtime=465.0s
+RESULT tag=vortex_K4_shepard_on_g1.6-0.5_s2_e1_N200 rel_mass_change=+2.493e-04,-1.055e-04,-5.466e-05,+3.863e-04 rel_remap_sum=-2.199e-07,-1.832e-07,-1.971e-07,-2.107e-07 rel_step_sum=+2.495e-04,-1.053e-04,-5.446e-05,+3.865e-04 max_abs_remap=1.109e-05
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=481 N=2500->2500 inserted=0 removed=0 min_u1=9.2714e-01 runtime=15.4s
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N50 rel_mass_change=+8.830e-04,+1.369e-03,+2.114e-04,+1.209e-03 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+8.830e-04,+1.369e-03,+2.114e-04,+1.209e-03 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=728 N=5041->5041 inserted=0 removed=0 min_u1=8.7586e-01 runtime=28.5s
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N71 rel_mass_change=+7.393e-04,+1.527e-03,+5.548e-05,+1.002e-03 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+7.393e-04,+1.527e-03,+5.548e-05,+1.002e-03 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1097 N=10000->10000 inserted=0 removed=0 min_u1=8.0304e-01 runtime=66.0s
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N100 rel_mass_change=+6.455e-04,+1.227e-03,+4.848e-04,+9.042e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+6.455e-04,+1.227e-03,+4.848e-04,+9.042e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1762 N=19881->19881 inserted=0 removed=0 min_u1=7.1757e-01 runtime=188.4s
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N141 rel_mass_change=+5.824e-04,+8.367e-04,+5.378e-04,+7.398e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.824e-04,+8.367e-04,+5.378e-04,+7.398e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=2872 N=40000->40000 inserted=0 removed=0 min_u1=6.3463e-01 runtime=579.7s
+RESULT tag=vortex_K4_mls_off_g1.6-0.5_s2_e1_N200 rel_mass_change=+5.903e-04,+4.473e-04,+5.504e-04,+6.287e-04 rel_remap_sum=+0.000e+00,+0.000e+00,+0.000e+00,+0.000e+00 rel_step_sum=+5.903e-04,+4.473e-04,+5.504e-04,+6.287e-04 max_abs_remap=0.000e+00
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N50 status=ok t=10/10 steps=480 N=2500->2646 inserted=152 removed=6 min_u1=9.2724e-01 runtime=17.2s
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N50 rel_mass_change=+7.833e-04,+1.291e-03,+1.122e-04,+1.076e-03 rel_remap_sum=-3.616e-15,+4.629e-15,+5.931e-15,+9.893e-16 rel_step_sum=+7.833e-04,+1.291e-03,+1.122e-04,+1.076e-03 max_abs_remap=6.821e-13
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N71 status=ok t=10/10 steps=732 N=5041->5330 inserted=367 removed=78 min_u1=8.7389e-01 runtime=34.1s
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N71 rel_mass_change=+7.722e-04,+1.527e-03,+3.200e-05,+1.000e-03 rel_remap_sum=+8.101e-15,-1.577e-14,+1.013e-15,+6.595e-15 rel_step_sum=+7.722e-04,+1.527e-03,+3.200e-05,+1.000e-03 max_abs_remap=7.390e-13
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N100 status=ok t=10/10 steps=1094 N=10000->10562 inserted=836 removed=274 min_u1=8.0356e-01 runtime=81.6s
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N100 rel_mass_change=+6.785e-04,+1.092e-03,-1.545e-04,+7.005e-04 rel_remap_sum=+1.025e-07,+8.555e-08,+8.818e-08,+9.389e-08 rel_step_sum=+6.784e-04,+1.092e-03,-1.545e-04,+7.004e-04 max_abs_remap=3.237e-05
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N141 status=ok t=10/10 steps=1555 N=19881->21758 inserted=4889 removed=3012 min_u1=7.0421e-01 runtime=236.8s
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N141 rel_mass_change=+7.345e-04,+6.996e-04,+1.389e-04,+8.590e-04 rel_remap_sum=+2.079e-07,+1.871e-07,+1.886e-07,+2.023e-07 rel_step_sum=+7.343e-04,+6.994e-04,+1.387e-04,+8.588e-04 max_abs_remap=2.141e-05
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N200 status=ok t=10/10 steps=2661 N=40000->44406 inserted=16272 removed=11866 min_u1=6.2308e-01 runtime=812.9s
+RESULT tag=vortex_K4_mls_on_g1.6-0.5_s2_e1_N200 rel_mass_change=+4.230e-04,+1.346e-04,+1.992e-04,+5.334e-04 rel_remap_sum=+3.513e-07,+3.146e-07,+3.820e-07,+3.538e-07 rel_step_sum=+4.227e-04,+1.343e-04,+1.988e-04,+5.331e-04 max_abs_remap=1.699e-05
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N400 status=ok t=2/2 steps=134 N=400->460 inserted=104 removed=44 min_u1=1.4184e-11 runtime=5.5s
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N400 rel_mass_change=-4.381e-03 rel_remap_sum=-1.754e-15 rel_step_sum=-4.381e-03 max_abs_remap=1.554e-15
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N566 status=ok t=2/2 steps=196 N=566->635 inserted=157 removed=88 min_u1=1.4096e-11 runtime=5.4s
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N566 rel_mass_change=-1.451e-03 rel_remap_sum=+1.629e-15 rel_step_sum=-1.451e-03 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N800 status=ok t=2/2 steps=277 N=800->883 inserted=233 removed=150 min_u1=1.4035e-11 runtime=5.5s
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N800 rel_mass_change=-1.152e-02 rel_remap_sum=-8.769e-16 rel_step_sum=-1.152e-02 max_abs_remap=2.220e-15
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N1131 status=ok t=2/2 steps=399 N=1131->1244 inserted=349 removed=236 min_u1=1.3992e-11 runtime=5.8s
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N1131 rel_mass_change=-7.961e-03 rel_remap_sum=+1.879e-15 rel_step_sum=-7.961e-03 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N1600 status=ok t=2/2 steps=565 N=1600->1742 inserted=518 removed=376 min_u1=1.3961e-11 runtime=6.3s
+RESULT tag=b1_K2_mls_on_g1.3-0.5_s2_e1_N1600 rel_mass_change=-8.575e-03 rel_remap_sum=-7.642e-15 rel_step_sum=-8.575e-03 max_abs_remap=2.220e-15
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N400 status=ok t=2/2 steps=133 N=400->429 inserted=71 removed=42 min_u1=1.4184e-11 runtime=5.1s
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N400 rel_mass_change=-8.216e-03 rel_remap_sum=+3.633e-15 rel_step_sum=-8.216e-03 max_abs_remap=1.554e-15
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N566 status=ok t=2/2 steps=195 N=566->608 inserted=128 removed=86 min_u1=1.4096e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N566 rel_mass_change=-4.662e-03 rel_remap_sum=-3.508e-15 rel_step_sum=-4.662e-03 max_abs_remap=2.220e-15
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N800 status=ok t=2/2 steps=279 N=800->850 inserted=194 removed=144 min_u1=1.4035e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N800 rel_mass_change=-1.055e-02 rel_remap_sum=-3.508e-15 rel_step_sum=-1.055e-02 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N1131 status=ok t=2/2 steps=394 N=1131->1185 inserted=292 removed=238 min_u1=1.3992e-11 runtime=5.5s
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N1131 rel_mass_change=-1.142e-02 rel_remap_sum=+4.134e-15 rel_step_sum=-1.142e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N1600 status=ok t=2/2 steps=567 N=1600->1656 inserted=432 removed=376 min_u1=1.3961e-11 runtime=5.9s
+RESULT tag=b1_K2_mls_on_g2.0-0.5_s2_e1_N1600 rel_mass_change=-1.051e-02 rel_remap_sum=+1.253e-15 rel_step_sum=-1.051e-02 max_abs_remap=2.665e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N400 status=ok t=2/2 steps=138 N=400->448 inserted=58 removed=10 min_u1=1.4184e-11 runtime=6.7s
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N400 rel_mass_change=-9.825e-03 rel_remap_sum=+6.264e-16 rel_step_sum=-9.825e-03 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N566 status=ok t=2/2 steps=197 N=566->632 inserted=114 removed=48 min_u1=1.4096e-11 runtime=5.9s
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N566 rel_mass_change=-1.332e-02 rel_remap_sum=-2.255e-15 rel_step_sum=-1.332e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N800 status=ok t=2/2 steps=287 N=800->874 inserted=172 removed=98 min_u1=1.4035e-11 runtime=5.9s
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N800 rel_mass_change=-1.585e-02 rel_remap_sum=+2.506e-15 rel_step_sum=-1.585e-02 max_abs_remap=2.665e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N1131 status=ok t=2/2 steps=403 N=1131->1223 inserted=270 removed=178 min_u1=1.3992e-11 runtime=5.9s
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N1131 rel_mass_change=-1.975e-02 rel_remap_sum=+2.631e-15 rel_step_sum=-1.975e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N1600 status=ok t=2/2 steps=573 N=1600->1711 inserted=417 removed=306 min_u1=1.3961e-11 runtime=6.6s
+RESULT tag=b1_K2_mls_on_g1.6-0.3_s2_e1_N1600 rel_mass_change=-2.143e-02 rel_remap_sum=-2.756e-15 rel_step_sum=-2.143e-02 max_abs_remap=2.665e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N400 status=ok t=2/2 steps=133 N=400->413 inserted=109 removed=96 min_u1=1.4184e-11 runtime=5.3s
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N400 rel_mass_change=+5.719e-04 rel_remap_sum=-2.130e-15 rel_step_sum=+5.719e-04 max_abs_remap=1.332e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N566 status=ok t=2/2 steps=193 N=566->594 inserted=192 removed=164 min_u1=1.4096e-11 runtime=5.3s
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N566 rel_mass_change=-3.332e-04 rel_remap_sum=+2.004e-15 rel_step_sum=-3.332e-04 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N800 status=ok t=2/2 steps=276 N=800->820 inserted=276 removed=256 min_u1=1.4035e-11 runtime=5.3s
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N800 rel_mass_change=-3.756e-03 rel_remap_sum=+5.387e-15 rel_step_sum=-3.756e-03 max_abs_remap=2.665e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N1131 status=ok t=2/2 steps=403 N=1131->1165 inserted=432 removed=398 min_u1=1.3992e-11 runtime=5.6s
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N1131 rel_mass_change=-3.854e-04 rel_remap_sum=+3.257e-15 rel_step_sum=-3.854e-04 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N1600 status=ok t=2/2 steps=572 N=1600->1643 inserted=685 removed=642 min_u1=1.3961e-11 runtime=6.0s
+RESULT tag=b1_K2_mls_on_g1.6-0.7_s2_e1_N1600 rel_mass_change=-5.872e-03 rel_remap_sum=-1.027e-14 rel_step_sum=-5.872e-03 max_abs_remap=2.442e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N400 status=ok t=2/2 steps=133 N=400->434 inserted=76 removed=42 min_u1=1.4184e-11 runtime=5.4s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N400 rel_mass_change=-1.023e-02 rel_remap_sum=-2.004e-15 rel_step_sum=-1.023e-02 max_abs_remap=1.110e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N566 status=ok t=2/2 steps=194 N=566->609 inserted=131 removed=88 min_u1=1.4096e-11 runtime=5.4s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N566 rel_mass_change=-4.280e-03 rel_remap_sum=-5.011e-16 rel_step_sum=-4.280e-03 max_abs_remap=1.332e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N800 status=ok t=2/2 steps=281 N=800->855 inserted=195 removed=140 min_u1=1.4035e-11 runtime=5.7s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N800 rel_mass_change=-1.052e-02 rel_remap_sum=+2.506e-16 rel_step_sum=-1.052e-02 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N1131 status=ok t=2/2 steps=395 N=1131->1197 inserted=306 removed=240 min_u1=1.3992e-11 runtime=5.7s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N1131 rel_mass_change=-9.864e-03 rel_remap_sum=+2.881e-15 rel_step_sum=-9.864e-03 max_abs_remap=2.220e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N1600 status=ok t=2/2 steps=568 N=1600->1670 inserted=444 removed=374 min_u1=1.3961e-11 runtime=6.1s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s1_e1_N1600 rel_mass_change=-9.929e-03 rel_remap_sum=+2.506e-15 rel_step_sum=-9.929e-03 max_abs_remap=2.442e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N400 status=ok t=2/2 steps=133 N=400->431 inserted=75 removed=44 min_u1=1.4184e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N400 rel_mass_change=-9.314e-03 rel_remap_sum=+1.503e-15 rel_step_sum=-9.314e-03 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N566 status=ok t=2/2 steps=195 N=566->613 inserted=133 removed=86 min_u1=1.4096e-11 runtime=5.3s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N566 rel_mass_change=-5.044e-03 rel_remap_sum=+3.508e-15 rel_step_sum=-5.044e-03 max_abs_remap=1.332e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N800 status=ok t=2/2 steps=278 N=800->849 inserted=197 removed=148 min_u1=1.4035e-11 runtime=5.4s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N800 rel_mass_change=-1.141e-02 rel_remap_sum=-1.127e-15 rel_step_sum=-1.141e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N1131 status=ok t=2/2 steps=396 N=1131->1197 inserted=298 removed=232 min_u1=1.3992e-11 runtime=5.5s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N1131 rel_mass_change=-1.114e-02 rel_remap_sum=+1.629e-15 rel_step_sum=-1.114e-02 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N1600 status=ok t=2/2 steps=564 N=1600->1671 inserted=449 removed=378 min_u1=1.3961e-11 runtime=6.0s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s4_e1_N1600 rel_mass_change=-1.237e-02 rel_remap_sum=-3.884e-15 rel_step_sum=-1.237e-02 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N400 status=ok t=2/2 steps=126 N=400->384 inserted=136 removed=152 min_u1=1.4184e-11 runtime=5.1s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N400 rel_mass_change=-8.241e-03 rel_remap_sum=+3.758e-15 rel_step_sum=-8.241e-03 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N566 status=ok t=2/2 steps=181 N=566->553 inserted=203 removed=216 min_u1=1.4096e-11 runtime=5.2s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N566 rel_mass_change=-7.205e-03 rel_remap_sum=-1.754e-15 rel_step_sum=-7.205e-03 max_abs_remap=1.554e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N800 status=ok t=2/2 steps=259 N=800->777 inserted=279 removed=302 min_u1=1.4035e-11 runtime=5.4s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N800 rel_mass_change=-7.586e-03 rel_remap_sum=-6.389e-15 rel_step_sum=-7.586e-03 max_abs_remap=1.998e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N1131 status=ok t=2/2 steps=362 N=1131->1103 inserted=400 removed=428 min_u1=1.3992e-11 runtime=5.4s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N1131 rel_mass_change=-5.586e-03 rel_remap_sum=+3.132e-15 rel_step_sum=-5.586e-03 max_abs_remap=1.776e-15
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N1600 status=ok t=2/2 steps=520 N=1600->1563 inserted=573 removed=610 min_u1=1.3961e-11 runtime=5.7s
+RESULT tag=b1_K2_mls_on_g1.6-0.5_s2_e0_N1600 rel_mass_change=-5.076e-03 rel_remap_sum=-2.255e-15 rel_step_sum=-5.076e-03 max_abs_remap=2.442e-15
+RESULT tag=b2_K2_mls_on_g1.3-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=96 N=10000->11394 inserted=1412 removed=18 min_u1=-6.7441e-06 runtime=37.9s
+RESULT tag=b2_K2_mls_on_g1.3-0.5_s2_e1_N100 rel_mass_change=+1.398e-03 rel_remap_sum=+6.927e-15 rel_step_sum=+1.398e-03 max_abs_remap=2.709e-14
+RESULT tag=b2_K2_mls_on_g1.3-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=132 N=19881->23918 inserted=4083 removed=46 min_u1=-6.1874e-19 runtime=99.2s
+RESULT tag=b2_K2_mls_on_g1.3-0.5_s2_e1_N141 rel_mass_change=-2.973e-03 rel_remap_sum=+2.544e-14 rel_step_sum=-2.973e-03 max_abs_remap=3.686e-14
+RESULT tag=b2_K2_mls_on_g2.0-0.5_s2_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->11367 inserted=1389 removed=22 min_u1=-7.5607e-07 runtime=38.0s
+RESULT tag=b2_K2_mls_on_g2.0-0.5_s2_e1_N100 rel_mass_change=+2.445e-03 rel_remap_sum=-3.053e-14 rel_step_sum=+2.445e-03 max_abs_remap=3.419e-14
+RESULT tag=b2_K2_mls_on_g2.0-0.5_s2_e1_N141 status=ok t=1.5/1.5 steps=133 N=19881->23725 inserted=3912 removed=68 min_u1=-8.7844e-20 runtime=96.7s
+RESULT tag=b2_K2_mls_on_g2.0-0.5_s2_e1_N141 rel_mass_change=-4.221e-03 rel_remap_sum=+2.870e-14 rel_step_sum=-4.221e-03 max_abs_remap=3.597e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.3_s2_e1_N100 status=ok t=1.5/1.5 steps=96 N=10000->11385 inserted=1391 removed=6 min_u1=-3.4650e-06 runtime=37.7s
+RESULT tag=b2_K2_mls_on_g1.6-0.3_s2_e1_N100 rel_mass_change=+1.050e-03 rel_remap_sum=-1.202e-14 rel_step_sum=+1.050e-03 max_abs_remap=3.286e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.3_s2_e1_N141 status=ok t=1.5/1.5 steps=133 N=19881->23775 inserted=3916 removed=22 min_u1=-2.4027e-19 runtime=96.8s
+RESULT tag=b2_K2_mls_on_g1.6-0.3_s2_e1_N141 rel_mass_change=-2.958e-03 rel_remap_sum=-1.357e-14 rel_step_sum=-2.958e-03 max_abs_remap=4.174e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.7_s2_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->11060 inserted=1440 removed=380 min_u1=-3.8053e-06 runtime=37.7s
+RESULT tag=b2_K2_mls_on_g1.6-0.7_s2_e1_N100 rel_mass_change=+1.641e-03 rel_remap_sum=+2.673e-08 rel_step_sum=+1.641e-03 max_abs_remap=6.581e-08
+RESULT tag=b2_K2_mls_on_g1.6-0.7_s2_e1_N141 status=ok t=1.5/1.5 steps=134 N=19881->22831 inserted=4144 removed=1194 min_u1=-1.7855e-07 runtime=97.5s
+RESULT tag=b2_K2_mls_on_g1.6-0.7_s2_e1_N141 rel_mass_change=-4.372e-03 rel_remap_sum=+6.403e-09 rel_step_sum=-4.372e-03 max_abs_remap=1.779e-08
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s1_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->11377 inserted=1403 removed=26 min_u1=-3.0766e-07 runtime=34.7s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s1_e1_N100 rel_mass_change=+3.238e-03 rel_remap_sum=+2.218e-11 rel_step_sum=+3.238e-03 max_abs_remap=6.979e-11
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s1_e1_N141 status=ok t=1.5/1.5 steps=133 N=19881->23751 inserted=3928 removed=58 min_u1=2.3180e-22 runtime=87.3s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s1_e1_N141 rel_mass_change=-1.982e-03 rel_remap_sum=+4.566e-14 rel_step_sum=-1.982e-03 max_abs_remap=3.730e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s4_e1_N100 status=ok t=1.5/1.5 steps=95 N=10000->11381 inserted=1405 removed=24 min_u1=-4.0807e-07 runtime=48.3s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s4_e1_N100 rel_mass_change=+7.631e-04 rel_remap_sum=+2.971e-11 rel_step_sum=+7.631e-04 max_abs_remap=9.334e-11
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s4_e1_N141 status=ok t=1.5/1.5 steps=133 N=19881->23752 inserted=3927 removed=56 min_u1=-3.0958e-19 runtime=126.4s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s4_e1_N141 rel_mass_change=-1.487e-03 rel_remap_sum=+2.248e-14 rel_step_sum=-1.487e-03 max_abs_remap=4.707e-14
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e0_N100 status=ok t=1.5/1.5 steps=95 N=10000->11400 inserted=1426 removed=26 min_u1=-4.8780e-07 runtime=38.2s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e0_N100 rel_mass_change=-3.940e-03 rel_remap_sum=+7.301e-11 rel_step_sum=-3.940e-03 max_abs_remap=2.295e-10
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e0_N141 status=ok t=1.5/1.5 steps=135 N=19881->23818 inserted=4029 removed=92 min_u1=-2.6186e-19 runtime=99.0s
+RESULT tag=b2_K2_mls_on_g1.6-0.5_s2_e0_N141 rel_mass_change=-2.923e-03 rel_remap_sum=-1.296e-13 rel_step_sum=-2.923e-03 max_abs_remap=3.908e-14
