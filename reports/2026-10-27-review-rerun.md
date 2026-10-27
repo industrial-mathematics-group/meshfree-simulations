@@ -58,7 +58,64 @@ SSP steppers + AR, lattice and jitter 0.2, **R = 5.5 (as before) and R = 2.5 (th
 
 ## 2. Mass conservation (point 1)
 
-MASS_SECTION
+141 CPU jobs (2333 runs) of the same matrix as reports/2026-10-24-mass-conservation.md, now with the SSP steppers
+and the aligned flux (AR) and with Sod added. Conservation defect = (m(t_end) − m(0) − exact boundary flux)/m,
+sampling-free (`tools/mass_table.jl`); full tables `reports/2026-10-27-mass-review-tables.md`.
+
+**1-D Burgers shock (jitter 0.4, R = 5.5), defect at N = 3163 — the MLS-order question:**
+
+| K | coupled MLS 0 + EPD1 | coupled MLS 0 + EPD2 | frozen MLS = K + EPD1 | frozen MLS = K + EPD2 | **frozen MLS 2 + EPD1** | **frozen MLS 2 + EPD2** | plain (no MOOD) |
+|---|---|---|---|---|---|---|---|
+| 2 | −3.9e-4 (= frozen 2) | −6.7e-4 | −3.9e-4 | −6.7e-4 | −3.9e-4 | −6.7e-4 | +1.1e-4 |
+| 3 | **+0.16** (was +2.8e-2) | **+5.8e-2** (was +3.6e-2) | −8.1e-5 (was +5.4e-3) | +8.7e-4 (was +1.7e-3) | −4.3e-4 | −6.3e-4 | +2.3e-4 |
+| 4 | **+0.16** (was +2.7e-2) | **+6.1e-2** (was +2.8e-2) | −1.5e-3 (was +8.4e-5) | +6.1e-4 (was +7.6e-4) | −4.6e-4 | −5.9e-4 | +5.1e-4 |
+| 5 | **+1.0 (fails)** (was −1.4e-3) | **+0.15** (was −4.1e-3) | −7.0e-3 (was −1.2e-2) | −3.6e-4 (was −3.5e-4) | −4.9e-4 | −6.7e-4 | −2.3e-3 |
+
+("was": the plain Rusanov / classical RK4 runs of 2026-10-24; the floor of this test is ±3e-4, see that report.)
+
+- **The coupled MLS order must not be combined with the aligned flux**: its flat defect grows from 3 % to 16 %
+  (EPD1) and 6 % (EPD2), and MUSCL5 + EPD1 loses all its mass. That is consistent with what the flux is for
+  (the HyperCloudCore docstring: it assumes a *uniform* divergence degree with MOOD acting on the reconstruction
+  only); on mixed-degree pairs the weight-sign orientation makes the mismatch systematic. The coupled mode is
+  out, as the review asks (point 1).
+- **Frozen MLS 2 (the review's candidate default) is conservative to the floor at every order** (−4 … −7e-4,
+  the same as MUSCL2 itself), with EPD1 and EPD2 alike.
+- Frozen MLS = K with the aligned flux: K = 3 is now at the floor with EPD1 (−8e-5, from +5e-3), K = 5 improves
+  (−7e-3 from −1.2e-2) but stays flat, K = 4 with EPD1 gets slightly worse (−1.5e-3 from +8e-5). So freezing at K
+  still leaves 1e-3 … 7e-3 for K ≥ 4; the mechanism (fallback particles with a high-degree divergence next to
+  full-order ones) is only partly cured by the flux.
+- Limiters and plain high order unchanged (VK/minmod 4e-4 … 4e-3 flat, plain MUSCL5 −2.3e-3): no drops, no
+  difference from the flux.
+- Jitter, range, α (MUSCL4 EPD1, frozen 4): same picture as before, except that **R = 3.5 no longer blows up**
+  (flat +3e-3 instead of −100 % at N ≥ 2000); R = 4.5 −1.2e-3, 5.5 −1.5e-3, 7.5 −8e-4, 9.5 −5e-4; jitter 0.1 … 0.5:
+  +2e-4 … −1.9e-3 (plain MUSCL4 +2e-4 … +8e-4, growing with jitter and not converging, as before).
+- Smooth periodic 1-D/2-D: identical to 2026-10-24 (1-D 1e-8 … 1e-15; 2-D ~1e-4 at 200² with jitter, independent
+  of order and limiter, second order; lattice exact). No MOOD drops, so the flux makes no difference.
+
+**Sod (1-D Euler, jitter 0.2, N = 100 … 1996), defects of (mass, momentum, energy) at N = 1996 with the exact
+boundary fluxes (0, 0.9 t, 0):**
+
+| Method | R = 5.5: mass / momentum / energy | R = 2.5: mass / momentum / energy |
+|---|---|---|
+| RK2MUSCL1 (K = 1) | −7.6e-7 / −3.7e-4 / +8.8e-7 | +6.8e-5 / −9.5e-4 / +7.8e-5 |
+| MUSCL2 EPD1, MLS 2 | −3.4e-6 / −3.0e-5 / −5.9e-6 | +6.2e-5 / −8.1e-5 / +6.4e-5 |
+| MUSCL2 EPD2, MLS 2 | −8.5e-6 / −3.2e-5 / −1.0e-5 | +4.9e-5 / −1.0e-4 / +4.5e-5 |
+| MUSCL3 EPD1, MLS 2 | −4.5e-6 / −2.6e-5 / −9.0e-6 | +6.8e-5 / −4.4e-5 / +6.8e-5 |
+| MUSCL3 EPD2, MLS 2 | −4.7e-6 / −7.9e-6 / −6.7e-6 | +5.3e-5 / −9.5e-5 / +4.2e-5 |
+| MUSCL3 EPD1, MLS 3 | −2.8e-7 / +4.7e-5 / +5.5e-6 | +1.4e-4 / **+2.1e-2** / +1.5e-4 |
+| MUSCL3 EPD2, MLS 0 | +5.7e-3 / +4.2e-2 / +1.3e-2 | **fails (−100 %)** |
+| MUSCL4 EPD1, MLS 2 | −8.4e-6 / −3.5e-5 / −1.4e-5 | +5.7e-5 / −8.1e-5 / +5.0e-5 |
+| MUSCL4 EPD2, MLS 2 | −1.6e-6 / −3.1e-6 / −2.8e-6 | +7.2e-5 / +5.2e-6 / +7.9e-5 |
+| MUSCL4 EPD1, MLS 4 | +1.9e-5 / +2.1e-4 / +3.6e-5 | +3.9e-4 / +3.4e-3 / +1.0e-3 |
+| MUSCL4 EPD2, MLS 0 | +1.3e-3 / +1.7e-2 / +4.6e-3 | **fails (−100 %)** |
+
+- At R = 5.5 the frozen-2 variants conserve mass, momentum and energy to 1e-6 … 3e-5 **and converge** (orders 2–4.5
+  over N); frozen K leaves 2e-5 … 2e-4 (momentum worst); the coupled mode is flat at 1e-3 … 4e-2.
+- At **R = 2.5 the coupled mode fails outright** (MUSCL3/4 + EPD2 + MLS 0 lose the whole mass), frozen K = 3/4
+  leave a 2 % momentum defect (frozen MLS 3 at K = 3) resp. 3e-3, and even the frozen-2 variants and MUSCL1 sit on
+  a flat 5 … 8e-5 (mass) that does not converge — a boundary effect of the 2.5 Δx ghost layer (the same floor for
+  K = 1 … 4), not of the schemes. So Sod needs R ≥ 3.5 for a clean conservation statement, which answers the
+  review's "why 5.5" for Sod.
 
 ## 3. Euler shock problems (points 1, 2, 5)
 
