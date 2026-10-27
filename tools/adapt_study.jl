@@ -31,32 +31,41 @@ out = get(ENV, "ADAPT_OUT", joinpath(@__DIR__, "..", "results", "adapt")); mkpat
 ns(k) = HyperCloud.extract_namespace(p, k)
 ctx = Dict{Symbol, Any}(:T => T, :Storage => Array, :ExplicitSources => (), :ImplicitSources => ())
 eq = HyperCloud.build_equation(ns(:PDE), ctx); ctx[:Equation] = eq; ctx[:D] = HyperCloud.get_D(eq); ctx[:M] = HyperCloud.get_M(eq)
+const IS_BGK = p[:PDE_name] == :bgk
+if IS_BGK   # as run_bgk_simulation: the IC is macroscopic (built with the Euler limit), the collision a source term
+    ctx[:Equation] = HyperCloud.euler_limit(eq); ctx[:M] = ctx[:D] + 2
+    IC0 = HyperCloud.build_ic(ns(:IC), ctx)
+    ctx[:Equation] = eq; ctx[:M] = HyperCloud.get_M(eq)
+    ctx[:Tableau] = HyperCloud.build_tableau(ns(:Time), ctx)
+    ctx[:ExplicitSources], ctx[:ImplicitSources] = HyperCloud.bgk_sources(eq, ctx[:Tableau])
+end
 ctx[:Domain] = HyperCloud.build_domain(ns(:Grid), ctx); ctx[:WeightConf] = ns(:Weight)
 pg = HyperCloud.build_run_grid(ns(:Grid), ctx)
 ad = HyperCloud.build_adaptivity(ns(:Adapt), ctx)
-if ad !== nothing && haskey(ENV, "ADAPT_MAXEVENTS")   # not exposed by the builder
-    ad = HCC.ParticleAdaptivity(T; max_gap = ad.max_gap, min_gap = ad.min_gap, clearance = ad.clearance, samples_per_dx = ad.samples_per_dx,
-                                exclude_reduced_order = ad.exclude_reduced_order, max_events = parse(Int, ENV["ADAPT_MAXEVENTS"]))
-end
 ctx[:Flux] = HyperCloud.build_flux(ns(:Flux), ctx); ctx[:Limiter] = HyperCloud.build_limiter(ns(:Limiter), ctx)
 ctx[:MOOD] = HyperCloud.build_mood(ns(:MOOD), ctx); ctx[:Scheme] = HyperCloud.build_scheme(ns(:Scheme), ctx)
-ctx[:Tableau] = HyperCloud.build_tableau(ns(:Time), ctx)
+IS_BGK || (ctx[:Tableau] = HyperCloud.build_tableau(ns(:Time), ctx))
 # The run pipeline does not pass the grid's volume estimator to the stepper (nothing sets context[:VolumeEstimator],
 # so `Grid_volumes` only affects the initial volumes, HyperCloudCore 0.7.3); do it here so the option applies.
-ctx[:VolumeEstimator] = HyperCloud.build_volume_estimator(ns(:Grid), ctx)
+pkgversion(HCC) < v"0.7.5" && (ctx[:VolumeEstimator] = HyperCloud.build_volume_estimator(ns(:Grid), ctx))   # fixed in 0.7.5
 ts = HyperCloud.build_run_timestepper(ctx; time_conf = ns(:Time))
-HyperCloud.set_initial_conditions!(pg, eq, HyperCloud.build_ic(ns(:IC), ctx))
+HyperCloud.set_initial_conditions!(pg, eq, IS_BGK ? IC0 : HyperCloud.build_ic(ns(:IC), ctx))
 div_interp = ts.divergence_interpolator
 order = HCC._extract_order(div_interp)
 
 tmax = T(p[:tmax]); cfl = T(p[:Time_CFL]); nsnap = parse(Int, get(ENV, "ADAPT_SNAPSHOTS", "10"))
 interior(pg) = .!collect(view(pg.core.is_boundary, 1:pg.meta.N))
-mass(pg) = HyperCloud.total_mass(pg)
+# conserved content; for BGK the moments (mass, momentum, energy) of Σ V_i f_i (moments are linear in f)
+mass(pg) = IS_BGK ? HyperCloud.moments(eq, HyperCloud.total_mass(pg)) : HyperCloud.total_mass(pg)
 vol(pg) = sum(view(pg.core.volumes, 1:pg.meta.N))
 m0 = mass(pg); N0 = pg.meta.N
+mint0 = let n = pg.meta.N, ib = collect(view(pg.core.is_boundary, 1:n)), V = collect(view(pg.core.volumes, 1:n)), F = collect(view(pg.rhos, 1:n))
+    mi = sum(V[i] * F[i] for i in 1:n if !ib[i]); IS_BGK ? HyperCloud.moments(eq, mi) : mi
+end
 io = open(joinpath(out, tag * ".csv"), "w")
 println(io, "step,t,N,inserted,removed,dm_remap,dm_step,volume,mass")
-snaps = Any[(0.0, collect(view(pg.core.positions, 1:N0)), collect(view(pg.rhos, 1:N0)))]
+snapstate(pg) = IS_BGK ? [HyperCloud.moments(eq, u) for u in view(pg.rhos, 1:pg.meta.N)] : collect(view(pg.rhos, 1:pg.meta.N))
+snaps = Any[(0.0, collect(view(pg.core.positions, 1:N0)), snapstate(pg))]
 sum_revol = zero(m0); t = zero(T); k = 0; ins = 0; rem = 0; sum_remap = zero(m0); sum_step = zero(m0); max_remap = zero(T)
 next_snap = tmax / nsnap
 status = "ok"
@@ -69,6 +78,7 @@ elapsed = @elapsed while t < tmax
     evs = (ad !== nothing && get(ENV, "ADAPT_EVENTLOG", "0") == "1") ? HCC._detect_events(pg, ad, order) : nothing
     pg_before = evs !== nothing && haskey(ENV, "ADAPT_HOLECHECK") ? deepcopy(pg) : nothing
     r = ad === nothing ? (inserted = 0, removed = 0, mass_residual = zero(m0)) : HyperCloud.adapt_particles!(pg, ad, order)
+    IS_BGK && ad !== nothing && (r = (inserted = r.inserted, removed = r.removed, mass_residual = HyperCloud.moments(eq, r.mass_residual)))
     if evs !== nothing && maximum(abs, r.mass_residual) > 1e-11 * maximum(abs, m0) && haskey(ENV, "ADAPT_HOLECHECK")
         # coverage around each event of the bad call, on the cloud BEFORE the call (positions saved below)
         Rw = p[:Weight_range] * minimum(pg.meta.dx); idx = Vector{Int}(undef, 4096); dv = Vector{Space{ctx[:D], T}}(undef, 4096)
@@ -106,13 +116,14 @@ elapsed = @elapsed while t < tmax
     global max_remap = max(max_remap, maximum(abs, r.mass_residual))
     println(io, k, ",", t, ",", pg.meta.N, ",", r.inserted, ",", r.removed, ",", r.mass_residual[1], ",", (ma - mb)[1], ",", vol(pg), ",", mass(pg)[1])
     if t >= next_snap - 1e-12
-        push!(snaps, (Float64(t), collect(view(pg.core.positions, 1:pg.meta.N)), collect(view(pg.rhos, 1:pg.meta.N))))
+        push!(snaps, (Float64(t), collect(view(pg.core.positions, 1:pg.meta.N)), snapstate(pg)))
         global next_snap += tmax / nsnap
     end
     any(x -> !isfinite(x), mass(pg)) && (global status = "non-finite"; break)
 end
 close(io)
 U = collect(view(pg.rhos, 1:pg.meta.N))
+IS_BGK && (U = [HyperCloud.moments(eq, u) for u in U])
 minu1 = minimum(u -> u[1], U)
 summary = Dict("name" => name, "method" => method, "tag" => tag, "params" => p, "status" => status, "t_end" => Float64(t),
                "steps" => k, "N0" => N0, "N_end" => pg.meta.N, "inserted" => ins, "removed" => rem,
@@ -138,4 +149,22 @@ if p[:PDE_name] == :linear
     qe = sum(V[i] * ue(X[i]) for i in eachindex(X))
     @printf("RESULT tag=%s quad_exact_rel=%+.3e scheme_vs_exact_rel=%+.3e (relative to the exact mass %.6f)\n",
             tag, (qe - m0[1]) / m0[1], (mass(pg)[1] - qe) / m0[1], m0[1])
+end
+
+# Smooth-wave error (experiments/BGK/bgk_wave.jl and any IC with a `wave_density(x)` and velocity `WAVE_U`): the
+# Euler-limit solution is the initial density translated with u, so L1(ρ) = Σ V_i |ρ_i − ρ0(x_i − u t)|.
+if isdefined(Main, :wave_density)
+    lo, hi = p[:Grid_mins][1], p[:Grid_maxs][1]; L = hi - lo
+    X = collect(view(pg.core.positions, 1:pg.meta.N)); V = collect(view(pg.core.volumes, 1:pg.meta.N))
+    werr = sum(V[i] * abs(U[i][1] - Main.wave_density(lo + mod(X[i][1] - Main.WAVE_U * t - lo, L))) for i in eachindex(X))
+    @printf("RESULT tag=%s wave_L1_rho=%.4e\n", tag, werr)
+end
+
+# Interior-only content (non-periodic problems: the ghosts hold boundary states and are excluded); for Sod-type
+# problems the boundary fluxes vanish until the waves reach the ends, so this is the conservation defect.
+let n = pg.meta.N, ib = collect(view(pg.core.is_boundary, 1:n)), V = collect(view(pg.core.volumes, 1:n)), F = collect(view(pg.rhos, 1:n))
+    mi = sum(V[i] * F[i] for i in 1:n if !ib[i])
+    mi = IS_BGK ? HyperCloud.moments(eq, mi) : mi
+    println("RESULT tag=$tag interior_content=", join((@sprintf("%.10e", x) for x in mi), ","), " interior_content0=", join((@sprintf("%.10e", x) for x in mint0), ","),
+            " rel_interior_change=", join((@sprintf("%+.3e", (mi[c] - mint0[c]) / max(abs(mint0[c]), abs(mint0[1]))) for c in eachindex(mi)), ","))
 end
