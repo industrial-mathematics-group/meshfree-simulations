@@ -1,4 +1,4 @@
-# Euler shock problems and isentropic vortex of the 0.7.7 rerun on GPUs in single precision (CUDA, Float32)
+# Euler shock problems and isentropic vortex of the 0.7.8 rerun on GPUs in single precision (CUDA, Float32)
 gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step m1 900 300 0.8 cuda Float32
 gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR m1 1440 450 0.8 cuda Float32
 gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock m1 800 800 0.8 cuda Float32
