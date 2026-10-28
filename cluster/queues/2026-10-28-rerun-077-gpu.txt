@@ -1,0 +1,73 @@
+# Euler shock problems and isentropic vortex of the 0.7.7 rerun on GPUs in single precision (CUDA, Float32)
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step m1 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR m1 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock m1 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k2.epd1.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k2.epd1.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k2.epd1.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k2.epd2.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k2.epd2.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k2.epd2.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k2.vk.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k2.vk.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k2.vk.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k2.epd2.ru.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k2.epd2.ru.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k2.epd2.ru.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd1.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd1.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd1.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd1.ar.mls3 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd1.ar.mls3 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd1.ar.mls3 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd1.ar.mls0 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd1.ar.mls0 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd1.ar.mls0 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd2.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd2.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd2.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd2.ar.mls3 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd2.ar.mls3 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd2.ar.mls3 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd2.ar.mls0 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd2.ar.mls0 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd2.ar.mls0 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k3.epd2.ru.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k3.epd2.ru.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k3.epd2.ru.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd1.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd1.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd1.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd1.ar.mls4 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd1.ar.mls4 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd1.ar.mls4 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd1.ar.mls0 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd1.ar.mls0 960 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd1.ar.mls0 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd2.ar.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd2.ar.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd2.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd2.ar.mls4 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd2.ar.mls4 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd2.ar.mls4 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd2.ar.mls0 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd2.ar.mls0 960 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd2.ar.mls0 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh Mach3Step k4.epd2.ru.mls2 900 300 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh DMR k4.epd2.ru.mls2 1440 450 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock k4.epd2.ru.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock_outflow k2.epd2.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock_outflow k3.epd2.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=64 time=300 :: cluster/run_method.sh clainshock_outflow k4.epd2.ar.mls2 800 800 0.8 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls2 1 400 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls4 1 400 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.none.ar.mls4 1 400 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.epd2.ar.mls2 1 400 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.none.ar.mls3 1 400 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k2.epd2.ar.mls2 1 400 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls2 1 400 cpu Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.epd2.ar.mls4 1 400 cpu Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k4.none.ar.mls4 1 400 cpu Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.epd2.ar.mls2 1 400 cpu Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k3.none.ar.mls3 1 400 cpu Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_sweep.sh IsentropicVortex k2.epd2.ar.mls2 1 400 cpu Float32
