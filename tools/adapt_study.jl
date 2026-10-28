@@ -14,6 +14,7 @@ using HyperCloud, StaticArrays, Printf, Logging
 const HCC = HyperCloud.HyperCloudCore
 const JLD2 = HyperCloud.PDEStudioCore.JLD2
 global_logger(ConsoleLogger(stderr, Logging.Warn))
+get(ENV, "ADAPT_BGK_ALE_FLUX", "0") == "1" && include(joinpath(@__DIR__, "patches", "bgk_ale_flux.jl"))
 
 name, method, tag = ARGS[1], ARGS[2], ARGS[3]
 set_target_module!(Main); HyperCloud.CONFIG_ROOT_OVERWRITE[] = joinpath(@__DIR__, "..")
@@ -167,4 +168,12 @@ let n = pg.meta.N, ib = collect(view(pg.core.is_boundary, 1:n)), V = collect(vie
     mi = IS_BGK ? HyperCloud.moments(eq, mi) : mi
     println("RESULT tag=$tag interior_content=", join((@sprintf("%.10e", x) for x in mi), ","), " interior_content0=", join((@sprintf("%.10e", x) for x in mint0), ","),
             " rel_interior_change=", join((@sprintf("%+.3e", (mi[c] - mint0[c]) / max(abs(mint0[c]), abs(mint0[1]))) for c in eachindex(mi)), ","))
+end
+
+# Vortex error (IsentropicVortex / bgk_vortex, one period: the exact solution is the initial condition)
+if isdefined(Main, :vortex_state) && p[:tmax] == 10.0 && p[:PDE_D] == 2
+    X = collect(view(pg.core.positions, 1:pg.meta.N)); V = collect(view(pg.core.volumes, 1:pg.meta.N))
+    verr = sum(V[i] * abs(U[i][1] - Main.vortex_state(X[i][1], X[i][2])[1]) for i in eachindex(X))
+    qex = sum(V[i] * Main.vortex_state(X[i][1], X[i][2])[1] for i in eachindex(X))
+    @printf("RESULT tag=%s vortex_L1_rho=%.4e quad_exact_rel=%+.3e scheme_vs_exact_rel=%+.3e\n", tag, verr, (qex - m0[1]) / m0[1], (mass(pg)[1] - qex) / m0[1])
 end

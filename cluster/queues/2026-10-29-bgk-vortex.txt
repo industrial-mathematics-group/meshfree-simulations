@@ -1,0 +1,11 @@
+# 2-D BGK isentropic vortex on moving grids (MLS volumes), N 50..100, with/without the ALE flux patch
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 none mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls off 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls on 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls on 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 none mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls off 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls on 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls on 1e-3 50 100 on
