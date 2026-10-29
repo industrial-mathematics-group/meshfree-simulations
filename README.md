@@ -13,6 +13,7 @@ parameters of these runs (the job scripts in `cluster/` override precision, grid
 | `DMR_1440x450`, `DMR_960x300` | 17 methods / the 2 coupled K = 4 methods | GPU, Float32 |
 | `clainshock_800x800`, `clainshock_outflow_800x800` | 19 methods (exact boundaries) / 3 methods (outflow boundaries) | GPU, Float32 |
 | `IsentropicVortex_Float32` | 6 methods, N = 50 … 400 | GPU, Float32 |
+| `IsentropicVortex_Float64` | RK4SSPMUSCL4(none,AR,MLS4), N = 50 … 400 (precision check of the Float32 floor) | CPU (local), Float64 |
 | `Convergence1D_sweep`, `ConvergenceAdvection_sweep`, `ConvergenceBurgers_sweep` | K = 2 … 5, lattice and jitter 0.2, R = 5.5 / 2.5 | CPU, Float64 |
 | `defect_floor`, `defect_shock`, `defect_jitter`, `defect_range`, `defect_alpha`, `defect_smooth1d`, `defect_smooth2d` | conservation-defect experiments | CPU, Float64 |
 | `bgk_sod_sweep` | 3 methods × static / Lagrangian / Lagrangian + adaptivity × τ × N (one run failed, see the report) | CPU, Float64 |
