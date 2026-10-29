@@ -1,22 +1,31 @@
-# DMR_1440x450: exactly the cluster runs of 2026-10-21/22 at 1440x450 (REPORT_2026-10-21.md), with the parameters
-# `tools/run_sim.jl` used (SIM_SET "Grid_Ns=(1440,450); Time_CFL=…", SIM_T), so the fetched results in data/
-# are found as cached runs instead of being rerun. Only the merged parameters are hashed (method entries
-# override shared ones, labels are not part of the hash), so methods that ran at another CFL or precision are
-# copies of their entry with that value as a per-method override.
-isdefined(@__MODULE__, :euler_2d_DMR) || Base.include(@__MODULE__, joinpath(@__DIR__, "DMR.jl"))
+# DMR_1440x450: the runs of the HyperCloudCore 0.7.8 rerun (reports/2026-10-29-rerun-078.md), GPU (CUDA), Float32,
+# 1440x450, CFL 0.8, with exactly the parameters the job script used (cluster/run_method.sh), so `@sim DMR_1440x450` finds every run as cached.
+# Check: julia --project=env_headless tools/check_config.jl DMR_1440x450
+module _DMR_1440x450_Base
+    using HyperCloud, StaticArrays
+    Base.include(@__MODULE__, joinpath(@__DIR__, "DMR.jl"))
+end
 
 function get_config()
-    config = euler_2d_DMR()
+    config = _DMR_1440x450_Base.euler_2d_DMR()
     merge!(config.shared, Dict{Symbol, Any}(:T => Float32, :Grid_Ns => (1440, 450), :Time_CFL => 0.8))
-    config.defaults = ["RK2MUSCL2(EPD1)", "RK4MUSCL4(EPD1,MLS0)", "RK4MUSCL4(EPD2,MLS0)", "RK4MUSCL4(EPD1,MLS2)", "RK3MUSCL3(EPD1)", "RK3MUSCL3(EPD2)", "RK3MUSCL3(EPD1,MLS2)"]
-    push!(config.sources,@__FILE__)
-    config.methods[Symbol("RK2MUSCL2(EPD1) Float64")] = merge(config.methods[Symbol("RK2MUSCL2(EPD1)")], Dict{Symbol, Any}(:T => Float64))
-    push!(config.defaults, Symbol("RK2MUSCL2(EPD1) Float64"))
-    config.methods[Symbol("RK3MUSCL3(EPD1) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD1)")], Dict{Symbol, Any}(:T => Float64))
-    push!(config.defaults, Symbol("RK3MUSCL3(EPD1) Float64"))
-    config.methods[Symbol("RK3MUSCL3(EPD2) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD2)")], Dict{Symbol, Any}(:T => Float64))
-    push!(config.defaults, Symbol("RK3MUSCL3(EPD2) Float64"))
-    config.methods[Symbol("RK3MUSCL3(EPD1,MLS2) Float64")] = merge(config.methods[Symbol("RK3MUSCL3(EPD1,MLS2)")], Dict{Symbol, Any}(:T => Float64))
-    push!(config.defaults, Symbol("RK3MUSCL3(EPD1,MLS2) Float64"))
+    config.defaults = Symbol.(["RK2MUSCL1",
+                              "RK2MUSCL2(EPD1,AR,MLS2)",
+                              "RK2MUSCL2(EPD2,AR,MLS2)",
+                              "RK2MUSCL2(VK,AR,MLS2)",
+                              "RK2MUSCL2(EPD2,RU,MLS2)",
+                              "RK3MUSCL3(EPD1,AR,MLS2)",
+                              "RK3MUSCL3(EPD1,AR,MLS3)",
+                              "RK3MUSCL3(EPD1,AR,MLS0)",
+                              "RK3MUSCL3(EPD2,AR,MLS2)",
+                              "RK3MUSCL3(EPD2,AR,MLS3)",
+                              "RK3MUSCL3(EPD2,AR,MLS0)",
+                              "RK3MUSCL3(EPD2,RU,MLS2)",
+                              "RK4SSPMUSCL4(EPD1,AR,MLS2)",
+                              "RK4SSPMUSCL4(EPD1,AR,MLS4)",
+                              "RK4SSPMUSCL4(EPD2,AR,MLS2)",
+                              "RK4SSPMUSCL4(EPD2,AR,MLS4)",
+                              "RK4SSPMUSCL4(EPD2,RU,MLS2)"])
+    push!(config.sources, @__FILE__)
     return config
 end

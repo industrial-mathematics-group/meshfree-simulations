@@ -3,11 +3,11 @@
 # and experimental orders EOC = log(e_{i-1}/e_i) / log(N_i/N_{i-1}). Experiments are told apart by the run
 # parameters (dimension, PDE), not by file names.
 #
-#     julia --project=env_headless tools/convergence_table.jl data/convergence [table.md] [table.csv]
+#     julia --project=env_headless tools/convergence_table.jl [save dir, default .] [table.md] [table.csv]
 using HyperCloud, StaticArrays, Printf
 const JLD2 = HyperCloud.PDEStudioCore.JLD2
 
-dir = joinpath(get(ARGS, 1, "data/convergence"), "data")
+dir = joinpath(get(ARGS, 1, "."), "data")
 runs = Dict{Tuple{String, String}, Dict{Int, Tuple{Float64, String}}}()   # (experiment, method + parameters) => N => (error, T)
 for f in sort(filter(endswith(".jld2"), readdir(dir; join = true)))
     file = JLD2.load(f)

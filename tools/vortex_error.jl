@@ -1,12 +1,12 @@
 # L1 error of the isentropic-vortex runs (experiments/Euler/IsentropicVortex.jl) against the initial condition at
 # the final time (one period, so the exact solution is the IC), per method and N, with the order; and the mass
 # conservation defect. Reads every *.jld2 under <dir>/data.
-#     julia --project=env_headless tools/vortex_error.jl data/vortex [table.md]
+#     julia --project=env_headless tools/vortex_error.jl [save dir, default .] [table.md]
 using HyperCloud, StaticArrays, Printf
 const JLD2 = HyperCloud.PDEStudioCore.JLD2
 Base.include(Main, joinpath(@__DIR__, "..", "experiments", "Euler", "IsentropicVortex.jl"))
 
-dir = joinpath(get(ARGS, 1, "data/vortex"), "data")
+dir = joinpath(get(ARGS, 1, "."), "data")
 runs = Dict{Tuple{String, String}, Dict{Int, NamedTuple}}()
 for f in sort(filter(endswith(".jld2"), readdir(dir; join = true)))
     file = JLD2.load(f); p, d = file["params"], file["raw"]
