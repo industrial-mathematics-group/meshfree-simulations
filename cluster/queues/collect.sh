@@ -28,6 +28,7 @@ grep -E '^[0-9]' "$log" | while read -r j line; do
         cluster/run_mass.sh*) study=convergence ;; cluster/run_defect.sh*) study=defect ;;
         "cluster/run_bgk.sh sod") study=bgksod ;; *) continue ;;
     esac
+    [ -f "$out/$study/job-info-$j.txt" ] && continue          # fetched by an earlier (interrupted) run
     slurm fetch $j < /dev/null > /dev/null 2>&1 || echo "$j fetch failed" >> "$res"
     mkdir -p "$out/$study/data"
     find "data/$j" -name '*.jld2' -exec mv -n {} "$out/$study/data/" \;
