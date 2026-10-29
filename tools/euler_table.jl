@@ -1,11 +1,11 @@
 # Summary tables of the Euler shock runs from saved results: per experiment and grid, one row per method with the
 # final time reached, the minimum pressure and density at the end, the mass change (m(t_end)/m(0) − 1) and its
 # difference to a reference method, steps and runtime. Reads every *.jld2 under <dir>/data.
-#     julia --project=env_headless tools/euler_table.jl data/review/euler [table.md] [reference label]
+#     julia --project=env_headless tools/euler_table.jl [save dir, default .] [table.md] [reference label]
 using HyperCloud, StaticArrays, Printf
 const JLD2 = HyperCloud.PDEStudioCore.JLD2
 
-dir = joinpath(get(ARGS, 1, "data/review/euler"), "data")
+dir = joinpath(get(ARGS, 1, "."), "data")
 refname = get(ARGS, 3, "RK2MUSCL2(EPD1,AR,MLS2)")
 label(p) = "$(p[:Time_stepper])$(p[:Scheme_name])$(p[:Scheme_order])" *
     (get(p, :Limiter_name, :none) != :none ? "($(p[:Limiter_name])" : get(p, :MOOD_criterion, :none) != :none ? "($(p[:MOOD_strategy])" : "(none") *
