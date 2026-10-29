@@ -7,6 +7,9 @@ function get_config()
         config.methods[Symbol("$(st)MUSCL$(K)(EPD2)")] = Dict{Symbol, Any}(:Time_stepper => st, :Scheme_name => :MUSCL,
             :Scheme_order => K, :Scheme_MLS_order => 2, :Flux_name => :AlignedRusanov, :Limiter_name => :none,
             :MOOD_criterion => :U2, :MOOD_strategy => :EPD2, :MOOD_delta_relax => 1e-4)
+        config.methods[Symbol("$(st)MUSCL$(K)(VK)")] = Dict{Symbol, Any}(:Time_stepper => st, :Scheme_name => :MUSCL,
+            :Scheme_order => K, :Scheme_MLS_order => 2, :Flux_name => :Rusanov, :Limiter_name => :VK, :Limiter_mode => :hard,
+            :MOOD_criterion => :none)
     end
     push!(config.sources, @__FILE__)
     return config
