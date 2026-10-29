@@ -65,5 +65,6 @@ function get_config()
     add_review_methods!(methods)
     defaults = ["RK4SSPMUSCL4(EPD2,AR,MLS2)", "RK4SSPMUSCL4(EPD2,AR,MLS4)", "RK4SSPMUSCL4(none,AR,MLS4)",
                 "RK3MUSCL3(EPD2,AR,MLS2)", "RK3MUSCL3(none,AR,MLS3)", "RK2MUSCL2(EPD2,AR,MLS2)"]
-    return SimulationConfig(shared, methods, defaults; varied = varied_params, sources = [@__FILE__])
+    return SimulationConfig(shared, methods, defaults; varied = varied_params, postprocess = :vortex_error!,
+                            sources = [@__FILE__, joinpath(@__DIR__, "vortex_stats.jl")])
 end
