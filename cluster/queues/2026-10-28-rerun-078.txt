@@ -1,0 +1,248 @@
+# Full rerun on HyperCloudCore 0.7.8 (MOOD u2 plateau criterion, SSP substep checks, aligned signs off the cached
+# path, adaptivity fixes) / HyperCloud 0.5.1, 2026-10-28, CPU part (Float64): convergence, conservation defect,
+# particle management + BGK. Euler shock problems and the vortex: 2026-10-28-rerun-078-gpu.txt.
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 2 ar 0.0 5.5 1.0 2 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.0 5.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.0 5.5 1.0 2 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.0 5.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.0 5.5 1.0 2 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 3 ar 0.0 5.5 1.0 3 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.0 5.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.0 5.5 1.0 3 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.0 5.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.0 5.5 1.0 3 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 4 ar 0.0 5.5 1.0 4 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.0 5.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.0 5.5 1.0 4 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.0 5.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.0 5.5 1.0 4 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 5 ar 0.0 5.5 1.0 5 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 5 ar 0.0 5.5 1.0 5 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 5 ar 0.0 5.5 1.0 5 251 631
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 5 ar 0.0 5.5 1.0 5 795 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 5 ar 0.0 5.5 1.0 5 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 5 ar 0.0 5.5 1.0 5 251 631
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 5 ar 0.0 5.5 1.0 5 795 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 2 ar 0.0 2.5 1.0 2 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.0 2.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.0 2.5 1.0 2 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.0 2.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.0 2.5 1.0 2 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 3 ar 0.0 2.5 1.0 3 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.0 2.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.0 2.5 1.0 3 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.0 2.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.0 2.5 1.0 3 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 4 ar 0.0 2.5 1.0 4 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.0 2.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.0 2.5 1.0 4 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.0 2.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.0 2.5 1.0 4 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 2 ar 0.2 5.5 1.0 2 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.2 5.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.2 5.5 1.0 2 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.2 5.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.2 5.5 1.0 2 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 3 ar 0.2 5.5 1.0 3 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.2 5.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.2 5.5 1.0 3 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.2 5.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.2 5.5 1.0 3 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 4 ar 0.2 5.5 1.0 4 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.2 5.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.2 5.5 1.0 4 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.2 5.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.2 5.5 1.0 4 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 5 ar 0.2 5.5 1.0 5 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 5 ar 0.2 5.5 1.0 5 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 5 ar 0.2 5.5 1.0 5 251 631
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 5 ar 0.2 5.5 1.0 5 795 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 5 ar 0.2 5.5 1.0 5 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 5 ar 0.2 5.5 1.0 5 251 631
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 5 ar 0.2 5.5 1.0 5 795 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 2 ar 0.2 2.5 1.0 2 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.2 2.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 2 ar 0.2 2.5 1.0 2 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.2 2.5 1.0 2 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 2 ar 0.2 2.5 1.0 2 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 3 ar 0.2 2.5 1.0 3 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.2 2.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 3 ar 0.2 2.5 1.0 3 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.2 2.5 1.0 3 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 3 ar 0.2 2.5 1.0 3 251 1000
+cpus=16 mem=16 time=300 :: cluster/run_mass.sh Convergence1D 4 ar 0.2 2.5 1.0 4 1 10000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.2 2.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceAdvection 4 ar 0.2 2.5 1.0 4 251 1000
+cpus=32 mem=32 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.2 2.5 1.0 4 1 200
+cpus=32 mem=64 time=300 :: cluster/run_mass.sh ConvergenceBurgers 4 ar 0.2 2.5 1.0 4 251 1000
+cpus=32 mem=64 time=240 :: cluster/run_defect.sh defect_shock
+cpus=32 mem=64 time=240 :: cluster/run_defect.sh defect_smooth2d
+cpus=32 mem=64 time=240 :: cluster/run_defect.sh defect_floor defect_jitter
+cpus=32 mem=64 time=240 :: cluster/run_defect.sh defect_range defect_alpha defect_smooth1d
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 shepard off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 shepard on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 4 shepard off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 4 shepard on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 4 mls off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 4 mls on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 2 shepard off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 2 shepard on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 2 mls off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 2 mls on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 4 shepard off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 4 shepard on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 4 mls off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1pre 4 mls on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 2 shepard off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 2 shepard on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 2 mls off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 2 mls on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 4 shepard off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 4 shepard on 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 4 mls off 1.6 0.5 2 1 1 10000
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh lin 4 mls on 1.6 0.5 2 1 1 10000
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 shepard off 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 shepard off 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 shepard on 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 shepard on 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls off 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls off 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 shepard off 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 shepard off 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 shepard on 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 shepard on 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 mls off 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 mls off 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 mls on 1.6 0.5 2 1 1 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 4 mls on 1.6 0.5 2 1 142 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 shepard off 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 shepard off 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 shepard on 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 shepard on 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 mls off 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 mls off 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 mls on 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 2 mls on 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 shepard off 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 shepard off 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 shepard on 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 shepard on 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 mls off 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 mls off 1.6 0.5 2 1 101 300
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 mls on 1.6 0.5 2 1 1 100
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh vortex 4 mls on 1.6 0.5 2 1 101 300
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.3 0.5 2 1 400 1600
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 2.0 0.5 2 1 400 1600
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.6 0.3 2 1 400 1600
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.6 0.7 2 1 400 1600
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.6 0.5 1 1 400 1600
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.6 0.5 4 1 400 1600
+cpus=16 mem=16 time=300 :: cluster/run_adapt.sh b1 2 mls on 1.6 0.5 2 0 400 1600
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.3 0.5 2 1 100 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 2.0 0.5 2 1 100 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.3 2 1 100 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.7 2 1 100 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.5 1 1 100 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.5 4 1 100 141
+cpus=32 mem=64 time=300 :: cluster/run_adapt.sh b2 2 mls on 1.6 0.5 2 0 100 141
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk none mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls on 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 none mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls on 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 none mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls on 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls on 1e-2 1 10000
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 none mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls off 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls on 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls on 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 none mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls off 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls on 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls on 1e-3 50 100 on
