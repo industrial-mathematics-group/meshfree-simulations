@@ -48,11 +48,12 @@ function (bc::NohExactBC)(pg, rhos_buffer, tag::Int, ts, eq, t::Real)
     return nothing
 end
 
-function get_config()
+function noh_config(file)
     γ, p0 = 5 / 3, 1e-6
     bc = NohExactBC(γ, p0)
     shared = bench_shared(:PDE_gamma => γ, :tmax => 0.6, :Grid_mins => (-1.0, -1.0), :Grid_maxs => (1.0, 1.0),
                           :Grid_Ns => (400, 400), :Grid_bc_map => Dict{Int, AbstractBoundaryCondition}(k => bc for k in 1:4),
                           :IC_name => :noh, :IC_gamma => γ, :IC_p0 => p0)
-    return bench_config(shared; reference = :analytical_solution, sources = [@__FILE__])
+    return bench_config(shared; reference = :analytical_solution, sources = unique([@__FILE__, file]))
 end
+get_config() = noh_config(@__FILE__)
