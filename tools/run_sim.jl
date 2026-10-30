@@ -72,7 +72,9 @@ function summary_line(params)
     nan = count(s -> any(isnan, s), u)
     rho = minimum(s -> s[1], u)
     ok   = nan == 0 && d.t[end] >= params[:tmax] * (1 - 1e-4) && (params[:PDE_name] != :euler || rho > 0)
-    ok  &= maximum(s -> maximum(abs, s), u) < 1e6     # blown up without NaNs
+    # blown up without NaNs: relative to the largest value of the initial data (an absolute bound flags e.g. the
+    # energy density 1.6e6 of the Mach 2000 jet)
+    ok  &= maximum(s -> maximum(abs, s), u) < 1e4 * max(1, maximum(s -> maximum(abs, s), d.u[1]))
     line = @sprintf("%-40s t=%.4g/%.4g  NaN=%d  min(u1)=%.3e", label(params), d.t[end], params[:tmax], nan, rho)
     if params[:PDE_name] == :euler
         γ = params[:PDE_gamma]

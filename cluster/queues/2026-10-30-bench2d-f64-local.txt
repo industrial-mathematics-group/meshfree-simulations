@@ -1,0 +1,19 @@
+# Float64 CPU (local) reruns of the GPU Float32 benchmark runs that failed (negative pressure); CONFIG KEY NX NY CFL T
+MachJet2000 k2.epd1.ar.mls2 640 320 0.4 Float64
+MachJet2000 k2.epd2.ar.mls2 640 320 0.4 Float64
+MachJet2000 k2.vk.ar.mls2 640 320 0.4 Float64
+MachJet2000 k3.epd1.ar.mls2 640 320 0.4 Float64
+MachJet2000 k3.epd1.ar.mls3 640 320 0.4 Float64
+MachJet2000 k3.epd2.ar.mls2 640 320 0.4 Float64
+MachJet2000 k3.epd2.ar.mls3 640 320 0.4 Float64
+MachJet2000 k4.epd1.ar.mls2 640 320 0.4 Float64
+MachJet2000 k4.epd2.ar.mls2 640 320 0.4 Float64
+MachJet80 k2.vk.ar.mls2 800 400 0.4 Float64
+Noh k2.vk.ar.mls2 400 400 0.4 Float64
+Noh k3.epd1.ar.mls3 400 400 0.4 Float64
+Noh k3.epd2.ar.mls3 400 400 0.4 Float64
+Noh k4.epd1.ar.mls4 400 400 0.4 Float64
+Noh k4.epd2.ar.mls2 400 400 0.4 Float64
+Noh k4.epd2.ar.mls4 400 400 0.4 Float64
+MachJet2000 k4.epd1.ar.mls4 640 320 0.4 Float64
+MachJet2000 k4.epd2.ar.mls4 640 320 0.4 Float64

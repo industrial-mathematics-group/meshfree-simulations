@@ -16,6 +16,8 @@ parameters of these runs (the job scripts in `cluster/` override precision, grid
 | `IsentropicVortex_Float64` | RK4SSPMUSCL4(none,AR,MLS4), N = 50 … 400 (precision check of the Float32 floor) | CPU (local), Float64 |
 | `Convergence1D_sweep`, `ConvergenceAdvection_sweep`, `ConvergenceBurgers_sweep` | K = 2 … 5, lattice and jitter 0.2, R = 5.5 / 2.5 | CPU, Float64 |
 | `defect_floor`, `defect_shock`, `defect_jitter`, `defect_range`, `defect_alpha`, `defect_smooth1d`, `defect_smooth2d` | conservation-defect experiments | CPU, Float64 |
+| `Riemann2D_C4`, `_C6`, `_C12`, `_C15`, `_C17`, `Implosion`, `Noh`, `Sedov`, `MachJet80`, `MachJet2000`, `Gresho`, `GreshoLowMach`, `KelvinHelmholtz`, `ShockVortex` (experiments/Benchmarks2D) | 2-D Euler benchmarks, 12 methods each (report reports/2026-10-30-benchmarks2d.md) | GPU, Float32 |
+| `Noh_Float64`, `MachJet80_Float64`, `MachJet2000_Float64` | the benchmark runs that lost positivity in Float32, rerun | CPU (local), Float64 |
 | `Sod1D` | Sod shock tube, 12 methods (AR + frozen MLS + MOOD, VK, MUSCL1), N = 100 … 1000, errors vs the exact solution | CPU (local), Float64 |
 | `bgk_sod_sweep` | 3 methods × static / Lagrangian / Lagrangian + adaptivity × τ × N (one run failed, see the report) | CPU, Float64 |
 

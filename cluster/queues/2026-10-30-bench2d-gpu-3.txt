@@ -1,0 +1,13 @@
+# 2-D Euler benchmarks, third batch: shock-vortex interaction; GPU (CUDA) Float32, CFL 0.4.
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex m1 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k2.vk.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k2.epd1.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k2.epd2.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k3.epd1.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k3.epd2.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k3.epd1.ar.mls3 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k3.epd2.ar.mls3 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k4.epd1.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k4.epd2.ar.mls2 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k4.epd1.ar.mls4 800 400 0.4 cuda Float32
+gpus=1 cpus=8 mem=32 time=300 :: cluster/run_method.sh ShockVortex k4.epd2.ar.mls4 800 400 0.4 cuda Float32
