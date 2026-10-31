@@ -1,0 +1,2 @@
+{ "name": "pdestudio-browser", "private": true, "description": "Headless Chromium driver for tools/studio/serve.jl",
+  "dependencies": { "playwright-core": "1.64.1" } }
