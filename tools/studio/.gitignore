@@ -1,0 +1,8 @@
+node_modules/
+state.json*
+cmd.jl
+cmd.out*
+bcmd.json
+bout.json*
+*.png
+*.log
