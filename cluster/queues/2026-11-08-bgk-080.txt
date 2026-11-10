@@ -1,0 +1,99 @@
+# BGK rerun on HyperCloud 0.6.0 / HyperCloudCore 0.8.0 (IMEX fixes: published ARS(2,2,2), implicit sources with explicit
+# tableaus), CPU Float64: the BGK part of 2026-10-28-rerun-078.txt (wave, sod, sodc, 2-D vortex incl. the ALE flux patch).
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2 lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m3 lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2vk lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 none mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian shepard on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls off 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls off Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls on 1e-4 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh wave m2epd2 lagrangian mls on Inf 1 1000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk none mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls on 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2vk lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 none mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls on 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m2epd2 lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 none mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls off 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls on 1e-3 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sod m3epd2 lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m2epd2 lagrangian mls on 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 none mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 none mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls off 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls off 1e-2 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls on 1e-5 1 10000
+cpus=16 mem=32 time=300 :: cluster/run_bgk.sh sodc m3epd2 lagrangian mls on 1e-2 1 10000
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 none mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls off 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls on 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m2 lagrangian mls on 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 none mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls off 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls off 1e-3 50 100 on
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls on 1e-3 50 100 off
+cpus=32 mem=64 time=300 :: cluster/run_bgk.sh vortex m3 lagrangian mls on 1e-3 50 100 on
