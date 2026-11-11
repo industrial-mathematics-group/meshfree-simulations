@@ -96,6 +96,10 @@ holds about twice as many particles, and EPD2's order drops (which lower the nei
 correspondingly wider region. Tests: the same run with EPD1, with a smaller R, or with a radius that follows the local
 spacing; and the MOOD activity along x (`tools/mood_activity.jl`).
 
+*Update (2026-11-11, `study/bgk-lagrangian-contact`):* the guess is wrong (EPD0/EPD1/SEPD0 smear alike). The cause is the
+numerical flux on moving grids: BGK's per-velocity upwind dissipation is lost in the ALE frame (generic Rusanov with the
+largest speed for every velocity); with the per-velocity flux the Lagrangian contact is as sharp as the static one.
+
 ## E5: particle management
 
 `final_particle_count` includes the 12 ghost particles (without particle management it is N + 13: N + 1 interior + 12),

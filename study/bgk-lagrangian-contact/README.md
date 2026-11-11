@@ -23,7 +23,7 @@ less dissipative the flux, the larger the gain (the patched BGK runs gain the mo
 |---|---|
 | Case | BGK Sod of `bgk_sod_sweep` (HyperCloud's bgk_1d_sod: Chu reduction, 24 velocities, γ = 1.4, jitter 0.2, R = 5.5, CFL 0.2, t = 0.2), τ = 1e-5, Float64, MLS 2 volumes, no particle management, N = 200, 400, 800, 1600, 3200 |
 | Configs | `experiments/BGK/bgk_sod_contact.jl` (24 variants: the Lagrangian EPD2 or VK run with one ingredient changed), `experiments/Euler/euler_sod_contact.jl` (the same Sod for Euler), `experiments/BGK/bgk_sod2d.jl` (planar Sod for the 2-D BGK model) |
-| Runs | local CPU (12 threads), HyperCloud 0.6.1 / HyperCloudCore 0.8.0 (`env_web`): 120 BGK + 45 Euler + 55 patched BGK runs, all finished without NaNs; 2-D: 200 × 10 locally, 400 × 20 and 800 × 40 on the cluster (see 2-D) |
+| Runs | local CPU (12 threads), HyperCloud 0.6.1 / HyperCloudCore 0.8.0 (`env_web`): 120 BGK + 45 Euler + 55 patched BGK + 6 velocity-grid runs, all finished without NaNs; 2-D: 200 × 10 locally, 400 × 20 and 800 × 40 on the cluster (§ 4) |
 | ALE flux patch | `tools/patches/bgk_ale_flux.jl` (test patch, not in HyperCloud), loaded with `SIM_PATCHES` (new opt-in in `tools/run_sim.jl`); patched runs are stored separately (`data/contact_alepatch`) because their parameters are the same |
 | Scripts | `metrics.jl` (L1, plateau errors, contact width per variant and N), `regions.jl` (L1 by region, shock position, mass), `mood_profile.jl` (MOOD orders along x), `sod2d.jl` (2-D measures), `figures.jl`; `common.jl` holds the exact Sod solution and the run loader |
 
@@ -117,7 +117,37 @@ now measured in isolation.
 
 ## 4. 2-D: planar Sod for the 2-D BGK model
 
-(see below, filled in when the cluster runs are back)
+`experiments/BGK/bgk_sod2d.jl`: the same Sod in the strip [-0.5, 0.5] × [0, 0.05], periodic in y, for the 2-D BGK model
+(Chu reduction, 8 × 8 Gauss–Hermite velocities as in `bgk_vortex.jl`), τ = 1e-5, jitter 0.2, R = 3.5 (R = 2.5 fails on
+Lagrangian particles, § 1), N_y = N_x / 20. Density averaged over y in bins of width 1/N_x (`sod2d.jl`).
+Runs: 200 × 10 locally; 400 × 20 and 800 × 40 on the cluster (jobs 25073617–25073626, CPU backend, 16 cores of GPU nodes,
+HyperCloud 0.6.0 / HyperCloudCore 0.8.0 in the cluster's `env_headless`; the 100 × 5 smoke test 25072955 matches the
+local run to all printed digits). 25073624 (EPD2 Lagrangian 800 × 40) was preempted twice on `gpuidle`; its rerun
+25091357 (CPU partition) is pending.
+
+![2-D profiles](img/sod2d_profiles.png)
+
+**The 8 × 8 velocity model is not the Euler solution.** The static runs converge, but not to exact Euler: behind the
+rarefaction ρ = 0.49 instead of 0.426, the rarefaction is too flat, the shock slower (0.331 at 800 × 40). The 1-D model
+shows the same with a coarse velocity grid: static EPD2, N = 3200, left plateau 0.448 with 8 Gauss–Hermite nodes, 0.442
+with 8 uniform nodes, 0.4263 (exact) with 16 Gauss–Hermite or 24 uniform nodes; L1 8.0e-3 (GH 8) vs 2.6e-3 (GH 16). So
+the 2-D comparison is against the static 800 × 40 run (the model reference), not against Euler. (The same 8-node grid
+is used by `bgk_vortex.jl`, whose error was already known to be the model's.)
+
+| 2-D, x-binned | contact width 200 / 400 / 800 | shock x 200 / 400 / 800 | plateau ρ between contact and shock, 400 |
+|---|---|---|---|
+| EPD2 static | 0.065 / 0.030 / 0.021 | 0.340 / 0.334 / 0.331 | flat |
+| EPD2 Lagrangian | **0.150 / 0.135** / (pending) | 0.375 / 0.354 / (pending) | ramp, no plateau |
+| EPD2 Lagrangian + ALE flux patch | 0.050 / 0.035 / 0.020 | 0.352 / 0.353 / 0.352 | flat |
+| VK static | 0.035 / 0.018 / – | 0.332 / 0.331 / – | flat |
+| VK Lagrangian | 0.060 / 0.037 / 0.022 | 0.347 / 0.348 / 0.346 | flat |
+| VK Lagrangian + ALE flux patch | 0.025 / 0.015 / – | 0.354 / 0.353 / – | flat |
+
+The 1-D findings hold in 2-D:
+- EPD2 on Lagrangian particles smears the contact (width 0.135 at 400 × 20 vs 0.030 static, 4.5×), VK much less
+  (2×); with the per-velocity flux the Lagrangian contact is as sharp as the static one (0.035 / 0.020 at 400 / 800).
+- Every Lagrangian shock is ahead of the static one by 0.015 … 0.022, constant in N for the patched runs (0.352 … 0.353);
+  the patched runs are the farthest ahead, as in 1-D.
 
 ## Conclusions and proposals
 
@@ -130,7 +160,10 @@ now measured in isolation.
    Lagrangian Sod converge; the shock needs a conservative ALE formulation (or a mover that slows the particles at shocks;
    α = 0.5 halves the gain). Not tested here.
 3. R ≥ 3.5 for Lagrangian runs with strong rarefactions (R = 2.5 diverges once the particles stretch beyond the radius).
-4. The E4 guess of PR #24 (absolute radius + EPD2 halo) is refuted; the README of `study/bgk-pdestudio` should point here.
+4. The E4 guess of PR #24 (absolute radius + EPD2 halo) is refuted; `study/bgk-pdestudio/README.md` now points here.
+5. 8 velocity nodes per direction are too few for Sod near the Euler limit (left state +5 % in 1-D, +15 % with 8 × 8 in
+   2-D); 16 Gauss–Hermite nodes are exact in 1-D. 2-D BGK runs that should be compared with Euler need a finer velocity
+   grid (cost ∝ N_v²).
 
 ## Reproduce
 
@@ -145,4 +178,10 @@ julia --project=env_web study/bgk-lagrangian-contact/metrics.jl bgk_sod_contact 
 julia --project=env_web study/bgk-lagrangian-contact/regions.jl bgk_sod_contact data/contact 3200 EPD2 "EPD2 static" VK
 julia --project=env_web -t 12 study/bgk-lagrangian-contact/mood_profile.jl bgk_sod_contact EPD2 epd2   # epd2s: "EPD2 static"; epd2p: with SIM_PATCHES
 julia --project=env_web study/bgk-lagrangian-contact/figures.jl
+# 2-D: 200 × 10 locally (~2 min per run), larger on the cluster (bash cluster/queues/lib.sh <queue> <log>)
+SIM_BACKEND=cpu SIM_T=Float64 SIM_SAVE=data/sod2d SIM_SET="Grid_Ns=(200, 10)" julia --project=env_web -t 12 tools/run_sim.jl bgk_sod2d
+bash cluster/queues/lib.sh cluster/queues/2026-11-11-bgk-sod2d.txt cluster/queues/logs/2026-11-11-bgk-sod2d.log
+julia --project=env_web study/bgk-lagrangian-contact/sod2d.jl data/sod2d 400 20 "ARS222MUSCL2(EPD2) static" "ARS222MUSCL2(EPD2) lagrangian"
 ```
+The cluster results are fetched into `data/sod2d/data/` and `data/sod2d_alepatch/data/` (patched jobs write to
+`results/alepatch/`) and upgraded with `PDEStudioCore.upgrade_sim_data` (the cluster environment has PDEStudioCore 0.4).

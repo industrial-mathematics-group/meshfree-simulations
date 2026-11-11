@@ -101,4 +101,28 @@ let fig = Figure(size = (900, 420))
     axislegend(ax, position = :lt, framevisible = false)
     save(joinpath(IMG, "mood_activity.png"), fig)
 end
+# 5. planar 2-D BGK Sod (bgk_sod2d): x-binned density at N_x = 400, static 800 × 40 as the model reference
+let fig = Figure(size = (1200, 480)), c = get_study_config("bgk_sod2d")
+    function run2d(save, m, nx)
+        set_save_path!(joinpath(ROOT, save))
+        p = HyperCloud.PDEStudioCore.assemble_params(c.shared, c.methods, Symbol(m)); p[:Grid_Ns] = (nx, nx ÷ 20)
+        return load_sim_data(p, :raw)
+    end
+    for (j, (meth, lab)) in enumerate((("ARS222MUSCL2(EPD2)", "EPD2"), ("ARS222MUSCL2(VK)", "VK")))
+        ax = Axis(fig[1, j], title = "2-D BGK planar Sod, $lab, N = 400 × 20, t = 0.2", xlabel = "x",
+                  ylabel = j == 1 ? "ρ (mean over y)" : "", limits = ((-0.3, 0.45), (0.1, 1.05)))
+        xe = range(-0.3, 0.45, length = 2000)
+        lines!(ax, xe, ρexact.(xe, 0.2), color = C.exact, linestyle = :dash, linewidth = 1.5, label = "exact Euler")
+        xr, ρr = binned_profile(run2d("data/sod2d", "ARS222MUSCL2(EPD2) static", 800), 800)
+        lines!(ax, xr, ρr, color = C.exact, linewidth = 1, label = "EPD2 static 800 × 40 (model reference)")
+        for (save, grid, col, l) in (("data/sod2d", "static", C.blue, "$lab static"),
+                                     ("data/sod2d", "lagrangian", C.orange, "$lab Lagrangian"),
+                                     ("data/sod2d_alepatch", "lagrangian", C.aqua, "$lab Lagrangian + ALE flux patch"))
+            x, ρ = binned_profile(run2d(save, "$meth $grid", 400), 400)
+            lines!(ax, x, ρ, color = col, linewidth = 2, label = l)
+        end
+        axislegend(ax, position = :rt, framevisible = false, labelsize = 12)
+    end
+    save(joinpath(IMG, "sod2d_profiles.png"), fig)
+end
 println("figures written to $IMG")

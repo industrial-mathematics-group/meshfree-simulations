@@ -52,3 +52,13 @@ function shock_position(s)
     i = findlast(k -> s.ρ[k] > lvl, 1:length(s.ρ) - 1)
     return s.x[i] + (s.x[i + 1] - s.x[i]) * (s.ρ[i] - lvl) / (s.ρ[i] - s.ρ[i + 1])
 end
+
+"Binned density profile of the last snapshot of a 2-D planar run: bin centres, mean ρ (NaN for empty bins)."
+function binned_profile(d, nx; k = length(d.t))
+    xs = range(-0.5, 0.5, length = nx + 1); xc = (xs[1:end-1] .+ xs[2:end]) ./ 2
+    s = zeros(nx); n = zeros(Int, nx)
+    for (q, u) in zip(d.x[k], d.u[k])
+        b = clamp(1 + floor(Int, (q[1] + 0.5) * nx), 1, nx); s[b] += u[1]; n[b] += 1
+    end
+    return collect(xc), [n[b] > 0 ? s[b] / n[b] : NaN for b in 1:nx]
+end
