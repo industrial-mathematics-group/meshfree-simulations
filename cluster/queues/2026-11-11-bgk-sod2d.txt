@@ -1,11 +1,5 @@
 # Planar 2-D BGK Sod (experiments/BGK/bgk_sod2d.jl, study/bgk-lagrangian-contact): static vs Lagrangian, EPD2 vs VK, with and
-# without the ALE flux test patch, N_x = 200, 400, 800 (N_y = N_x / 20). CPU backend on GPU nodes (CPU partition fair share).
-gpus=1 cpus=16 mem=32 time=120 :: cluster/run_bgk2d.sh bgk_sod2d epd2-s 200 10
-gpus=1 cpus=16 mem=32 time=120 :: cluster/run_bgk2d.sh bgk_sod2d epd2-l 200 10
-gpus=1 cpus=16 mem=32 time=120 :: cluster/run_bgk2d.sh bgk_sod2d vk-s 200 10
-gpus=1 cpus=16 mem=32 time=120 :: cluster/run_bgk2d.sh bgk_sod2d vk-l 200 10
-gpus=1 cpus=16 mem=32 time=120 :: cluster/run_bgk2d.sh bgk_sod2d epd2-l 200 10 patch
-gpus=1 cpus=16 mem=32 time=120 :: cluster/run_bgk2d.sh bgk_sod2d vk-l 200 10 patch
+# without the ALE flux test patch, N_x = 400, 800 (N_y = N_x / 20; 200 × 10 ran locally). CPU backend on GPU nodes (CPU partition fair share).
 gpus=1 cpus=16 mem=32 time=240 :: cluster/run_bgk2d.sh bgk_sod2d epd2-s 400 20
 gpus=1 cpus=16 mem=32 time=240 :: cluster/run_bgk2d.sh bgk_sod2d epd2-l 400 20
 gpus=1 cpus=16 mem=32 time=240 :: cluster/run_bgk2d.sh bgk_sod2d vk-s 400 20
