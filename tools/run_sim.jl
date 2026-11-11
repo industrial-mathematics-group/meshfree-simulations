@@ -14,6 +14,8 @@
 #   SIM_SAVE    = directory for the result files (default results/)
 #   SIM_FORCE   = 1 reruns cached runs
 #   SIM_SKIP_RUN = 1 only prints the summary of the cached runs
+#   SIM_PATCHES = "tools/patches/x.jl;…"  test patches loaded after HyperCloud (paths relative to the repo). The run
+#                 parameters do not record them, so use a separate SIM_SAVE for patched runs.
 using Logging, Printf
 using HyperCloud, StaticArrays
 const BACKEND = get(ENV, "SIM_BACKEND", "gpu")
@@ -54,6 +56,11 @@ else
         HyperCloud.HyperCloudCore.@batch per=core for i in 1:10_000; set_zero_subnormals(true); end
     end
     set_zero_subnormals(true)
+end
+
+for f in split(get(ENV, "SIM_PATCHES", ""), ';'; keepempty = false)
+    @warn "Loading test patch $f (not recorded in the run parameters)"
+    include(joinpath(@__DIR__, "..", strip(f)))
 end
 
 include(joinpath(@__DIR__, "config.jl"))
